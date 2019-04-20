@@ -6,6 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
+    "experimentalDecorators": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
@@ -20,20 +21,10 @@
     "baseUrl": ".",
     "module": "es6",
     "paths": {
-      "shlack/tests/*": [
-        "tests/*"
-      ],
-      "shlack/*": [
-        "app/*"
-      ],
-      "*": [
-        "types/*"
-      ]
+      "shlack/tests/*": ["tests/*"],
+      "shlack/*": ["app/*"],
+      "*": ["types/*"]
     }
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ]
+  "include": ["app/**/*", "tests/**/*", "types/**/*"]
 }
