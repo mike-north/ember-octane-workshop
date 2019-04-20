@@ -4,6 +4,7 @@ module.exports = {
   extends: 'recommended',
   rules: {
     'no-implicit-this': true,
-    'block-indentation': false
+    'block-indentation': false,
+    'img-alt-attributes': true
   }
 };
