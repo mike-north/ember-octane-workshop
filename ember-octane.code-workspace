@@ -4,7 +4,19 @@
       "path": "."
     }
   ],
-  "settings": {},
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      ".gitignore": true,
+      ".ignore": true,
+      ".watchmanconfig": true,
+      ".editorconfig": true
+    }
+  },
   "extensions": {
     "recommendations": [
       "emberjs.vscode-ember",
