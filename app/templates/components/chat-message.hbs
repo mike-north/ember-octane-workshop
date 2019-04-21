@@ -1,9 +1,14 @@
-<div class="flex items-start mb-4 text-sm">
+<div class="flex items-start mb-4 text-sm hover-target">
   <img src={{@message.user.iconUrl}} class="w-10 h-10 rounded mr-3">
   <div class="flex-1 overflow-hidden">
     <div>
       <span class="font-bold">{{@message.user.name}}</span>
       <span class="text-grey text-xs">{{format-timestamp @message.createdAt}}</span>
+    </div>
+    <div class="float-right mr-4">
+      <button {{on "click" (fn @deleteChatMessage @message)}} class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1" alt="delete message">
+        🗑
+      </button>
     </div>
     <p class="text-black leading-normal">
       {{@message.body}}

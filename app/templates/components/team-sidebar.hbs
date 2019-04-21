@@ -28,13 +28,13 @@
       </div>
     </div>
     {{#each @channels as |channel| }}
-    {{#link-to 'teams.team.channel' channel.id
-        class=(concat "py-1 px-4 text-white no-underline block " (if channel.isDisabled "opacity-25" "opacity-75"))
-        disabled=channel.isDisabled
-        loadingClass="bg-teal-dark"
-        activeClass="bg-teal-dark"}}
-    # {{channel.name}}
-    {{/link-to}}
+      {{#link-to 'teams.team.channel' channel.id
+          class=(concat "py-1 px-4 text-white no-underline block " (if channel.isDisabled "opacity-25" "opacity-75"))
+          disabled=channel.isDisabled
+          loadingClass="bg-teal-dark"
+          activeClass="bg-teal-dark"}}
+        # {{channel.name}}
+      {{/link-to}}
     {{/each}}
   </div>
 

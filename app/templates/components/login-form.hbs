@@ -1,0 +1,22 @@
+<form {{on "submit" this.onFormSubmitted}} class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <div class="mb-6">
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+      User ID
+    </label>
+    <input
+      class="shadow appearance-none border border-blue rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline"
+      id="username" type="text" placeholder="User ID" {{on "input" (action (mut this.userId) value='target.value')}}>
+    <p class="text-blue text-xs italic">
+      {{#if this.previewUserPromise}}
+        Logging in as {{get (await this.previewUserPromise) 'name'}}
+      {{/if}}
+    </p>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <input type="submit"
+      disabled={{this.isInvalid}}
+      class="{{if this.isInvalid 'bg-grey' 'bg-blue hover:bg-blue-dark'}} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      value='Sign In'>
+  </div>
+</form>
