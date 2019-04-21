@@ -5,7 +5,7 @@
     {{did-update ch.acts.updateMessages this.model}}>
     {{!-- A message --}}
     {{#each ch.messages as |message| }}
-      <ChatMessage @message={{message}} />
+      <ChatMessage @message={{message}} @deleteChatMessage={{ch.acts.deleteMessage}} />
     {{/each}}
   </div>
   <div class="pb-6 px-4 flex-none">

@@ -52,4 +52,14 @@ export default class ChannelContainerComponent extends Component {
       }
     ];
   }
+
+  @action async deleteChatMessage(message) {
+    const resp = await fetch(`/api/messages/${message.id}`, {
+      method: 'DELETE'
+    });
+    if (!resp.ok) {
+      throw new Error('Problem deleting chat message: ' + (await resp.text()));
+    }
+    await this.updateMessages();
+  }
 }

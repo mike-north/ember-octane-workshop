@@ -24,6 +24,11 @@
       "id": 1,
       "name": "Mike North",
       "iconUrl": "https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Lisa Huang-North",
+      "iconUrl": "https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200"
     }
   ],
   "channels": [
@@ -61,68 +66,44 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": 1,
-      "channelId": "general",
       "teamId": "fem",
-      "createdAt": "2019-04-20T19:14:10.813Z",
-      "body": "hello schlack"
+      "channelId": "compliments",
+      "userId": 2,
+      "createdAt": "2019-04-21T17:48:33.421Z",
+      "body": "Your penmanship is excellent!",
+      "id": 1
     },
     {
-      "id": 2,
-      "userId": 1,
-      "channelId": "general",
       "teamId": "fem",
-      "createdAt": "2019-04-20T19:14:12.813Z",
-      "body": "hello again"
+      "channelId": "compliments",
+      "userId": 1,
+      "createdAt": "2019-04-21T17:54:38.556Z",
+      "body": "I admire your punctuality",
+      "id": 2
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 2,
+      "createdAt": "2019-04-21T17:55:08.713Z",
+      "body": "Hello shlack!",
+      "id": 3
     },
     {
       "teamId": "li",
       "channelId": "general",
       "userId": 1,
-      "createdAt": "2019-04-21T00:22:51.846Z",
-      "body": "Would you like to join my professional network?",
-      "id": 3
-    },
-    {
-      "teamId": "fem",
-      "channelId": "compliments",
-      "userId": 1,
-      "createdAt": "2019-04-21T00:23:50.948Z",
-      "body": "I admire your punctuality",
-      "id": 4
-    },
-    {
-      "teamId": "fem",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T06:55:47.607Z",
-      "body": "this course is great!",
-      "id": 5
-    },
-    {
-      "teamId": "fem",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T06:56:01.886Z",
-      "body": "soooo great!",
-      "id": 6
-    },
-    {
-      "teamId": "fem",
-      "channelId": "compliments",
-      "userId": 1,
-      "createdAt": "2019-04-21T06:56:11.002Z",
-      "body": "your penmanship is excellent!",
-      "id": 7
-    },
-    {
-      "teamId": "fem",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T17:14:01.871Z",
-      "body": "chat!!",
+      "createdAt": "2019-04-21T18:29:41.153Z",
+      "body": "cq",
       "id": 8
+    },
+    {
+      "teamId": "li",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T18:29:41.422Z",
+      "body": "cq",
+      "id": 9
     }
   ]
 }
