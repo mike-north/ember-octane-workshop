@@ -23,11 +23,13 @@
     {
       "id": 1,
       "name": "Mike North",
+      "username": "mike",
       "iconUrl": "https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg"
     },
     {
       "id": 2,
       "name": "Lisa Huang-North",
+      "username": "lisa",
       "iconUrl": "https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200"
     }
   ],
@@ -104,6 +106,57 @@
       "createdAt": "2019-04-21T18:29:41.422Z",
       "body": "cq",
       "id": 9
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T18:36:30.995Z",
+      "body": "awda",
+      "id": 11
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T18:40:34.648Z",
+      "body": "wad",
+      "id": 12
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "body": "wdw",
+      "createdAt": 1555872178322,
+      "id": 13
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "body": "awqwdqwqwdq",
+      "enrichedBody": [
+        "awqwdqwqwdq"
+      ],
+      "createdAt": 1555872270175,
+      "id": 14
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "body": "qdq",
+      "createdAt": 1555872790592,
+      "id": 15
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "body": "w",
+      "createdAt": 1555872792437,
+      "id": 16
     }
   ]
 }
