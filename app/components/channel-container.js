@@ -3,6 +3,7 @@ import { tracked } from '@glimmer/tracking';
 
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import fetch from 'fetch';
 
 export default class ChannelContainerComponent extends Component {
   @tracked
@@ -36,7 +37,6 @@ export default class ChannelContainerComponent extends Component {
         teamId: channel.teamId,
         channelId: channel.id,
         userId: user.id,
-        createdAt: new Date().toISOString(),
         body: message
       })
     });
