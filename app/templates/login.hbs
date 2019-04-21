@@ -4,7 +4,7 @@
   </div>
   <div class="flex justify-center flex-row w-full">
     <div class="w-full max-w-xs">
-      <form {{action 'doLogin'}} class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form {{action 'doLogin' on="submit"}} class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
           <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
             User ID
@@ -18,7 +18,7 @@
         <div class="flex items-center justify-between">
           <input type="submit"
             class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button" value='Sign In' />
+            value='Sign In'>
 
         </div>
       </form>

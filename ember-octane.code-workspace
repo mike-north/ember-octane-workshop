@@ -15,6 +15,9 @@
       ".ignore": true,
       ".watchmanconfig": true,
       ".editorconfig": true
+    },
+    "[handlebars]": {
+      "editor.formatOnSave": false
     }
   },
   "extensions": {

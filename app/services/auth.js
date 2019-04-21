@@ -1,4 +1,4 @@
-import Service from '@ember/service';
+import Service, { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 const USER_LOCALSTORAGE_KEY = 'shlack-userid';
@@ -6,6 +6,11 @@ const USER_LOCALSTORAGE_KEY = 'shlack-userid';
 export default class AuthService extends Service {
   @tracked
   currentUser = null;
+
+  @tracked
+  prevTransition = null;
+
+  @service router;
 
   async restoreSession() {
     const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY);
@@ -31,5 +36,10 @@ export default class AuthService extends Service {
   async loginWithUserId(uid) {
     localStorage.setItem(USER_LOCALSTORAGE_KEY, uid);
     await this.restoreSession();
+    if (this.prevTransition) {
+      this.prevTransition.retry();
+    } else {
+      this.router.transitionTo('teams.index');
+    }
   }
 }
