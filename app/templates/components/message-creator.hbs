@@ -10,7 +10,7 @@
     <input type="text" value={{this.messageBuffer}} class="w-full px-4" placeholder="Message #general"
       {{on "input" this.onInputKeyDown}}>
     <input disabled={{this.submitDisabled}} type="submit"
-      class="text-xl {{if this.submitDisabled "opacity-50" ""}} bg-teal-dark text-white border-teal-dark p-2"
-      value="Send">
+      class="font-bold uppercase {{if this.submitDisabled "opacity-50 bg-grey-dark" "bg-teal-dark"}} text-white border-teal-dark p-2"
+      value="SEND">
   </form>
 </div>

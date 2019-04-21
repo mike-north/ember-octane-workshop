@@ -1,22 +1,16 @@
 {
   "teams": [
     {
-      "id": "fem",
-      "name": "Frontend Masters",
-      "order": 1,
-      "iconUrl": "https://gravatar.com/avatar/3634db7785a8dd45853029aa4d60f5c5?s=200"
-    },
-    {
       "id": "li",
       "name": "LinkedIn",
       "order": 2,
-      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://twitter.com/linkedin/profile_image"
+      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png"
     },
     {
       "id": "ms",
       "name": "Microsoft",
       "order": 3,
-      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://twitter.com/microsoft/profile_image"
+      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
     }
   ],
   "users": [
@@ -92,22 +86,6 @@
       "id": 3
     },
     {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T18:29:41.153Z",
-      "body": "cq",
-      "id": 8
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T18:29:41.422Z",
-      "body": "cq",
-      "id": 9
-    },
-    {
       "teamId": "fem",
       "channelId": "general",
       "userId": 1,
@@ -136,9 +114,7 @@
       "channelId": "general",
       "userId": 1,
       "body": "awqwdqwqwdq",
-      "enrichedBody": [
-        "awqwdqwqwdq"
-      ],
+      "enrichedBody": ["awqwdqwqwdq"],
       "createdAt": 1555872270175,
       "id": 14
     },
@@ -157,6 +133,22 @@
       "body": "w",
       "createdAt": 1555872792437,
       "id": 16
+    },
+    {
+      "teamId": "li",
+      "channelId": "general",
+      "userId": 2,
+      "body": "Would you like to join my professional network?",
+      "createdAt": 1555874498634,
+      "id": 17
+    },
+    {
+      "teamId": "li",
+      "channelId": "general",
+      "userId": 1,
+      "body": "Hello developer, I looked at your profile and am impressed by your 14 years of COBOL experience. Are you happy in your current role?",
+      "createdAt": 1555874584752,
+      "id": 18
     }
   ]
 }
