@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="flex justify-center flex-row w-full leading-loose text-3xl">
+    Login
+  </div>
+  <div class="flex justify-center flex-row w-full">
+    <div class="w-full max-w-xs">
+      <form {{action 'doLogin'}} class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+            User ID
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+            id="username" type="text" placeholder="User ID"
+            {{on "input" (action (mut this.userId) value='target.value')}}>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <input type="submit"
+            class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button" value='Sign In' />
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
