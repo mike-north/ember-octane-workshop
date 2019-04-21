@@ -1,0 +1,14 @@
+<ChannelContainer @channel={{this.model}} as |ch|>
+  <ChannelHeader @channel={{this.model}} />
+  {{!-- Chat messages --}}
+  <div class="px-6 py-4 flex-1 overflow-y-scroll" {{did-insert ch.acts.updateMessages this.model}}
+    {{did-update ch.acts.updateMessages this.model}}>
+    {{!-- A message --}}
+    {{#each ch.messages as |message| }}
+      <ChatMessage @message={{message}} />
+    {{/each}}
+  </div>
+  <div class="pb-6 px-4 flex-none">
+    <MessageCreator @onSubmit={{ch.acts.submitMessage}} />
+  </div>
+</ChannelContainer>

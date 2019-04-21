@@ -1,18 +1,12 @@
 <div class="flex items-start mb-4 text-sm">
-  <img src="https://twitter.com/steveschoger/profile_image" class="w-10 h-10 rounded mr-3">
+  <img src={{@message.user.iconUrl}} class="w-10 h-10 rounded mr-3">
   <div class="flex-1 overflow-hidden">
     <div>
-      <span class="font-bold">Steve Schoger</span>
-      <span class="text-grey text-xs">11:46</span>
+      <span class="font-bold">{{@message.user.name}}</span>
+      <span class="text-grey text-xs">{{format-timestamp @message.createdAt}}</span>
     </div>
     <p class="text-black leading-normal">
-      {{!-- a mention --}}
-      <a href="#" class="inline-block bg-blue-lightest text-blue no-underline">@Adam Wathan</a>
-      {{!-- normal text --}}
-      The slack from the other side.
-      {{!-- code --}}
-      <pre class="bg-grey-lighter border border-grey-light text-grey-darkest text-sm font-mono rounded p-3 mt-2 overflow-scroll">.marquee-lightspeed { -webkit-marquee-speed: fast; }
-.marquee-lightspeeder { -webkit-marquee-speed: faster; }</pre>
+      {{@message.body}}
     </p>
   </div>
 </div>

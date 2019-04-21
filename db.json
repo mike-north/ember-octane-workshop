@@ -1,0 +1,84 @@
+{
+  "teams": [
+    {
+      "id": "fem",
+      "name": "Frontend Masters",
+      "order": 1,
+      "iconUrl": "https://twitter.com/frontendmasters/profile_image"
+    },
+    {
+      "id": "li",
+      "name": "LinkedIn",
+      "order": 2,
+      "iconUrl": "https://twitter.com/linkedin/profile_image"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Mike North",
+      "iconUrl": "https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg"
+    }
+  ],
+  "channels": [
+    {
+      "id": "general",
+      "name": "general",
+      "description": "foo bar baz (professional)",
+      "teamId": "li"
+    },
+    {
+      "id": "general",
+      "name": "General",
+      "description": "foo bar baz",
+      "teamId": "fem"
+    },
+    {
+      "id": "compliments",
+      "name": "Compliments",
+      "description": "foo bar baz",
+      "teamId": "fem"
+    },
+    {
+      "id": "complaints",
+      "name": "Complaints",
+      "description": "foo bar baz",
+      "teamId": "fem",
+      "isDisabled": true
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "channelId": "general",
+      "teamId": "fem",
+      "createdAt": "2019-04-20T19:14:10.813Z",
+      "body": "hello schlack"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "channelId": "general",
+      "teamId": "fem",
+      "createdAt": "2019-04-20T19:14:12.813Z",
+      "body": "hello again"
+    },
+    {
+      "teamId": "li",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T00:22:51.846Z",
+      "body": "Would you like to join my professional network?",
+      "id": 3
+    },
+    {
+      "teamId": "fem",
+      "channelId": "compliments",
+      "userId": 1,
+      "createdAt": "2019-04-21T00:23:50.948Z",
+      "body": "I admire your punctuality",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{{!-- Team Sidebar --}}
+<TeamSidebar @team={{this.model}} @channels={{this.model.channels}} />
+
+{{!-- Chat content --}}
+<div class="flex-1 flex flex-col bg-white overflow-hidden">
+  {{outlet}}
+</div>

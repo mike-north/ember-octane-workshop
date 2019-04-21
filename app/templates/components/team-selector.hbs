@@ -1,18 +1,16 @@
 <div class="bg-indigo-darkest text-purple-lighter flex-none p-4 hidden md:block">
-  <div class="cursor-pointer mb-4">
-    <div
-      class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img src="https://twitter.com/tailwindcss/profile_image" alt="">
-    </div>
-    <div class="text-center text-white opacity-50 text-sm">&#8984;1</div>
-  </div>
-  <div class="cursor-pointer mb-4">
-    <div
-      class="bg-indigo-lighter opacity-25 h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      L
-    </div>
-    <div class="text-center text-white opacity-50 text-sm">&#8984;2</div>
-  </div>
+  {{#each @teams as |team|}}
+    {{#link-to "teams.team" team.id class="cursor-pointer mb-4 block"}}
+      <div
+        class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
+        <img src={{team.iconUrl}} alt={{team.name}}>
+      </div>
+      <div class="text-center text-white opacity-50 text-sm">
+        &#8984; {{team.order}}
+      </div>
+    {{/link-to}}
+  {{/each}}
+
   <div class="cursor-pointer">
     <div
       class="bg-white opacity-25 h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
