@@ -24,7 +24,6 @@ export default class ChannelContainerComponent extends Component {
 
   @action
   async chatMessageSubmit(message) {
-    alert('MESSAGE: ' + message);
     const { channel } = this.args;
     const user = this.auth.currentUser;
 

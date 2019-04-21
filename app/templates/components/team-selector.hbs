@@ -1,17 +1,14 @@
-<div class="bg-indigo-darkest text-purple-lighter flex-none p-4 hidden md:block">
+<div class="bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
   {{#each @teams as |team|}}
-    {{#link-to "teams.team" team.id class="cursor-pointer mb-4 block"}}
+    {{#link-to "teams.team" team.id class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25" activeClass="opacity-100"}}
       <div
         class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
         <img src={{team.iconUrl}} alt={{team.name}}>
       </div>
-      <div class="text-center text-white opacity-50 text-sm">
-        &#8984; {{team.order}}
-      </div>
     {{/link-to}}
   {{/each}}
 
-  <div class="cursor-pointer">
+  <div class="cursor-pointer p-4">
     <div
       class="bg-white opacity-25 h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
       <svg class="fill-current h-10 w-10 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

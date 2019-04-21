@@ -41,6 +41,7 @@ server.use(
       '/api/messages?_expand=user&teamId=:id&channelId=:channelId'
   })
 );
+
 server.use('/api', router);
 
 server.listen(3000, () => {

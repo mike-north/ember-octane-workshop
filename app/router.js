@@ -15,6 +15,7 @@ Router.map(function() {
       });
     });
   });
+  this.route('team');
 });
 
 export default Router;

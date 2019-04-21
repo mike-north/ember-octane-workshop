@@ -4,13 +4,19 @@
       "id": "fem",
       "name": "Frontend Masters",
       "order": 1,
-      "iconUrl": "https://twitter.com/frontendmasters/profile_image"
+      "iconUrl": "https://gravatar.com/avatar/3634db7785a8dd45853029aa4d60f5c5?s=200"
     },
     {
       "id": "li",
       "name": "LinkedIn",
       "order": 2,
-      "iconUrl": "https://twitter.com/linkedin/profile_image"
+      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://twitter.com/linkedin/profile_image"
+    },
+    {
+      "id": "ms",
+      "name": "Microsoft",
+      "order": 3,
+      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://twitter.com/microsoft/profile_image"
     }
   ],
   "users": [
@@ -29,19 +35,25 @@
     },
     {
       "id": "general",
-      "name": "General",
+      "name": "general",
+      "description": "foo bar baz (for windows)",
+      "teamId": "ms"
+    },
+    {
+      "id": "general",
+      "name": "general",
       "description": "foo bar baz",
       "teamId": "fem"
     },
     {
       "id": "compliments",
-      "name": "Compliments",
+      "name": "compliments",
       "description": "foo bar baz",
       "teamId": "fem"
     },
     {
       "id": "complaints",
-      "name": "Complaints",
+      "name": "complaints",
       "description": "foo bar baz",
       "teamId": "fem",
       "isDisabled": true
@@ -79,6 +91,38 @@
       "createdAt": "2019-04-21T00:23:50.948Z",
       "body": "I admire your punctuality",
       "id": 4
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T06:55:47.607Z",
+      "body": "this course is great!",
+      "id": 5
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T06:56:01.886Z",
+      "body": "soooo great!",
+      "id": 6
+    },
+    {
+      "teamId": "fem",
+      "channelId": "compliments",
+      "userId": 1,
+      "createdAt": "2019-04-21T06:56:11.002Z",
+      "body": "your penmanship is excellent!",
+      "id": 7
+    },
+    {
+      "teamId": "fem",
+      "channelId": "general",
+      "userId": 1,
+      "createdAt": "2019-04-21T17:14:01.871Z",
+      "body": "chat!!",
+      "id": 8
     }
   ]
 }

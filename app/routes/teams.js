@@ -4,8 +4,9 @@ import { inject as service } from '@ember/service';
 export default class TeamRoute extends Route {
   @service auth;
 
-  beforeModel() {
+  beforeModel(transition) {
     if (!this.auth.isAuthenticated) {
+      this.auth.prevTransition = transition;
       this.transitionTo('login');
     }
   }

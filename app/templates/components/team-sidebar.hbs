@@ -1,4 +1,4 @@
-<div class="bg-indigo-darker text-purple-lighter flex-none w-64 pb-6 hidden md:flex flex-col">
+<div class="bg-indigo-darker text-purple-lighter flex-none w-64 pb-6 hidden sm:flex flex-col">
   <div class="text-white mb-2 mt-3 px-4 flex justify-between">
     <div class="flex-auto">
       <h1 class="font-semibold text-xl leading-tight mb-1 truncate">{{@team.name}}</h1>
@@ -17,7 +17,7 @@
       </svg>
     </div>
   </div>
-  <div class="mb-8">
+  <div class="mb-8 flex-1">
     <div class="px-4 mb-2 text-white flex justify-between items-center">
       <div class="opacity-75">Channels</div>
       <div>
@@ -29,46 +29,18 @@
     </div>
     {{#each @channels as |channel| }}
     {{#link-to 'teams.team.channel' channel.id
-                  class=(concat "py-1 px-4 text-white no-underline block " (if channel.isDisabled "opacity-25" "opacity-75"))
-                  disabled=channel.isDisabled
-                  loadingClass="bg-teal-dark"
-                  activeClass="bg-teal-dark"}}
+        class=(concat "py-1 px-4 text-white no-underline block " (if channel.isDisabled "opacity-25" "opacity-75"))
+        disabled=channel.isDisabled
+        loadingClass="bg-teal-dark"
+        activeClass="bg-teal-dark"}}
     # {{channel.name}}
     {{/link-to}}
     {{/each}}
   </div>
-  <div class="mb-8 flex-grow">
-    <div class="px-4 mb-2 text-white flex justify-between items-center">
-      <div class="opacity-75">Direct Messages</div>
-      <div>
-        <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-          <path
-            d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
-        </svg>
-      </div>
-    </div>
-    <div class="flex items-center mb-3 px-4">
-      <svg class="h-2 w-2 fill-current text-green mr-2" viewBox="0 0 20 20">
-        <circle cx="10" cy="10" r="10" />
-      </svg>
-      <span class="text-white opacity-75">Adam Wathan <span class="text-grey text-sm">(you)</span></span>
-    </div>
-    <div class="flex items-center mb-3 px-4">
-      <svg class="h-2 w-2 fill-current text-green mr-2" viewBox="0 0 20 20">
-        <circle cx="10" cy="10" r="10" />
-      </svg>
-      <span class="text-white opacity-75">David Hemphill</span>
-    </div>
-    <div class="flex items-center px-4 mb-6 opacity-50">
-      <svg class="h-2 w-2 stroke-current text-white mr-2" viewBox="0 0 22 22">
-        <circle cx="11" cy="11" r="9" fill="none" stroke-width="3" />
-      </svg>
-      <span class="text-white">Steve Schoger</span>
-    </div>
-  </div>
+
   <div class="flex-none">
     <div class="px-4 mb-2 text-white flex justify-between items-center">
-      <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2">
+      <button {{on "click" this.doLogout}} class="text-white rounded bg-grey-dark hover:bg-red-darker p-2">
         Logout
       </button>
     </div>
