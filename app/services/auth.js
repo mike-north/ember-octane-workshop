@@ -31,7 +31,7 @@ export default class AuthService extends Service {
   }
 
   clearSession() {
-    this.cookies.read(USER_LOCALSTORAGE_KEY);
+    this.cookies.clear(USER_LOCALSTORAGE_KEY);
     this.currentUser = null;
   }
 
