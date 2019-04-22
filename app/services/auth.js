@@ -19,7 +19,7 @@ export default class AuthService extends Service {
     if (userId) {
       const resp = await fetch(`/api/users/${userId}`);
       if (!resp.ok) {
-        this.clearSession();
+        await this.clearSession();
         throw new Error('Problem retriving user to restore session');
       }
       this.currentUser = await resp.json();
@@ -30,9 +30,12 @@ export default class AuthService extends Service {
     return !!this.currentUser;
   }
 
-  clearSession() {
+  async clearSession() {
     this.cookies.clear(USER_LOCALSTORAGE_KEY);
     this.currentUser = null;
+    if (window && window.navigator && window.navigator.serviceWorker) {
+      await (await window.navigator.serviceWorker.getRegistration()).unregister();
+    }
   }
 
   async loginWithUserId(uid) {

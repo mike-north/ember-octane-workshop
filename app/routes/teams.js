@@ -12,7 +12,7 @@ export default class TeamRoute extends Route {
     }
   }
   async model() {
-    const teamResponse = fetch('http://localhost:4200/api/teams');
+    const teamResponse = fetch('/api/teams');
     return (await teamResponse).json();
   }
 }
