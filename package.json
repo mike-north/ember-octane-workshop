@@ -6,6 +6,7 @@
   "repository": "",
   "license": "MIT",
   "author": "",
+  "main": "prod-server.js",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -14,7 +15,7 @@
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
-    "start": "ember serve",
+    "start": "node ./prod-server.js",
     "test": "ember test"
   },
   "devDependencies": {
@@ -71,6 +72,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
+    "fastboot-app-server": "^1.1.2-beta.1",
     "json-server": "^0.14.2"
   }
 }
