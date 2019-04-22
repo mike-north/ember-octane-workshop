@@ -13,6 +13,18 @@ export default class LoginFormComponent extends Component {
   @tracked
   previewUser = null;
 
+  @tracked
+  users = [];
+
+  constructor() {
+    super(...arguments);
+    this.loadUsers();
+  }
+
+  async loadUsers() {
+    this.users = await (await fetch('/api/users')).json();
+  }
+
   get previewUserUrl() {
     if (!this.userId) return null;
     return `/api/users/${this.userId}`;

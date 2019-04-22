@@ -78,7 +78,7 @@ export default {
   */
 
   modules: {
-    appearance: ['responsive'],
+    appearance: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     backgroundAttachment: ['responsive'],
     backgroundColors: ['responsive', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
@@ -127,7 +127,7 @@ export default {
     visibility: ['responsive'],
     whitespace: ['responsive'],
     width: ['responsive'],
-    zIndex: ['responsive'],
+    zIndex: ['responsive']
   },
 
   /*
@@ -164,6 +164,6 @@ export default {
   options: {
     prefix: '',
     important: false,
-    separator: ':',
-  },
+    separator: ':'
+  }
 };

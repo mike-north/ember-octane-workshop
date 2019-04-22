@@ -1,22 +1,34 @@
-<form {{on "submit" this.onFormSubmitted}} class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
-  <div class="mb-6">
-    <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
-      User ID
-    </label>
-    <input
-      class="shadow appearance-none border border-blue rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline"
-      id="username" type="text" placeholder="User ID" {{on "input" (action (mut this.userId) value='target.value')}}>
-    <p class="text-blue text-xs italic">
+{{#unless (is-pending this.users)}}
+
+  <form {{on "submit" this.onFormSubmitted}} class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="inline-block relative w-64 mt-2">
+
+      <select
+         {{on "change" (action (mut this.userId) value='target.value')}}
+        class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+        <option value="">Select a user</option>
+        {{#each this.users as |user|}}
+          <option value={{user.id}}>{{user.name}}</option>
+        {{/each}}
+      </select>
+      <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+      </div>
+
+    </div>
+    <p class="text-blue text-xs italic my-4" style="transition: margin 0.2s">
       {{#if this.previewUserPromise}}
         Logging in as {{get (await this.previewUserPromise) 'name'}}
       {{/if}}
     </p>
-  </div>
+    <div class="flex items-center justify-between">
+      <input type="submit" disabled={{this.isInvalid}}
+        class="{{if this.isInvalid 'bg-grey' 'bg-blue hover:bg-blue-dark'}} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        value='Sign In'>
+    </div>
+  </form>
 
-  <div class="flex items-center justify-between">
-    <input type="submit"
-      disabled={{this.isInvalid}}
-      class="{{if this.isInvalid 'bg-grey' 'bg-blue hover:bg-blue-dark'}} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      value='Sign In'>
-  </div>
-</form>
+{{else}}
+  Loading...
+{{/unless}}

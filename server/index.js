@@ -4,6 +4,7 @@ const url = require('url');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
+// eslint-disable-next-line no-unused-vars
 const express = require('express');
 
 function SINGULAR_MIDDLEWARE(req, res, next) {
