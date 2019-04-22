@@ -1,1 +1,1 @@
-web: yarn && ./node_modules/.bin/ember --prod --port=$PORT
+web: yarn && ./node_modules/.bin/ember serve --prod --port=$PORT
