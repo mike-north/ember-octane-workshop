@@ -22,7 +22,7 @@ module.exports = function(environment) {
       }
     },
     fastboot: {
-      hostWhitelist: [/^localhost:\d+$/]
+      hostWhitelist: [/^localhost:\d+$/, 'octane-shlack.herokuapp.com']
     },
 
     APP: {

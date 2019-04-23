@@ -11,38 +11,17 @@ export default class LoginFormComponent extends Component {
   userId = null;
 
   @tracked
-  previewUser = null;
-
-  @tracked
   users = [];
 
-  constructor() {
-    super(...arguments);
-    this.loadUsers();
-  }
-
-  async loadUsers() {
-    this.users = await (await fetch('/api/users')).json();
-  }
-
-  get previewUserUrl() {
+  get previewUser() {
     if (!this.userId) return null;
-    return `/api/users/${this.userId}`;
-  }
-
-  get previewUserPromise() {
-    this.previewUser = null;
-    if (!this.previewUserUrl) return null;
-    return fetch(this.previewUserUrl)
-      .then(resp => resp.json())
-      .then(data => {
-        this.previewUser = data;
-        return data;
-      });
+    const [found] = this.users.filter(u => u.id === this.userId);
+    if (!found) return null;
+    return found;
   }
 
   get isInvalid() {
-    return !this.previewUser;
+    return !this.userId;
   }
 
   @action
