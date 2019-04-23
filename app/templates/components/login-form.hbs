@@ -1,44 +1,39 @@
 {{! template-lint-disable simple-unless }}
 <div class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 w-full max-w-xs mx-auto">
-  {{#if (is-pending this.users)}}
-    <p aria-live="polite">
-      Loading&hellip;
-    </p>
-  {{else}}
-    <form {{on "submit" this.onFormSubmitted}}>
-      <div class="relative w-64 mb-4">
-        <label for="select-user" class="sr-only">
-          User
-        </label>
 
-        <select
-          {{on "change" (action (mut this.userId) value='target.value')}}
-          class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-          id="select-user"
-        >
-          <option value="">Select a user</option>
+  <form {{on "submit" this.onFormSubmitted}}>
+    <div class="relative w-64 mb-4">
+      <label for="select-user" class="sr-only">
+        User
+      </label>
 
-          {{#each this.users as |user|}}
-            <option value={{user.id}}>{{user.name}}</option>
-          {{/each}}
-        </select>
+      <select {{on "change" (action (mut this.userId) value='target.value')}}
+        class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+        id="select-user">
+        <option value="">Select a user</option>
 
-        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
-          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-          </svg>
-        </div>
+        {{#each this.users as |user|}}
+          <option value={{user.id}}>{{user.name}}</option>
+        {{/each}}
+      </select>
+
+      <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+        </svg>
       </div>
+    </div>
 
-      {{#if this.userId}}
-        <p class="text-blue text-xs italic my-4" aria-live="polite">
-          Log in as {{get (await this.previewUserPromise) 'name'}}
-        </p>
-      {{/if}}
+    {{#if this.previewUser}}
+      <p class="text-blue text-xs italic my-4" aria-live="polite">
+        Log in as {{get this.previewUser 'name'}}
+      </p>
+    {{/if}}
 
-      <button class="{{if this.userId 'bg-blue hover:bg-blue-dark cursor-pointer' 'bg-grey cursor-not-allowed'}} text-white font-bold py-2 px-4 rounded" disabled={{this.isInvalid}}>
-        Sign In
-      </button>
-    </form>
-  {{/if}}
+    <button
+      class="{{if this.userId 'bg-blue hover:bg-blue-dark cursor-pointer' 'bg-grey cursor-not-allowed'}} text-white font-bold py-2 px-4 rounded"
+      disabled={{this.isInvalid}}>
+      Sign In
+    </button>
+  </form>
 </div>
