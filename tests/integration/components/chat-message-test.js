@@ -10,17 +10,31 @@ module('Integration | Component | chat-message', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<ChatMessage />`);
+    this.set('message', {
+      body: 'foo',
+      user: {
+        name: 'Testy Testerson',
+        iconUrl: 'http://placehold.it/48/48'
+      },
+      createdAt: new Date('01-01-2019').valueOf()
+    });
 
-    assert.equal(this.element.textContent.trim(), '');
+    this.set('onDelete', function() {});
+    this.set('noFollow', function() {});
 
-    // Template block usage:
-    await render(hbs`
-      <ChatMessage>
-        template block text
-      </ChatMessage>
-    `);
+    await render(hbs`<ChatMessage
+      @message={{this.message}}
+      @noFollowLink={{this.noFollow}}
+      @deleteChatMessage={{this.onDelete}}
+    />
+`);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.deepEqual(
+      this.element.textContent
+        .trim()
+        .replace(/(\s*[\n]+\s*)+/g, '\n')
+        .split('\n'),
+      ['Testy Testerson', 'at', 'Jan 1, 2019 0:0.0 PM', 'foo', '🗑']
+    );
   });
 });

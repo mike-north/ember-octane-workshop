@@ -8,10 +8,11 @@ module('Integration | Helper | format-timestamp', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+    const d = new Date('01-01-2019');
+    this.set('inputValue', d.valueOf());
 
     await render(hbs`{{format-timestamp inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'Jan 1, 2019 0:0.0 PM');
   });
 });

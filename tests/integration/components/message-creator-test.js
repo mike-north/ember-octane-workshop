@@ -12,15 +12,12 @@ module('Integration | Component | message-creator', function(hooks) {
 
     await render(hbs`<MessageCreator />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <MessageCreator>
-        template block text
-      </MessageCreator>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.deepEqual(
+      this.element.textContent
+        .trim()
+        .replace(/(\s*[\n]+\s*)+/g, '\n')
+        .split('\n'),
+      ['Message Input', 'Message', 'SEND']
+    );
   });
 });
