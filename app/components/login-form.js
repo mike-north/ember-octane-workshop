@@ -42,7 +42,11 @@ export default class LoginFormComponent extends Component {
   }
 
   get isInvalid() {
-    return !this.previewUser;
+    return !this.userId;
+  }
+
+  get userId() {
+    return this.userId;
   }
 
   @action

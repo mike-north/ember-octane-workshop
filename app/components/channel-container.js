@@ -17,10 +17,22 @@ export default class ChannelContainerComponent extends Component {
     }/messages`;
   }
 
+  // TODO: fix this
+  updateScrollPosition() {
+    this.scrollElement.scrollTop = this.scrollElement.scrollHeight;
+  }
+
+  @action
+  captureScrollElement(element) {
+    this.scrollElement = element;
+  }
+
   @action
   async updateMessages() {
     const resp = await fetch(this.getMessagesUrl);
     this.messages = await resp.json();
+
+    this.updateScrollPosition();
   }
 
   @action
@@ -51,9 +63,12 @@ export default class ChannelContainerComponent extends Component {
         user
       }
     ];
+
+    await this.updateScrollPosition();
   }
 
-  @action async deleteChatMessage(message) {
+  @action
+  async deleteChatMessage(message) {
     const resp = await fetch(`/api/messages/${message.id}`, {
       method: 'DELETE'
     });
@@ -61,5 +76,10 @@ export default class ChannelContainerComponent extends Component {
       throw new Error('Problem deleting chat message: ' + (await resp.text()));
     }
     await this.updateMessages();
+  }
+
+  @action
+  noFollowLink(event) {
+    event.preventDefault();
   }
 }
