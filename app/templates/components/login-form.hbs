@@ -12,7 +12,7 @@
         id="select-user">
         <option value="">Select a user</option>
 
-        {{#each this.users as |user|}}
+        {{#each @users as |user|}}
           <option value={{user.id}}>{{user.name}}</option>
         {{/each}}
       </select>

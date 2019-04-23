@@ -10,17 +10,22 @@ module('Integration | Component | login-form', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<LoginForm />`);
+    this.set('users', [
+      {
+        id: 1,
+        name: 'Testy Testerson'
+      }
+    ]);
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`<LoginForm @users={{this.users}} />`);
 
-    // Template block usage:
-    await render(hbs`
-      <LoginForm>
-        template block text
-      </LoginForm>
-    `);
+    assert.deepEqual(
+      this.element.textContent
+        .trim()
+        .replace(/(\s*[\n]+\s*)+/g, '\n')
+        .split('\n'),
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+      ['User', 'Select a user', 'Testy Testerson', 'Sign In']
+    );
   });
 });

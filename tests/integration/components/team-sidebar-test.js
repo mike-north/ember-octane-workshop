@@ -10,17 +10,22 @@ module('Integration | Component | team-sidebar', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<TeamSidebar />`);
+    this.set('team', {
+      id: 'li',
+      name: 'LinkedIn',
+      order: 2,
+      iconUrl:
+        'https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png'
+    });
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`<TeamSidebar @team={{this.team}} />`);
 
-    // Template block usage:
-    await render(hbs`
-      <TeamSidebar>
-        template block text
-      </TeamSidebar>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.deepEqual(
+      this.element.textContent
+        .trim()
+        .replace(/(\s*[\n]+\s*)+/g, '\n')
+        .split('\n'),
+      ['LinkedIn', 'Channels', 'Logout']
+    );
   });
 });

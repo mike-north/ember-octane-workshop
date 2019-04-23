@@ -5,7 +5,7 @@ module('Unit | Route | team/show/channel', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:team/show/channel');
+    let route = this.owner.lookup('route:teams.team.channel');
     assert.ok(route);
   });
 });

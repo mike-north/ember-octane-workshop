@@ -9,12 +9,9 @@ export default class LoginFormComponent extends Component {
   @tracked
   userId = null;
 
-  @tracked
-  users = [];
-
   get previewUser() {
     if (!this.userId) return null;
-    const [found] = this.users.filter(u => u.id === this.userId);
+    const [found] = this.args.users.filter(u => u.id === this.userId);
     if (!found) return null;
     return found;
   }

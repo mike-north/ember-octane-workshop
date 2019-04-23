@@ -5,7 +5,9 @@
 
   <div class="flex-1">
     <h5 class="text-sm">
-      <a href="#" class="text-black font-bold no-underline hover:underline" {{on "click" @noFollowLink}}>{{@message.user.name}}</a>
+      <a href="#" class="text-black font-bold no-underline hover:underline" {{on "click" @noFollowLink}}>
+        {{@message.user.name}}
+      </a>
       <span class="sr-only">at</span>
       <time class="text-grey-darker text-xs font-normal">{{format-timestamp @message.createdAt}}</time>
     </h5>
@@ -15,7 +17,9 @@
     </p>
   </div>
 
-  <button {{on "click" (fn @deleteChatMessage @message)}} class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1" aria-label="delete message">
+  <button {{on "click" (fn @deleteChatMessage @message)}}
+    class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1"
+    aria-label="delete message">
     🗑
   </button>
 </div>

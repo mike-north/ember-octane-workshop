@@ -10,17 +10,19 @@ module('Integration | Component | channel-header', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<ChannelHeader />`);
+    this.set('channel', {
+      name: 'compliments',
+      description: 'say something nice'
+    });
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`<ChannelHeader @channel={{this.channel}} />`);
 
-    // Template block usage:
-    await render(hbs`
-      <ChannelHeader>
-        template block text
-      </ChannelHeader>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.deepEqual(
+      this.element.textContent
+        .trim()
+        .replace(/(\s*[\n]+\s*)+/g, '\n')
+        .split('\n'),
+      ['#compliments', 'say something nice', 'Search messages']
+    );
   });
 });
