@@ -1,17 +1,21 @@
-<div class="flex items-start mb-4 text-sm hover-target">
-  <img src={{@message.user.iconUrl}} class="w-10 h-10 rounded mr-3">
-  <div class="flex-1 overflow-hidden">
-    <div>
-      <span class="font-bold">{{@message.user.name}}</span>
-      <span class="text-grey text-xs">{{format-timestamp @message.createdAt}}</span>
-    </div>
-    <div class="float-right mr-4">
-      <button {{on "click" (fn @deleteChatMessage @message)}} class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1" alt="delete message">
-        🗑
-      </button>
-    </div>
+<div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest" role="listitem">
+  <figure class="w-10 h-10 rounded overflow-hidden mr-3">
+    <img src={{@message.user.iconUrl}} alt="">
+  </figure>
+
+  <div class="flex-1">
+    <h5 class="text-sm">
+      <a href="#" class="text-black font-bold no-underline hover:underline" {{on "click" @noFollowLink}}>{{@message.user.name}}</a>
+      <span class="sr-only">at</span>
+      <time class="text-grey-darker text-xs font-normal">{{format-timestamp @message.createdAt}}</time>
+    </h5>
+
     <p class="text-black leading-normal">
       {{@message.body}}
     </p>
   </div>
+
+  <button {{on "click" (fn @deleteChatMessage @message)}} class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1" aria-label="delete message">
+    🗑
+  </button>
 </div>
