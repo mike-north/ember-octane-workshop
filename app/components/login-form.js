@@ -2,7 +2,6 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import fetch from 'fetch';
 
 export default class LoginFormComponent extends Component {
   @service auth;
