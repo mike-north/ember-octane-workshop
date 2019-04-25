@@ -10,7 +10,8 @@
       "emberjs.vscode-ember",
       "msjsdiag.debugger-for-chrome",
       "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode"
+      "esbenp.prettier-vscode",
+      "humao.rest-client"
     ]
   }
 }
