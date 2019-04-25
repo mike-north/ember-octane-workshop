@@ -1,10 +1,10 @@
 {{yield (hash
   acts=(hash
-    captureScrollElement=(action this.captureScrollElement)
-    submitMessage=(action this.chatMessageSubmit)
-    deleteMessage=(action this.deleteChatMessage)
-    updateMessages=(action this.updateMessages)
-    noFollowLink=(action this.noFollowLink)
+    captureScrollElement=(fn this.captureScrollElement)
+    submitMessage=(fn this.chatMessageSubmit)
+    deleteMessage=(fn this.deleteChatMessage)
+    updateMessages=(fn this.updateMessages)
+    noFollowLink=(fn this.noFollowLink)
   )
   messages=this.messages
 )}}
