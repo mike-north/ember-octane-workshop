@@ -48,4 +48,4 @@ Congrats! You've just broken down all of that HTML into components!
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/2ebe97bfe90a921a280056831595dc6cc8bf3c01)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/6de85d5afd83d21800116a6be5f262755da4b5ff)
