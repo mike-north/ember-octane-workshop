@@ -8,8 +8,8 @@ GET http://localhost:4200/api/users/1 HTTP/1.1
 ### Get all teams
 GET http://localhost:4200/api/teams HTTP/1.1
 
-### Get team channels
-GET http://localhost:4200/api/teams/li/channels HTTP/1.1
+### Get a team (includes channels)
+GET http://localhost:4200/api/teams/li HTTP/1.1
 
 ### Get team channel messages
 GET http://localhost:4200/api/teams/li/channels/general/messages HTTP/1.1

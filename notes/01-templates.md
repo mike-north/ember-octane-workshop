@@ -6,7 +6,7 @@ For now, we'll just focus on one of these files: `app/templates/application.hbs`
 
 ## Starting with regular HTML and CSS
 
-For now, paste the following HTML in `app/templates/application.hbs`
+For now, paste the following HTML in [`app/templates/application.hbs`](../app/templates/application.hbs)
 
 <details>
 
@@ -199,7 +199,7 @@ For now, paste the following HTML in `app/templates/application.hbs`
 
 </details>
 
-and the following in `app/styles/app.css`
+and the following in [`app/styles/app.css`](../app/styles/app.css)
 
 <details>
 <summary>Click to show CSS</summary>

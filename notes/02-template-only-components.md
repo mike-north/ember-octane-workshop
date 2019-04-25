@@ -13,7 +13,7 @@ You should see no change to the rendered HTML at http://localhost:4200.
 
 Congrats! You've just made your first component!
 
-Continue with this process until your `app/templates/application.hbs` looks like
+Continue with this process until your [`app/templates/application.hbs`](../app/templates/application.hbs) looks like
 
 ```hbs
 <TeamSelector />

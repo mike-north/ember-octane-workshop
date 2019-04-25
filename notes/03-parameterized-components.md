@@ -4,7 +4,7 @@ We can parameterize components and pass data into them. Ember calls values that 
 
 Let's start with our `<ChannelHeader />` component, parameterizing the channel's `title` and `description`.
 
-in `app/templates/components/channel-header.hbs`
+in [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
 
 1. find the text `general` and replace it with `{{@title}}`
 1. Find the text `foo bar baz (professional)` and replace it with `{{@description}}`
@@ -20,7 +20,7 @@ Our component is now parameterized, and ready to receive data!
 
 You may notice that your component is now blank. Instead of rendering hard-coded values, the component now expects to be passed `args` called `@title` and `@description`. Let's pass it some data:
 
-Go to you `app/templates/application.hbs` and pass some values into the component using key-value pairs
+Go to you [`app/templates/application.hbs`](../app/templates/application.hbs) and pass some values into the component using key-value pairs
 
 ```hbs
 <ChannelHeader @title="compliments" @description="Say nice things about your teammates" />
