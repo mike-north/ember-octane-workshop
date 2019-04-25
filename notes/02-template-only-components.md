@@ -12,3 +12,21 @@ Now, replace that `<nav>` in `application.hbs` with `<TeamSelector />`, and make
 You should see no change to the rendered HTML at http://localhost:4200.
 
 Congrats! You've just made your first component!
+
+Continue with this process until your `app/templates/application.hbs` looks like
+
+```hbs
+<TeamSelector />
+<TeamSidebar />
+<main class="flex-1 flex flex-col bg-white overflow-hidden">
+  <ChannelHeader />
+
+  <div class="py-4 flex-1 overflow-y-scroll" role="list">
+    <ChatMessage />
+    <ChatMessage />
+    <ChatMessage />
+  </div>
+
+  <ChannelFooter />
+</main>
+```
