@@ -270,4 +270,4 @@ If `ember serve` is running, you should be able to visit `http://localhost:4200`
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/5ba89d25b4a638f17a06bd1d2eb5f0e1152e2903)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/68accbfb8f4a1ab6f6fc83081f00643e6b54dbd7)
