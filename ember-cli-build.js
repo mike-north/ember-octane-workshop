@@ -4,7 +4,15 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    addons: {
+      blacklist: ['ember-service-worker']
+    },
+    'esw-cache-fallback': {
+      patterns: ['/api/(.+)']
+    },
+    'ember-fetch': {
+      preferNative: true
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
