@@ -2,6 +2,7 @@ import Service from '@ember/service';
 import { inject as service } from '@ember/service';
 import Router from '@ember/routing/router';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 const AUTH_KEY = 'shlack-userid';
 
@@ -11,13 +12,24 @@ export default class AuthService extends Service {
    */
   @service router;
 
+  @tracked currentUser = null;
+
   /**
    *
    * @param {string} userId
    */
-  loginWithUserId(userId) {
-    this.router.transitionTo('teams');
+  async loginWithUserId(userId) {
     this.currentUserId = userId;
+    await this.loadCurrentUser();
+    this.router.transitionTo('teams');
+  }
+
+  async loadCurrentUser() {
+    const { currentUserId } = this;
+    if (!currentUserId) return;
+    this.currentUser = await (await fetch(
+      `/api/users/${currentUserId}`
+    )).json();
   }
 
   get currentUserId() {
