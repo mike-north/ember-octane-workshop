@@ -85,7 +85,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
-    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2">
+    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 logout-button">
       Logout
     </button>
   </footer>

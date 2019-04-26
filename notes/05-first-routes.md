@@ -129,10 +129,10 @@ First, open up [`app/templates/components/team-sidebar.hbs`](../app/templates/co
    </nav>
 
    <footer class="mx-4 mb-2 text-white">
--    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2">
+-    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 logout-button">
 +    <LinkTo @route='login' {{! destination route }}
 +            @tagName="button" {{! use <button> instead of <a> }}
-+            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2" {{! HTML classes}}
++            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 logout-button" {{! HTML classes}}
 +    >
        Logout
 -    </button>
