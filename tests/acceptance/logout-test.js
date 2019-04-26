@@ -13,9 +13,9 @@ module('Acceptance | logout', function(hooks) {
   test('visiting /teams while logged in, and then logging out', async function(assert) {
     StubbedAuthService.authenticatedUserId = '1';
 
-    await visit('/teams'); // Go to a URL
+    await visit('/teams/li'); // Go to a URL
 
-    assert.equal(currentURL(), '/teams'); // Make sure we've arrived
+    assert.equal(currentURL(), '/teams/li'); // Make sure we've arrived
 
     await click('.logout-button'); // Click a button
 

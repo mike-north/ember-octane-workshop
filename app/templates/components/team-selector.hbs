@@ -1,20 +1,16 @@
 <nav class="bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block team-selector">
-  <a href="/li" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
-    <div data-team-id="li"
-      class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img class="team-logo"
-        src="https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&amp;d=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png"
-        alt="LinkedIn">
-    </div>
-  </a>
-  <a href="/ms" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25">
-    <div data-team-id="ms"
-      class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img class="team-logo"
-        src="https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&amp;d=https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
-        alt="Microsoft">
-    </div>
-  </a>
+  {{#each @teams as |team|}}
+    <LinkTo @route="teams.team" @model={{team.id}} data-team-id={{team.id}} class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100 ember-view">
+      <div
+        class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
+        <img
+          class="team-logo"
+          src={{team.iconUrl}}
+          alt={{team.name}}>
+      </div>
+    </LinkTo>
+  {{/each}}
+
   <div class="cursor-pointer p-4">
     <div
       class="bg-white opacity-25 h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">

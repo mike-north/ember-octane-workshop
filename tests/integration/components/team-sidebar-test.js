@@ -18,7 +18,17 @@ module('Integration | Component | team-sidebar', function(hooks) {
 
     this.owner.lookup('service:auth').currentUserId = 'LOL';
 
-    await render(hbs`<TeamSidebar />`);
+    this.set('myTeam', {
+      name: 'LinkedIn',
+      channels: [
+        {
+          name: 'general',
+          id: 'general'
+        }
+      ]
+    });
+
+    await render(hbs`<TeamSidebar @team={{this.myTeam}}/>`);
 
     assert.deepEqual(
       this.element.textContent
