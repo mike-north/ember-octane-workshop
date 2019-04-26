@@ -1,23 +1,17 @@
 <!-- Team Selector -->
-<nav
-  class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
-  <a href="/li" data-team-id="li"
-    class="team-selector__team-button cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
-    <div
-      class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img class="team-selector__team-logo"
-        src="https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&amp;d=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png"
-        alt="LinkedIn">
-    </div>
-  </a>
-  <a href="/ms" data-team-id="ms"
-    class="team-selector__team-button cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25">
-    <div class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img class="team-selector__team-logo"
-        src="https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&amp;d=https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
-        alt="Microsoft">
-    </div>
-  </a>
+<nav class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
+  {{#each @teams as |team|}}
+    <LinkTo @route="teams.team" @model={{team.id}} data-team-id={{team.id}} class="team-selector__team-button cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
+      <div
+        class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
+        <img
+          class="team-selector__team-logo"
+          src={{team.iconUrl}}
+          alt={{team.name}}>
+      </div>
+    </LinkTo>
+  {{/each}}
+
   <div class="team-selector__add-team-button cursor-pointer p-4">
     <div class="bg-white opacity-25 h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
       <svg class="fill-current h-10 w-10 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
