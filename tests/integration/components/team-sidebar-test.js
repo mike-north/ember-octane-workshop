@@ -16,8 +16,9 @@ module('Integration | Component | team-sidebar', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    this.owner.lookup('service:auth').currentUserId = 'LOL';
-
+    const auth = this.owner.lookup('service:auth');
+    auth.currentUserId = 'LOL';
+    await auth.loadCurrentUser();
     this.set('myTeam', {
       name: 'LinkedIn',
       channels: [
@@ -35,7 +36,7 @@ module('Integration | Component | team-sidebar', function(hooks) {
         .trim()
         .replace(/\s*[\n]+\s*/g, '\n')
         .split('\n'),
-      ['LinkedIn', 'Mike North (LOL)', 'Channels', '# general', 'Logout']
+      ['LinkedIn', 'Mike North', 'Channels', '# general', 'Logout']
     );
   });
 });

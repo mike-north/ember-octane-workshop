@@ -9,10 +9,12 @@ export default class TeamsRoute extends Route {
    */
   @service auth;
 
-  beforeModel() {
+  async beforeModel() {
     super.beforeModel(...arguments);
     if (!this.auth.isAuthenticated) {
       this.transitionTo('login');
+    } else {
+      await this.auth.loadCurrentUser();
     }
   }
 

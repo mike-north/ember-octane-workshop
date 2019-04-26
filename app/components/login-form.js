@@ -9,9 +9,9 @@ export default class LoginFormComponent extends Component {
    */
   @service auth;
 
-  handleSignIn(value) {
+  async handleSignIn(value) {
     if (typeof value === 'string' && value.length > 0)
-      this.auth.loginWithUserId(value);
+      await this.auth.loginWithUserId(value);
   }
 
   /**
@@ -19,8 +19,8 @@ export default class LoginFormComponent extends Component {
    * @param {Event} evt
    */
   @action
-  onLoginFormSubmit(evt /* DOM event */) {
+  async onLoginFormSubmit(evt /* DOM event */) {
     evt.preventDefault();
-    this.handleSignIn(evt.target.querySelector('select').value);
+    await this.handleSignIn(evt.target.querySelector('select').value);
   }
 }
