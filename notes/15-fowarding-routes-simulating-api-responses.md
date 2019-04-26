@@ -314,4 +314,4 @@ And that's it. We have now successfully implemented conditional route forwarding
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/236b55cdbdcaf605c280d462fd9ea433b506fa52)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/4dc0384f5291aafc87cf2a6b5b92d8b3ca22abe9)

@@ -24,7 +24,7 @@ module('Acceptance | login', function(hooks) {
 
     await click('form input[type="submit"]');
 
-    assert.equal(currentURL(), '/teams');
+    assert.ok(currentURL().startsWith('/teams'));
   });
 
   test('already logged in', async function(assert) {
@@ -33,6 +33,6 @@ module('Acceptance | login', function(hooks) {
 
     await visit('/login');
 
-    assert.equal(currentURL(), '/teams');
+    assert.ok(currentURL().startsWith('/teams'));
   });
 });
