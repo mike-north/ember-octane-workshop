@@ -22,7 +22,7 @@ Ember CLI will generate the following files:
 Replace the contents of [`app/utils/date.js`](../app/utils/date.js) with the following:
 
 <details>
-  
+
   <summary>Click to reveal <code>date.js</code></summary>
 
 ```js {starter-file=date.js}
@@ -291,4 +291,4 @@ Congrats! We're done with this helper!
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/e3190f7c39ec5032c658424905cfe61d6c0e3642)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/194d7f6eeeef6f4b31bc26b1d715e849615eb5f6)
