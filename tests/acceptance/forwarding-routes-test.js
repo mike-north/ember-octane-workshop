@@ -31,6 +31,7 @@ function setupServer() {
       channels: [
         {
           id: 'prs',
+          teamId: 'gh',
           name: 'Pull Requests'
         }
       ]
@@ -40,9 +41,11 @@ function setupServer() {
     '/api/teams/gh/channels/prs',
     jsonResponse({
       id: 'prs',
+      teamId: 'gh',
       name: 'Pull Requests'
     })
   );
+  this.get('/api/teams/gh/channels/prs/messages', jsonResponse([]));
 }
 
 module('Acceptance | forwarding routes', function(hooks) {
