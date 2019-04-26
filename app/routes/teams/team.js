@@ -1,11 +1,9 @@
 import Route from '@ember/routing/route';
-import { ALL_TEAMS } from '../teams';
+import fetch from 'fetch';
 
 export default class TeamsTeamRoute extends Route {
-  model({ teamId }) {
-    const matches = ALL_TEAMS.filter(
-      t => `${t.id}` === `${teamId}`
-    );
-    return matches[0];
+  async model({ teamId }) {
+    const resp = await fetch(`/api/teams/${teamId}`);
+    return resp.json();
   }
 }
