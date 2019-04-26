@@ -46,11 +46,9 @@
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
-    <LinkTo @route='login' {{! destination route }}
-            @tagName="button" {{! use <button> instead of <a> }}
-            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button" {{! HTML classes}}
+    <button {{on "click" this.auth.logout}} class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button"
     >
       Logout
-    </LinkTo>
+    </button>
   </footer>
 </section>
