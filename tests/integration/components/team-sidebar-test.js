@@ -19,6 +19,8 @@ module('Integration | Component | team-sidebar', function(hooks) {
     const auth = this.owner.lookup('service:auth');
     auth._writeUserId('LOL');
 
+    await auth.loadCurrentUser();
+
     this.set('myTeam', {
       name: 'LinkedIn',
       channels: [
@@ -36,7 +38,7 @@ module('Integration | Component | team-sidebar', function(hooks) {
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      ['LinkedIn', 'Mike North (LOL)', 'Channels', '#', 'general', 'Logout']
+      ['LinkedIn', 'Mike North', 'Channels', '#', 'general', 'Logout']
     );
   });
 });
