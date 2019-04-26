@@ -50,4 +50,4 @@ Now, you should see the title and description properly rendered in the channel h
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/e9f0827798ef0d11bb91f1d059702738885f3028)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/a526b9f1be8c432b8843f35cef3bd4a5a4aa75e7)
