@@ -1,0 +1,11 @@
+<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+  <ChannelHeader @title={{this.model.name}} @description={{this.model.description}} />
+
+  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+    <ChatMessage />
+    <ChatMessage />
+    <ChatMessage />
+  </div>
+
+  <ChannelFooter />
+</main>
