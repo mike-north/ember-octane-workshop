@@ -172,4 +172,4 @@ Congrats! We've just set up our first routes!
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/8e0808c0ec8aef96cfb638f5e7f144effebfaf72)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/296ec66ceb7cbae80473df0f5cf20e5aa143e67c)
