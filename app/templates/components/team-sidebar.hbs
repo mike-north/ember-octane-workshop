@@ -3,7 +3,7 @@
   <header class="team-sidebar__header text-white mb-2 mt-3 px-4 flex justify-between">
     <div class="flex-auto">
       <h1 class="team-sidebar__team-name font-semibold text-xl leading-tight mb-1 truncate">
-        LinkedIn
+        {{@team.name}}
       </h1>
 
       <div class="team-sidebar__current-user-indicator flex items-center mb-6">
@@ -38,11 +38,17 @@
       </button>
     </div>
 
-    <a href="/li/general" data-channel-id="general"
-      class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75 bg-teal-dark">
-      <span aria-hidden="true">#</span>
-      general
-    </a>
+    {{#each @team.channels as |channel|}}
+      <LinkTo
+        @route="teams.team.channel"
+        @model={{channel.id}}
+        @activeClass="bg-teal-dark"
+        data-channel-id={{channel.id}}
+        class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75">
+        <span aria-hidden="true">#</span>
+        {{channel.name}}
+      </LinkTo>
+    {{/each}}
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
