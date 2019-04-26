@@ -9,8 +9,9 @@
           <select {{on "change" this.onSelectChanged}}
             class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
             <option selected={{not this.userId}} value="" disabled>Select a user</option>
-            <option selected={{eq this.userId "1"}} value="1">Testy Testerson</option>
-            <option selected={{eq this.userId "2"}} value="2">Sample McData</option>
+            {{#each @users as |user|}}
+              <option selected={{eq this.userId (concat '' user.id)}} value={{user.id}}>{{user.name}}</option>
+            {{/each}}
           </select>
           <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
