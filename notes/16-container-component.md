@@ -12,7 +12,7 @@ The pattern of container and presentational components was made popular by [this
       <img src="https://github.com/mike-north.png" height=64 align="left" style="margin-right: 10px" />
     </a>
     <p>
-      The "container and presentational components" pattern can result in significantly more testable, more easy to understand, and more composable code. Most of this is due to the benefits of separating state and state-manipulating logic from the component's other concerns (i.e., rendering HTML). Often the sweet spot for components will be "90% container" or "90% presentational", and aiming for 100% can result in significant additional unneeded complexity. 
+      The "container and presentational components" pattern can result in significantly more testable, more easy to understand, and more composable code. Most of this is due to the benefits of separating state and state-manipulating logic from the component's other concerns (i.e., rendering HTML). Often the sweet spot for components will be "90% container" or "90% presentational", and aiming for 100% can result in significant additional unneeded complexity.
     </p>
   </blockquote>
 </p>
@@ -247,4 +247,4 @@ module('Integration | Component | channel-container', function (hooks) {
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/cbf48e6fff59e0f76d9460c9793544b18cee2ef3)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/f67fa9ddd2caa6a73a6d098773fc1c957f114100)
