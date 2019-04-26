@@ -28,9 +28,9 @@ export default class LoginFormComponent extends Component {
     this.userId = evt.target.value;
   }
 
-  handleSignIn(value) {
+  async handleSignIn(value) {
     if (typeof value === 'string' && value.length > 0)
-      this.auth.loginWithUserId(value);
+      await this.auth.loginWithUserId(value);
   }
 
   /**
@@ -38,8 +38,8 @@ export default class LoginFormComponent extends Component {
    * @param {Event & { target: HTMLFormElement }} evt
    */
   @action
-  onLoginFormSubmit(evt) {
+  async onLoginFormSubmit(evt /* DOM event */) {
     evt.preventDefault();
-    if (this.userId) this.handleSignIn(this.userId);
+    if (this.userId) await this.handleSignIn(this.userId);
   }
 }
