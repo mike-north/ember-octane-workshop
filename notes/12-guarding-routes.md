@@ -243,4 +243,4 @@ test('visiting /teams while logged out', async function (assert) {
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/6805a6ce042c994c3ed426c180e2817b1d6ce8ac)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/730696698383bd64aefa7c8aa59388640deca773)
