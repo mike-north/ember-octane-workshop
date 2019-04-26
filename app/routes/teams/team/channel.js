@@ -1,13 +1,17 @@
 import Route from '@ember/routing/route';
+import fetch from 'fetch';
 
 export default class TeamsTeamChannelRoute extends Route {
-  model({ channelId }) {
-    const team = /** @type {{channels: {id: string}[]}} */ (this.modelFor(
+  async model({ channelId }) {
+    const {
+      teamId,
+    } = /** @type {{teamId: string}} */ (this.paramsFor(
       'teams.team'
     ));
-    const matches = team.channels.filter(
-      ch => `${ch.id}` === `${channelId}`
+    // const team = this.modelFor('teams.team');
+    const resp = await fetch(
+      `/api/teams/${teamId}/channels/${channelId}`
     );
-    return matches[0];
+    return resp.json();
   }
 }

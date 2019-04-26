@@ -1,6 +1,7 @@
 import Service, { inject as service } from '@ember/service';
 import Router from '@ember/routing/router';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
 export default class StubbedAuthService extends Service {
   /**
@@ -16,8 +17,24 @@ export default class StubbedAuthService extends Service {
     return !!this.currentUserId;
   }
 
-  loginWithUserId(id) {
+  async loadCurrentUser() {
+    if (!this.isAuthenticated) return;
+    this.currentUser = {
+      id: this.currentUserId,
+      name: 'Mike North',
+    };
+  }
+
+  async loginWithUserId(id) {
     this.currentUserId = id;
+    await this.loadCurrentUser();
     this.router.transitionTo('teams');
+  }
+
+  @action
+  logout() {
+    this.currentUserId = null;
+    this.currentUser = null;
+    this.router.transitionTo('login');
   }
 }

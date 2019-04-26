@@ -7,14 +7,19 @@ module('Integration | Component | login-form', function(hooks) {
   setupRenderingTest(hooks);
 
   test('initially has no user selected, and "Sign In" button disabled', async function(assert) {
-    await render(hbs`<LoginForm />`);
+    this.set('myUsers', [
+      { id: 1, name: 'Sample McFixture' },
+      { id: 2, name: 'Testy Assertington' },
+    ]);
+
+    await render(hbs`<LoginForm @users={{this.myUsers}}/>`);
 
     assert.deepEqual(
       this.element.textContent
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      ['Login', 'Select a user', 'Testy Testerson', 'Sample McData']
+      ['Login', 'Select a user', 'Sample McFixture', 'Testy Assertington']
     );
 
     let button = /** @type {HTMLInputElement} */ (find('input[type="submit"]'));
@@ -26,8 +31,13 @@ module('Integration | Component | login-form', function(hooks) {
   });
 
   test('after selecting a user "Sign In" button enabled', async function(assert) {
+    this.set('myUsers', [
+      { id: 1, name: 'Sample McFixture' },
+      { id: 2, name: 'Testy Assertington' },
+    ]);
+
     // Render the component
-    await render(hbs`<LoginForm />`);
+    await render(hbs`<LoginForm @users={{this.myUsers}}/>`);
 
     // Pluck off the DOM elements we care about
     let button = /** @type {HTMLInputElement} */ (find('input[type="submit"]'));
@@ -52,8 +62,8 @@ module('Integration | Component | login-form', function(hooks) {
       [
         'Login',
         'Select a user',
-        'Testy Testerson',
-        'Sample McData',
+        'Sample McFixture',
+        'Testy Assertington',
         'Logging in with userId 1',
       ],
       'validation text now shows up'
