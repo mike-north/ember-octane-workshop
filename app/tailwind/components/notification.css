@@ -15,3 +15,22 @@
  @apply .bg-blue-dark;
 }
 */
+
+.notification {
+  position: relative;
+  top: -40px;
+  left: 0;
+  margin-bottom: -40px;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: top, left, margin-bottom;
+}
+
+.notification.entering {
+  top: 0;
+  margin-bottom: 0;
+}
+
+.notification.leaving {
+  left: 100vw;
+}
