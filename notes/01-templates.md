@@ -14,18 +14,18 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
 
 ```html
 <nav class="bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
-  <a href="/li" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100 ember-view">
-    <div
+  <a href="/li" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
+    <div data-team-id="li"
       class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img
+      <img class="team-logo"
         src="https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&amp;d=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png"
         alt="LinkedIn">
     </div>
   </a>
-  <a href="/ms" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 ember-view">
-    <div
+  <a href="/ms" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25">
+    <div data-team-id="ms"
       class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
-      <img
+      <img class="team-logo"
         src="https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&amp;d=https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
         alt="Microsoft">
     </div>
@@ -42,14 +42,14 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
   </div>
 </nav>
 
-<section class="bg-indigo-darker text-purple-lighter flex-none w-64 pb-6 hidden sm:flex flex-col">
+<section class="team-sidebar bg-indigo-darker text-purple-lighter flex-none w-64 pb-6 hidden sm:flex flex-col">
   <header class="text-white mb-2 mt-3 px-4 flex justify-between">
     <div class="flex-auto">
-      <h1 class="font-semibold text-xl leading-tight mb-1 truncate">
+      <h1 class="team-name font-semibold text-xl leading-tight mb-1 truncate">
         LinkedIn
       </h1>
 
-      <div class="flex items-center mb-6">
+      <div class="current-user-indicator flex items-center mb-6">
         <svg class="h-2 w-2 fill-current text-green mr-2" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="10"></circle>
         </svg>
@@ -66,11 +66,11 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
     </div>
   </header>
 
-  <nav class="mb-8 flex-1">
+  <nav class="mb-8 flex-1 channels-list">
     <div class="px-4 mb-2 text-white flex justify-between items-center">
       <h2 class="opacity-75 text-lg">Channels</h2>
 
-      <button aria-label="Join channel" role="button" class="text-white">
+      <button class="join-channel-button text-white" aria-label="Join channel" role="button">
         <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
           <path
             d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z">
@@ -79,7 +79,8 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
       </button>
     </div>
 
-    <a href="/li/general" class="py-1 px-4 text-white no-underline block opacity-75 bg-teal-dark ember-view">
+    <a href="/li/general" data-channel-id="general"
+      class="channel-link py-1 px-4 text-white no-underline block opacity-75 bg-teal-dark">
       <span aria-hidden="true">#</span> general
     </a>
   </nav>
@@ -91,24 +92,25 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
   </footer>
 </section>
 
-<main class="flex-1 flex flex-col bg-white overflow-hidden">
-  <header class="border-b flex px-6 py-2 items-center flex-none">
+<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+  <header class="border-b flex px-6 py-2 items-center flex-none channel__header">
     <div>
-      <h3 class="text-grey-darkest mb-1 font-extrabold">
+      <h3 class="text-grey-darkest mb-1 font-extrabold channel__title">
         #general
       </h3>
 
-      <h4 class="text-grey-dark text-sm truncate">
+      <h4 class="text-grey-dark text-sm truncate channel__description">
         foo bar baz (professional)
       </h4>
     </div>
 
-    <form class="ml-auto md:block border border-grey rounded-lg pl-3 pr-2 py-1 flex flex-row-reverse items-center">
+    <form
+      class="ml-auto md:block border border-grey rounded-lg pl-3 pr-2 py-1 flex flex-row-reverse items-center search-form">
       <label for="search" class="sr-only">Search messages</label>
 
-      <input placeholder="Search" class="appearance-none" id="search" type="search">
+      <input placeholder="Search" class="appearance-none search-form__field" id="search" type="search">
 
-      <button aria-label="Submit search">
+      <button aria-label="Submit search" class="search-form__button">
         <svg class="fill-current text-grey h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
           <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
           </path>
@@ -117,61 +119,64 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
     </form>
   </header>
 
-  <div class="py-4 flex-1 overflow-y-scroll" role="list">
-    <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest" role="listitem">
+  <div class="py-4 flex-1 overflow-y-scroll channel__messages-list" role="list">
+    <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest channel-message" role="listitem">
       <figure class="w-10 h-10 rounded overflow-hidden mr-3">
-        <img src="https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200" alt="">
+        <img class="channel-message__user-avatar"
+          src="https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200" alt="">
       </figure>
 
       <div class="flex-1">
         <h5 class="text-sm">
-          <a href="#" class="text-black font-bold no-underline hover:underline">
+          <a href="#" class="channel-message__user-name text-black font-bold no-underline hover:underline">
             Lisa Huang-North
           </a>
           <span class="sr-only">at</span>
-          <time class="text-grey-darker text-xs font-normal">Apr 21, 2019 12:21.38 PM</time>
+          <time class="channel-message__timestamp text-grey-darker text-xs font-normal">Apr 21, 2019 12:21.38 PM</time>
         </h5>
 
-        <p class="text-black leading-normal">
+        <p class="channel-message__body text-black leading-normal">
           Would you like to join my professional network?
         </p>
       </div>
 
       <button
-        class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1"
+        class="channel-message__delete-button border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1"
         aria-label="delete message">
         🗑
       </button>
     </div>
-    <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest" role="listitem">
+    <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest channel__message"
+      role="listitem">
       <figure class="w-10 h-10 rounded overflow-hidden mr-3">
-        <img src="https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg" alt="">
+        <img class="channel-message__user-avatar"
+          src="https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg" alt="">
       </figure>
 
       <div class="flex-1">
         <h5 class="text-sm">
-          <a href="#" class="text-black font-bold no-underline hover:underline">
+          <a href="#" class="channel-message__user-name text-black font-bold no-underline hover:underline">
             Mike North
           </a>
           <span class="sr-only">at</span>
-          <time class="text-grey-darker text-xs font-normal">Apr 21, 2019 12:23.4 PM</time>
+          <time class="channel-message__timestamp text-grey-darker text-xs font-normal">Apr 21, 2019 12:23.4 PM</time>
         </h5>
 
-        <p class="text-black leading-normal">
+        <p class="channel-message__body text-black leading-normal">
           Hello developer, I looked at your profile and am impressed by your 14
           years of COBOL experience. Are you happy in your current role?
         </p>
       </div>
 
       <button
-        class="border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1"
+        class="channel-message__delete-button border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1"
         aria-label="delete message">
         🗑
       </button>
     </div>
   </div>
 
-  <footer class="pb-6 px-4 flex-none">
+  <footer class="pb-6 px-4 flex-none channel-footer">
     <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labeledby="message-label">
       <h1 id="message-label" class="sr-only">
         Message Input
@@ -185,11 +190,13 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
         </svg>
       </button>
 
-      <label for="message" class="sr-only">Message</label>
+      <label for="message-input" class="sr-only">Message</label>
 
-      <input id="message-input" class="w-full px-4" placeholder="Message #general" type="text">
+      <input id="message-input" class="channel-footer__message-input w-full px-4" placeholder="Message #general"
+        type="text">
 
-      <button disabled="" class="font-bold uppercase opacity-50 bg-grey-dark text-white border-teal-dark p-2">
+      <button disabled=""
+        class="channel-footer__message-send-button font-bold uppercase opacity-50 bg-grey-dark text-white border-teal-dark p-2">
         SEND
       </button>
     </form>
