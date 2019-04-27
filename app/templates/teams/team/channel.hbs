@@ -3,7 +3,7 @@
 
   <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
     {{#each ch.messages as |message|}}
-      <ChatMessage @message={{message}}/>
+      <ChatMessage @message={{message}} @onDelete={{fn ch.acts.deleteMessage message}}/>
     {{/each}}
   </div>
 
