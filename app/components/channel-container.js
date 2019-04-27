@@ -32,9 +32,14 @@ export default class ChannelContainerComponent extends Component {
         'Content-Type': 'application/json'
       }
     });
-    const idx = this.messages.map(m => m.id).indexOf(message.id);
-    this.messages.splice(idx, 1);
-    this.messages = this.messages;
+    if (resp.ok) {
+      const idx = this.messages.map(m => m.id).indexOf(message.id);
+      this.messages.splice(idx, 1);
+      this.messages = this.messages;
+      this.args.notify('Deleted message');
+    } else {
+      this.args.notify('Problem deleting message', 'red');
+    }
   }
 
   @action
@@ -56,7 +61,12 @@ export default class ChannelContainerComponent extends Component {
       })
     });
     if (!resp.ok) {
-      throw new Error('Problem creating message: ' + (await resp.text()));
+      this.args.notify(
+        'Problem creating message: ' + (await resp.text()),
+        'red'
+      );
+    } else {
+      this.args.notify('Created new message', 'green-dark');
     }
 
     const newMessage = await resp.json();
