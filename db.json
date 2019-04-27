@@ -41,28 +41,22 @@
       "teamId": "ms"
     },
     {
-      "id": "general",
-      "name": "general",
+      "id": "complaints",
+      "name": "complaints",
       "description": "foo bar baz",
-      "teamId": "fem"
+      "teamId": "li",
+      "isDisabled": true
     },
     {
       "id": "compliments",
       "name": "compliments",
       "description": "foo bar baz",
-      "teamId": "fem"
-    },
-    {
-      "id": "complaints",
-      "name": "complaints",
-      "description": "foo bar baz",
-      "teamId": "fem",
-      "isDisabled": true
+      "teamId": "li"
     }
   ],
   "messages": [
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "compliments",
       "userId": 2,
       "createdAt": "2019-04-21T17:48:33.421Z",
@@ -70,7 +64,7 @@
       "id": 1
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "compliments",
       "userId": 1,
       "createdAt": "2019-04-21T17:54:38.556Z",
@@ -78,7 +72,7 @@
       "id": 2
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 2,
       "createdAt": "2019-04-21T17:55:08.713Z",
@@ -86,7 +80,7 @@
       "id": 3
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 1,
       "createdAt": "2019-04-21T18:36:30.995Z",
@@ -94,7 +88,7 @@
       "id": 11
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 1,
       "createdAt": "2019-04-21T18:40:34.648Z",
@@ -102,7 +96,7 @@
       "id": 12
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 1,
       "body": "wdw",
@@ -110,7 +104,7 @@
       "id": 13
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 1,
       "body": "awqwdqwqwdq",
@@ -119,7 +113,7 @@
       "id": 14
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 1,
       "body": "qdq",
@@ -127,7 +121,7 @@
       "id": 15
     },
     {
-      "teamId": "fem",
+      "teamId": "li",
       "channelId": "general",
       "userId": 1,
       "body": "w",
