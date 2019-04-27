@@ -1,11 +1,24 @@
-<ChannelContainer @channel={{this.model}} as |ch|>
-  <ChannelHeader @title={{this.model.name}} @description={{this.model.description}} />
+<NotificationCenter as |notification|>
+  <ChannelContainer @notify={{notification.actions.notify}} @channel={{this.model}} as |ch|>
+    <ChannelHeader @title={{this.model.name}} @description={{this.model.description}} />
+    <div class="notifications-container z-10 overflow-hidden position-relative">
+      {{#each notification.messages as |msg|}}
+        {{#if (eq msg.color "green-dark")}}
+          <Notification @notification={{msg}}>
+            <img src="https://media.giphy.com/media/4xpB3eE00FfBm/giphy.gif" class="mr-20">
+            {{msg.body}}
+          </Notification>
+        {{else}}
+          <Notification @notification={{msg}} />
+        {{/if}}
+      {{/each}}
+    </div>
+    <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+      {{#each ch.messages as |message|}}
+        <ChatMessage @message={{message}} @onDelete={{fn ch.acts.deleteMessage message}}/>
+      {{/each}}
+    </div>
 
-  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
-    {{#each ch.messages as |message|}}
-      <ChatMessage @message={{message}} @onDelete={{fn ch.acts.deleteMessage message}}/>
-    {{/each}}
-  </div>
-
-  <ChannelFooter @createMessage={{ch.acts.createMessage}} />
-</ChannelContainer>
+    <ChannelFooter @createMessage={{ch.acts.createMessage}} />
+  </ChannelContainer>
+</NotificationCenter>
