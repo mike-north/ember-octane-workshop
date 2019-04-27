@@ -13,7 +13,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
 <summary>Click to show HTML</summary>
 
 ```html
-<nav class="bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
+<nav class="bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block team-selector">
   <a href="/li" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
     <div data-team-id="li"
       class="bg-white h-12 w-12 flex items-center justify-center text-black text-2xl font-semibold rounded-lg mb-1 overflow-hidden">
