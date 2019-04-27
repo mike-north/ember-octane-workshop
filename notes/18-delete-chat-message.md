@@ -68,4 +68,4 @@ You should now be able to hover over each message to see a "delete" button, and 
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/20c4578f07ae35ac64b867dc0ad0ec00d53bf8a7)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/a56d758d9bf9068efcbc58e3b655f654c2055be8)
