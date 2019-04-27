@@ -212,7 +212,7 @@ and the following in [`app/styles/app.css`](../app/styles/app.css)
 <summary>Click to show CSS</summary>
 
 ```css
-@import 'tailwind.css';
+@import "tailwind.css";
 
 .hover-target .show-on-hover {
   opacity: 0;
