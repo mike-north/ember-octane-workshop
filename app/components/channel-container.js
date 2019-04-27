@@ -25,6 +25,18 @@ export default class ChannelContainerComponent extends Component {
     )).json();
   }
 
+  @action async deleteMessage(message) {
+    const resp = await fetch(`/api/messages/${message.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const idx = this.messages.map(m => m.id).indexOf(message.id);
+    this.messages.splice(idx, 1);
+    this.messages = this.messages;
+  }
+
   @action
   async createMessage(body) {
     const {
