@@ -78,4 +78,4 @@ and update `logout so it clears the value from the cookie instead of`localStorag
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/cc08ad8054d706c3d4efd4ae286f186ae2430533)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/ae7c7524ac5765222dde93da1447d3c36d5c763b)
