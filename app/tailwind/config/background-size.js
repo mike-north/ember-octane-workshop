@@ -13,7 +13,7 @@
 */
 
 export default {
-  'auto': 'auto',
-  'cover': 'cover',
-  'contain': 'contain',
+  auto: "auto",
+  cover: "cover",
+  contain: "contain"
 };

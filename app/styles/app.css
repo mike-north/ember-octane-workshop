@@ -1,4 +1,4 @@
-@import 'tailwind.css';
+@import "tailwind.css";
 
 .hover-target .show-on-hover {
   opacity: 0;
