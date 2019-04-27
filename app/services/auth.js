@@ -4,6 +4,7 @@ import Router from '@ember/routing/router';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import fetch from 'fetch';
+import CookiesService from 'ember-cookies/services/cookies';
 
 const AUTH_KEY = 'shlack-userid';
 
@@ -12,6 +13,11 @@ export default class AuthService extends Service {
    * @type {Router}
    */
   @service router;
+
+  /**
+   * @type {CookiesService}
+   */
+  @service cookies;
 
   @tracked currentUser = null;
 
@@ -47,9 +53,9 @@ export default class AuthService extends Service {
   }
 
   _readUserId() {
-    return window.localStorage.getItem(AUTH_KEY);
+    return this.cookies.read(AUTH_KEY);
   }
   _writeUserId(userId) {
-    window.localStorage.setItem(AUTH_KEY, userId);
+    this.cookies.write(AUTH_KEY, userId);
   }
 }
