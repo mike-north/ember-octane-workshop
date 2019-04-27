@@ -1,7 +1,30 @@
-# shlack
+<p align='center'>
+  <a href="https://mike.works" target='_blank'>
+    <img height=40 src='https://assets.mike.works/img/login_logo-33a9e523d451fb0d902f73d5452d4a0b.png' />
+  </a> 
+</p>
+<!--
+<p align='center'>
+  <a href="https://mike.works/course/ember-basics-cf22ed3" target='_blank'>
+    <img height=150 src='https://user-images.githubusercontent.com/558005/34076832-f366c976-e2b7-11e7-9085-73f3aeab3743.png' />
+  </a>
+</p>
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+<!--
+<p align='center'>
+  <a href="https://travis-ci.org/mike-works/ember-fundamentals" title="Build Status">
+    <img title="Build Status" src="https://travis-ci.org/mike-works/ember-fundamentals.svg?branch=master"/>
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release" title="Semantic Release">
+    <img title="Semantic Release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-blue.svg"/>
+  </a>
+</p>
+-->
+
+<p align='center'>
+This is the  project used for the <a title="Mike.Works" href="https://mike.works">Mike.Works</a> <a title="Ember Octane" href="">Ember Octane</a> course.
+</p>
+
 
 ## Prerequisites
 
@@ -13,21 +36,94 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
-## Installation
+# Getting Set Up
 
-* `git clone <repository-url>` this repository
-* `cd shlack`
-* `yarn install`
+There are a few things you need to ensure you have installed, in order to be ready for this course.
 
-## Running / Development
+### Node.js
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+You’ll need a relatively recent version (v10.0 or newer ideally) of Node.js installed. On OS X, a great way of doing this without disturbing your existing dev environment is to install NVM. [Installation instructions are here](https://github.com/creationix/nvm#installation).
+
+You’ll know everything is set up properly when you can run
+
+```
+nvm --version # might look like "0.34.0"
+node --version # might look like "v10.15.3"
+```
+
+### Ember-CLI
+Ember-CLI is the official Ember.js build tool. It handles things like:
+
+- Running a development web server
+- Running tests
+- Code generation
+- Compiling static assets
+
+We can install ember-cli globally by running
+
+```
+npm install -g ember-cli
+```
+
+Now you should be able to run
+
+```sh
+ember --version
+```
+
+and see something like
+
+```
+ember-cli: 3.10.0
+node: 11.6.0
+os: darwin x64
+```
+
+### Visual Studio Code
+
+Particularly if you’ve never tried it before, you should install [Microsoft Visual Studio Code](https://code.visualstudio.com/). Some fantastic extensions that I use regularly include
+* [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [Ember-CLI in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=felixrieseberg.vsc-ember-cli)
+* [Ember Language Server](https://marketplace.visualstudio.com/items?itemName=emberjs.vscode-ember)
+
+
+### Clone the Project
+```sh
+git clone git@github.com:mike-north/ember-octane-workshop.git
+```
+
+### Install dependencies
+```sh
+cd shlack
+yarn install
+```
+
+## Creating a new app
+
+We can create a new Ember app by running:
+
+```sh
+ember new <app-name>
+```
+
+This will create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app). If we want to create an Ember Octane app, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
+
+```sh
+ember new -b @ember/octane-app-blueprint <app-name>
+```
+
+### Start the development server
+```sh
+ember serve
+```
+
+* Visit your app at [http://localhost:4200](http://localhost:4200)
+* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests)
+* Your app runs on localhost `:4200` by default. You can customize this via `--port <port-number>`
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+Make use of the many built-in Ember-CLI generators to get files that follow the latest practices (with matching tests_. To see available generators, run `ember help generate`
 
 ### Running Tests
 
@@ -45,14 +141,9 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
 ## Further Reading / Useful Links
 
 * [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
