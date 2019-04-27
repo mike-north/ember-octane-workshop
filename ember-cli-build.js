@@ -3,8 +3,12 @@
 // eslint-disable-next-line node/no-unpublished-require
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function (defaults) {
-  let app = new EmberApp(defaults, {});
+module.exports = function(defaults) {
+  let app = new EmberApp(defaults, {
+    'esw-cache-fallback': {
+      patterns: ['/api/(.+)']
+    }
+  });
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

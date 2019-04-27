@@ -44,7 +44,7 @@ Now if you go to the service worker section of your devtools, you should see som
       <img src="https://github.com/mike-north.png" height=64 align="left" style="margin-right: 10px" />
     </a>
     <p>
-      When developing an app that uses a Service Worker, remember to consider your developer tools, or you may be in for a frustrating experience. 
+      When developing an app that uses a Service Worker, remember to consider your developer tools, or you may be in for a frustrating experience.
       <p><b>You'll nearly always want "Update on reload" checked, so that a new worker is installed on each refresh.</b> Leaving this un-checked will interfere with your browser picking up on changes as you save files. </p>
     </p>
   </blockquote>
@@ -63,4 +63,4 @@ Note that as soon as you try to see anything you haven't previously seen (i.e., 
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/1e9096c8021ca184407128f9b2e95b8fa8400865)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/3bedec1733e26166849a56f47c8150769e03b596)
