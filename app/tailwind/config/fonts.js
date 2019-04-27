@@ -30,14 +30,7 @@ export default {
     "Fira Sans",
     "Droid Sans",
     "Helvetica Neue",
-    "sans-serif"
+    "sans-serif",
   ],
-  mono: [
-    "Menlo",
-    "Monaco",
-    "Consolas",
-    "Liberation Mono",
-    "Courier New",
-    "monospace"
-  ]
+  mono: ["Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
 };
