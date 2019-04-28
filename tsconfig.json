@@ -2,12 +2,10 @@
   "compilerOptions": {
     "target": "es2017",
     "allowJs": true,
+    "checkJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
     "experimentalDecorators": true,
-    "alwaysStrict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "noFallthroughCasesInSwitch": true,
