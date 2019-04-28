@@ -135,8 +135,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
     <!-- Message -->
     <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest message" role="listitem">
       <figure class="w-10 h-10 rounded overflow-hidden mr-3">
-        <img class="message__user-avatar" src="https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200"
-          alt="">
+        <img class="message__user-avatar" src="https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200" alt="">
       </figure>
 
       <div class="flex-1">
