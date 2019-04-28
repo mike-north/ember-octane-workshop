@@ -10,11 +10,31 @@ and the chat UI showing up when users visit http://localhost:4200/teams
 
 ![chat-ui](./img/05-first-routes/chat-ui.png)
 
-Whenever we think about URL-driven state (or content), [Routing](https://octane-guides-preview.emberjs.com/release/routing/) is likely to be involved
+## What's routing
+
+Whenever we think about URL-driven state (or content), [Routing](https://octane-guides-preview.emberjs.com/release/routing/) is likely to be involved. Our router [`app/router.js`](../app/router.js) responds to URL changes, and the appropriate routes take care of the particulars of bringing the application into the correct state for that URL (fetching the right data, rendering the right thing, etc...)
+
+Each route is associated with a top-level template (the `.hbs` files in `app/templates` _other than_ the ones in `app/templates/components`) of a similar name. For example [`app/routes/teams.js`](../app/routes/teams.js) would have [`app/templates/teams.hbs`](../app/templates/teams.hbs) as its corresponding top-level template.
+
+The contents of our [app/templates/application.hbs](../app/templates/application.hbs) file will show up on the screen regardless of URL, but if we add a `{{outlet}}` to the template, any "child routes" will render their content into the outlet.
+
+The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs
+
+##### An Example Routing Higherarchy
+
+```yaml
+application # application.hbs
+  login     # login.hbs
+  teams     # teams.hbs
+    team    #   teams/team.hbs
+      channel # teams/team/channel.hbs
+```
+
+![routes](./img/05-first-routes/routes.gif)
 
 ## The `/teams` route
 
-The contents of our [app/templates/application.hbs](../app/templates/application.hbs) file is going to show up on the screen regardless of URL, so we'll want to change that first
+[app/templates/application.hbs](../app/templates/application.hbs) file is going to show up on the screen regardless of URL, so we'll want to change that first
 
 Run the following command to generate a `teams` route
 
@@ -28,12 +48,10 @@ This should result in new files being created
 - [`app/templates/teams.hbs`](../app/templates/teams.hbs) - a template to be shown when we visit `/teams`
 - [`tests/unit/routes/teams-test.js`](../tests/unit/routes/teams-test.js) - a unit test for the route
 
-You may also notice that your [`app/router.js`](../app/router.js) has been altered to "install" the new route.
-
-We'll eventually dig into all of this, but for now
+You may also notice that your [`app/router.js`](../app/router.js) has been modified to "install" the new route.
 
 1. copy the contents of [`app/templates/application.hbs`](../app/templates/application.hbs) into [`app/templates/teams.hbs`](../app/templates/teams.hbs)
-1. replace the contents of [`app/templates/application.hbs`](../app/templates/application.hbs) with `{{outlet}}`
+1. replace the contents of [`app/templates/application.hbs`](../app/templates/application.hbs) with `{{outlet}}`, so that either [`teams.hbs`](../app/templates/teams.hbs) or [`login.hbs`](../app/templates/login.hbs) will be rendered into the outlet, depending on the URL
 
 You should now see...
 
@@ -116,7 +134,7 @@ You should now see...
 
 ## Creating a basic link
 
-In single-page apps we have to be careful when creating links. The default browser behavior is to trigger a page load, and this is not what we want.
+In single-page apps we have to be careful when creating links. The default browser behavior when recieving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
 
 Ember provides a tool for this called [`link-to`](https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/link-to?anchor=link-to).
 
@@ -129,10 +147,10 @@ First, open up [`app/templates/components/team-sidebar.hbs`](../app/templates/co
    </nav>
 
    <footer class="mx-4 mb-2 text-white">
--    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 logout-button">
+-    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button">
 +    <LinkTo @route='login' {{! destination route }}
 +            @tagName="button" {{! use <button> instead of <a> }}
-+            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 logout-button" {{! HTML classes}}
++            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button"
 +    >
        Logout
 -    </button>
@@ -140,3 +158,7 @@ First, open up [`app/templates/components/team-sidebar.hbs`](../app/templates/co
    </footer>
  </section>
 ```
+
+You should now be able to click on the "Logout" button and find yourself looking at the login screen with a `/login` url.
+
+Congrats! we've just set up our first routes!
