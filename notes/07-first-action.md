@@ -62,7 +62,6 @@ Go to [`app/components/login-form.js`](../app/components/login-form.js) and add 
  * @param {Event} evt
  */
 onLoginFormSubmit(evt /* DOM event */) {
-  evt.preventDefault();
   console.log(evt.target.querySelector('select').value);
 }
 ```
