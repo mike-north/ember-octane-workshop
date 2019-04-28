@@ -78,7 +78,13 @@ export default {
   */
 
   modules: {
-    appearance: ["responsive", "hover", "focus", "active", "group-hover"],
+    appearance: [
+      "responsive",
+      "hover",
+      "focus",
+      "active",
+      "group-hover",
+    ],
     backgroundAttachment: ["responsive"],
     backgroundColors: ["responsive", "hover", "focus"],
     backgroundPosition: ["responsive"],

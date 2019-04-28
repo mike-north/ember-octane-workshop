@@ -32,5 +32,12 @@ export default {
     "Helvetica Neue",
     "sans-serif",
   ],
-  mono: ["Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+  mono: [
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    "monospace",
+  ],
 };
