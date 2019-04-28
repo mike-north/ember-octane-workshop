@@ -20,6 +20,10 @@ Move various parts of [`app/templates/application.hbs`](../app/templates/applica
 1. Create [`app/templates/components/channel-footer.hbs`](../app/templates/components/channel-footer.hbs)
    - Move `<footer class="channel__footer">...</footer>` into it
    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelFooter />`
+1. Create [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs)
+   - Move one of the `<div class="channel-message">...</div>` into it
+      - NOTE: the starting point HTML has more than one of these. Pick one to use for the component, and for now we'll just repeat it several times 
+   - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with 2 `<ChannelMessage />`s
 
 At the end of this, your [`app/templates/application.hbs`](../app/templates/application.hbs) should look like
 
@@ -30,7 +34,6 @@ At the end of this, your [`app/templates/application.hbs`](../app/templates/appl
   <ChannelHeader />
 
   <div class="py-4 flex-1 overflow-y-scroll channel__messages-list" role="list">
-    <ChatMessage />
     <ChatMessage />
     <ChatMessage />
   </div>
