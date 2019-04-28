@@ -12,7 +12,8 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
 
 <summary>Click to show HTML</summary>
 
-```html
+```hbs
+<!-- Team Selector -->
 <nav class="bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block team-selector">
   <a href="/li" class="cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
     <div data-team-id="li"
@@ -42,6 +43,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
   </div>
 </nav>
 
+<!-- Team Sidebar -->
 <section class="team-sidebar bg-indigo-darker text-purple-lighter flex-none w-64 pb-6 hidden sm:flex flex-col">
   <header class="text-white mb-2 mt-3 px-4 flex justify-between">
     <div class="flex-auto">
@@ -92,7 +94,10 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
   </footer>
 </section>
 
+<!-- Channel -->
 <main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+
+  <!-- Channel Header -->
   <header class="border-b flex px-6 py-2 items-center flex-none channel__header">
     <div>
       <h3 class="text-grey-darkest mb-1 font-extrabold channel__title">
@@ -119,7 +124,10 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
     </form>
   </header>
 
+  <!-- Channel Message List -->
   <div class="py-4 flex-1 overflow-y-scroll channel__messages-list" role="list">
+
+    <!-- Message -->
     <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest channel-message" role="listitem">
       <figure class="w-10 h-10 rounded overflow-hidden mr-3">
         <img class="channel-message__user-avatar"
@@ -146,6 +154,8 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
         🗑
       </button>
     </div>
+
+    <!-- Message -->
     <div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest channel__message"
       role="listitem">
       <figure class="w-10 h-10 rounded overflow-hidden mr-3">
@@ -174,8 +184,10 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
         🗑
       </button>
     </div>
+
   </div>
 
+  <!-- Channel Footer -->
   <footer class="pb-6 px-4 flex-none channel-footer">
     <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labeledby="message-label">
       <h1 id="message-label" class="sr-only">
