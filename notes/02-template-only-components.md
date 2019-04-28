@@ -6,22 +6,30 @@ These components can be thought of as pure functions, where `args` are passed in
 
 Usually we'd use Ember CLI to generate a new component, but in this case we'll just create a new template file -- that's all it takes.
 
-Create a template file `app/templates/components/team-selector.hbs` and copy the first `<nav>...</nav>` (and everything inside it) to this file.
+Move various parts of [`app/templates/application.hbs`](../app/templates/application.hbs) into their own respective `.hbs` files
 
-Now, replace that `<nav>` in `application.hbs` with `<TeamSelector />`, and make sure to save everyhing.
-You should see no change to the rendered HTML at http://localhost:4200.
+1. Create [`app/templates/components/team-selector.hbs`](../app/templates/components/team-selector.hbs)
+   - Move `<nav class="team-selector">...</nav>` into it
+   - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSelector />`
+1. Create [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs)
+   - Move `<section class="team-sidebar">...</section>` into it
+   - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSidebar />`
+1. Create [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
+   - Move `<header class="channel__header">...</header>` into it
+   - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelHeader />`
+1. Create [`app/templates/components/channel-footer.hbs`](../app/templates/components/channel-footer.hbs)
+   - Move `<footer class="channel__footer">...</footer>` into it
+   - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelFooter />`
 
-Congrats! You've just made your first component!
-
-Continue with this process until your [`app/templates/application.hbs`](../app/templates/application.hbs) looks like
+At the end of this, your [`app/templates/application.hbs`](../app/templates/application.hbs) should look like
 
 ```hbs
 <TeamSelector />
 <TeamSidebar />
-<main class="flex-1 flex flex-col bg-white overflow-hidden">
+<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
   <ChannelHeader />
 
-  <div class="py-4 flex-1 overflow-y-scroll" role="list">
+  <div class="py-4 flex-1 overflow-y-scroll channel__messages-list" role="list">
     <ChatMessage />
     <ChatMessage />
     <ChatMessage />
@@ -30,3 +38,7 @@ Continue with this process until your [`app/templates/application.hbs`](../app/t
   <ChannelFooter />
 </main>
 ```
+
+and you should see no change to the rendered HTML at http://localhost:4200.
+
+Congrats! You've just broken down all of that HTML into components!
