@@ -48,6 +48,7 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
+  // eslint-disable-next-line no-empty
   if (environment === "production") {
   }
 
