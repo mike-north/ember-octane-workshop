@@ -1,15 +1,19 @@
 import Service from '@ember/service';
 
 export default class CookiesService extends Service {
-  read(name: string, options: { raw?: boolean }): any; //reads the cookie with the given name, returns its value as a String; options can be used to set raw (boolean, disables URL-decoding the value).
+  read(name: string, options?: { raw?: boolean }): any; //reads the cookie with the given name, returns its value as a String; options can be used to set raw (boolean, disables URL-decoding the value).
   write(
     name: string,
     value: any,
-    options: { path: string; secure: boolean; raw: boolean }
+    options?: {
+      path: string;
+      secure: boolean;
+      raw: boolean;
+    }
   ): void; // writes a cookie with the given name and value; options can be used to set domain, expires (Date), maxAge (time in seconds), path, secure, and raw (boolean, disables URL-encoding the value).
   clear(
     name: string,
-    options: {
+    options?: {
       domain: string;
       path: string;
       secure: boolean;
