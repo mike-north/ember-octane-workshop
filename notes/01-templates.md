@@ -110,7 +110,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
       </h3>
 
       <h4 class="text-grey-dark text-sm truncate channel-header__description">
-        Just some general people generally chatting about general things
+        Generally chatting about general things
       </h4>
     </div>
 
