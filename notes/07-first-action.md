@@ -59,10 +59,12 @@ Go to [`app/components/login-form.js`](../app/components/login-form.js) and add 
 ```js
 /**
  * Handle the form submit event
- * @param {Event} evt
+ * @param {Event & { target: HTMLFormElement }} evt
  */
 onLoginFormSubmit(evt /* DOM event */) {
-  console.log(evt.target.querySelector('select').value);
+  const { target } = evt;
+  const selectElem = target.querySelector('select');
+  console.log(selectElem.value);
 }
 ```
 
@@ -72,11 +74,28 @@ In your template, you'll have to hook this event handler up to the `<form>` DOM 
 <form {{on "submit" this.onLoginFormSubmit}} ... >
 ```
 
-`{{on}}` is called a Modifier. We can recognize modifiers because they're kind of "floating" in a HTML tag, not associated with any particular HTML attribute
+`{{on}}` is called a Modifier. We can recognize modifiers because they're kind of "floating" in a HTML tag, not associated with any particular HTML attribute.
 
 ```hbs
 <div {{my-modifier}} >
 ```
+
+In this example
+
+```hbs
+<div class={{my-helper}} >
+```
+
+because the `{{my-helper}}` is associated with the `class` attribute of the `<div>` -- we know it cannot be a modifier.
+
+In this example
+
+```hbs
+<div onClick={{my-helper (my-m 1 2 3)}} >
+<div {{foo (bar "hello") "world"}}>
+```
+
+because the `{{my-helper}}` is associated with the `class` attribute of the `<div>` -- we know it cannot be a modifier.
 
 Open your devtools and try your use of the `{{on}}` modifier out. You may notice that the selected user ID is logged to the console _briefly_ and then disappears. Why is this?
 
@@ -87,11 +106,13 @@ Update your event handler to use [`Event.preventDefault();`](https://developer.m
 ```js
 /**
  * Handle the form submit event
- * @param {Event} evt
+ * @param {Event & { target: HTMLFormElement }} evt
  */
 onLoginFormSubmit(evt /* DOM event */) {
+  const { target } = evt;
+  const selectElem = target.querySelector('select');
   evt.preventDefault();
-  console.log(evt.target.querySelector('select').value);
+  console.log(selectElem.value);
 }
 ```
 
@@ -109,11 +130,13 @@ export default class LoginFormComponent extends Component {
 
   /**
    * Handle the form submit event
-   * @param {Event} evt
+   * @param {Event & { target: HTMLFormElement }} evt
    */
   onLoginFormSubmit(evt) {
+    const { target } = evt;
+    const selectElem = target.querySelector('select');
     evt.preventDefault();
-    this.handleSignIn(evt.target.querySelector('select').value);
+    this.handleSignIn(selectElem.value);
   }
 }
 ```
@@ -132,12 +155,14 @@ Let's dig deeper to investigate using a `debugger;`
 ```js
 /**
  * Handle the form submit event
- * @param {Event} evt
+ * @param {Event & { target: HTMLFormElement }} evt
  */
 onLoginFormSubmit(evt) {
+  const { target } = evt;
+  const selectElem = target.querySelector('select');
   evt.preventDefault();
   debugger;
-  this.handleSignIn(evt.target.querySelector('select').value);
+  this.handleSignIn(selectElem.value);
 }
 ```
 
@@ -150,14 +175,18 @@ To fix this, we'll have to `bind` the `onLoginFormSubmit` method, so that no mat
 ```js
 /**
  * Handle the form submit event
- * @param {Event} evt
+ * @param {Event & { target: HTMLFormElement }} evt
  */
 @action // << ACTION DECORATOR
 onLoginFormSubmit(evt) {
+  const { target } = evt;
+  const selectElem = target.querySelector('select');
   evt.preventDefault();
   debugger;
-  this.handleSignIn(evt.target.querySelector('select').value);
+  this.handleSignIn(selectElem.value);
 }
 ```
 
 Stop at the `debugger;` again and observe: we now have what we want, and the logging works properly again!
+
+Delete the `debugger;` inside `onLoginFormSubmit()` before we continue
