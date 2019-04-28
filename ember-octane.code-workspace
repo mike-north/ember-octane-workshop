@@ -7,7 +7,7 @@
   "settings": {},
   "extensions": {
     "recommendations": [
-      "emberjs.vscode-ember",
+      "lifeart.vscode-ember-unstable",
       "msjsdiag.debugger-for-chrome",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
