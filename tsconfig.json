@@ -7,7 +7,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -19,6 +18,7 @@
     "baseUrl": ".",
     "module": "es6",
     "paths": {
+      "fetch": ["node_modules/ember-fetch"],
       "shlack/tests/*": ["tests/*"],
       "shlack/*": ["app/*"],
       "*": ["types/*"]
