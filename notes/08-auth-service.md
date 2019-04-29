@@ -41,15 +41,16 @@ This will result in two new files being created
 - [`app/services/auth.js`](../app/services/auth.js) - the service
 - [`tests/unit/services/auth-test.js`](../tests/unit/services/auth-test.js) - a unit test for the service
 
-Services do not involve passing anything through templates, they're "injected" directly onto the specific objects that need access to them
+First, let's flesh out the service so that we can use it in a few places.
 
 ```js
-import { inject as service } from '@ember/service';
+import Service from '@ember/service';
 
-class Foo {
-  @service auth;
-
-  fu;
+export default class AuthService extends Service {
+  currentUserId = null;
+  get isAuthenticated() {
+    return !!this.currentUserId;
+  }
 }
 ```
 
