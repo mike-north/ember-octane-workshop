@@ -56,7 +56,7 @@ function padLeadingZeroes(val, digits) {
 /**
  * Create a string representation of a Date
  * @param {string|number|Date} date
- * @returns {string|null}
+ * @returns {string}
  */
 export function dateToString(date) {
   if (
