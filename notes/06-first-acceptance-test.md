@@ -66,4 +66,4 @@ and now go to http://localhost:4200/tests. Try adding a `debugger;` to various p
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/672bd7d733a61ce047f5a3f49fb3d2cf6a95da29)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/6861b3b6ece8a8641afdb2653057c964fa617c5f)
