@@ -44,7 +44,7 @@ Remember the `StubbedAuthService` that we just added? It needs to have the same 
     this.currentUserId = null;
     this.router.transitionTo('login');
   }
-``` 
+```
 
 We also need to import `action` at the top of the file:
 
@@ -243,4 +243,4 @@ test('visiting /teams while logged out', async function (assert) {
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/f695c3d1720150a066b055b317aaef679f4d4234)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/6805a6ce042c994c3ed426c180e2817b1d6ce8ac)

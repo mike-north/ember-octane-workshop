@@ -10,4 +10,3 @@ Router.map(function() {
   this.route('teams');
   this.route('login');
 });
-
