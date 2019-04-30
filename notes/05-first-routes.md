@@ -90,7 +90,7 @@ Paste the HTML below into [`app/templates/login.hbs`](../app/templates/login.hbs
           <select
             class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           >
-            <option value="">Select a user</option>
+            <option value="" disabled>Select a user</option>
             <option value="1">Testy Testerson</option>
             <option value="2">Sample McData</option>
           </select>
