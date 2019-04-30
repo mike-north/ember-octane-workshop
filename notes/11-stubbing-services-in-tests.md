@@ -4,7 +4,7 @@ We have a problem: our tests only pass, when we're logged in with a particular u
 
 Create a file in your tests folder like [`tests/test-helpers/auth-service.js`](../tests/test-helpers/auth-service.js), where we'll put our "stub" service that will be used in place of the real one during tests.
 
-If you'd like to learn more about how to write tests using stubs, fakes and mocks, [this article is worth reading](https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da). 
+If you'd like to learn more about how to write tests using stubs, fakes and mocks, [this article is worth reading](https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da).
 
 ```js
 import Service, { inject as service } from '@ember/service';
@@ -52,4 +52,4 @@ Make an appropriate adjustment to the assertion value, taking the userId into ac
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/1e1cc2df48af28de0004fe787a7faa91d2573cef)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/58aea7a707abf0b76097df846c2f0d25c45a3faa)
