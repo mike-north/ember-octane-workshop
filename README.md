@@ -12,7 +12,7 @@ You will need the following things properly installed on your computer.
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
 - [Ember CLI](https://ember-cli.com/)
-- [Google Chrome](https://google.com/chrome/)
+- [Brave](https://brave.com/), [Firefox](https://www.mozilla.org/en-US/firefox/) or [Chrome](https://google.com/chrome/)
 
 # Getting Set Up
 
@@ -69,7 +69,7 @@ Particularly if you’ve never tried it before, you should install [Microsoft Vi
 ### Clone the Project
 
 ```sh
-git clone git@github.com:mike-north/ember-octane-workshop.git
+git clone git@github.com:mike-north/ember-octane-workshop.git shlack
 ```
 
 ### Install dependencies
@@ -77,20 +77,6 @@ git clone git@github.com:mike-north/ember-octane-workshop.git
 ```sh
 cd shlack
 yarn install
-```
-
-## Creating a new app
-
-We can create a new Ember app by running:
-
-```sh
-ember new <app-name>
-```
-
-This will create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app). If we want to create an Ember Octane app, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
-
-```sh
-ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
 ### Start the development server
@@ -129,6 +115,34 @@ Make use of the many built-in Ember-CLI generators to get files that follow the 
 - Development Browser Extensions
   - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## How this starting point was created
+
+We _could_ create a new Ember app by running the following command (you don't need to run this):
+
+```sh
+ember new <app-name>
+```
+
+This would create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app). If we want to create an Ember Octane app, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
+
+```sh
+ember new -b @ember/octane-app-blueprint <app-name>
+```
+
+Beyond this, all I've done is...
+
+Installed a few packages like
+
+- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind)
+- [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)
+- [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
+
+```sh
+ember install ember-cli-tailwind ember-on-modifier ember-cli-pretender
+```
+
+Added the files in the `server` folder, and the `db.json` to provide a development JSON API, and created the `notes` folder and markdown files inside it.
 
 ## Legal
 
