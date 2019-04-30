@@ -199,4 +199,4 @@ import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/5a7cd8b74ac6bf429b3e15e2419d91a71a6829ec)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/94afd3501f15aef270e3f011116950cd538b8ab1)
