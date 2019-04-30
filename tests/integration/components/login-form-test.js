@@ -17,13 +17,7 @@ module('Integration | Component | login-form', function(hooks) {
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      [
-        'Login',
-        'Select a user',
-        'Testy Testerson',
-        'Sample McData',
-        'A validation message',
-      ]
+      ['Login', 'Select a user', 'Testy Testerson', 'Sample McData']
     );
   });
 });
