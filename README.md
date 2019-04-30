@@ -1,6 +1,8 @@
-<p align='center'>
-This is the  project used for the <a title="Mike North's" href="https://github.com/mike-north">Mike North's</a> <a title="Ember Octane" href="">Ember Octane</a> course.
-</p>
+# Ember Octane Workshop: Shlack
+
+This is the project used for the <a title="Mike North's" href="https://github.com/mike-north">Mike North's</a> <a title="Ember Octane" href="">Ember Octane</a> course, where we build a chat app together step-by-step
+
+![](./notes/img/app.png)
 
 ## Prerequisites
 
