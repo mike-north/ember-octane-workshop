@@ -151,4 +151,4 @@ Congrats! We've just written a nice component integration test!
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/3eb1ec93f29d6d2877871f0bc62551bdd6808ea1)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/795f802fd2b35fe55ea28d4804305b7a5d7196a8)
