@@ -2,13 +2,18 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import StubbedAuthService from 'shlack/tests/test-helpers/auth-service';
 
 module('Integration | Component | team-sidebar', function(hooks) {
   setupRenderingTest(hooks);
 
+  hooks.beforeEach(function() {
+    this.owner.register('service:auth', StubbedAuthService);
+  });
+
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    const auth = this.owner.lookup('service:auth');
+    auth.currentUserId = 'LOL';
 
     await render(hbs`<TeamSidebar />`);
 
@@ -17,7 +22,7 @@ module('Integration | Component | team-sidebar', function(hooks) {
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      ['LinkedIn', 'Mike North (1)', 'Channels', '#', 'general', 'Logout']
+      ['LinkedIn', 'Mike North (LOL)', 'Channels', '#', 'general', 'Logout']
     );
   });
 });
