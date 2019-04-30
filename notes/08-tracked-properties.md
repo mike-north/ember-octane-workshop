@@ -22,6 +22,14 @@ Opene up your component JS module [`app/components/login-form.js`](../app/compon
 userId = '1';
 ```
 
+Also, let's add a very simple piece of derivied state for `isDisabled`. Its value should be true if `userId` is falsy.
+
+```ts
+get isDisabled() {
+  return !this.userId;
+}
+```
+
 Update the validation message in the component's template [`app/templates/components/login-form.hbs`](../app/templates/components/login-form.hbs)
 
 ```diff
@@ -29,6 +37,19 @@ Update the validation message in the component's template [`app/templates/compon
 -    A validation message
 +    Logging in with userId <code>{{this.userId}}</code>
    </p>
+```
+
+And hook up `isDisabled` to the `input[type="submit"]`
+
+```hbs
+  <input disabled={{this.isDisabled}} type="submit">
+```
+
+We should also show some visual indication of whether this button is disabled. Replace the `"bg-grey"` class with a handlebars expression
+
+```hbs
+  <input
+    class="{if this.isDisabled "bg-grey" "bg-teal-dark"}} ...">
 ```
 
 And also update the `<option>` tags so their `selected` attribute is true when the `userId` property matches the selected value
@@ -100,7 +121,7 @@ Now, try once more, and you should see that:
 - Changes to the selected user should no longer throw errors
 - The validation message should be kept in sync with the selected user
 
-Finally, let's make our initial state a little bit more reasonable. Let's start with no user selected -- all we have to do for this is initialize `userId` to null
+Let's make our initial state a little bit more reasonable. Let's start with no user selected -- all we have to do for this is initialize `userId` to null
 
 ```ts
 userId = null;
@@ -114,4 +135,17 @@ Let's also hide the validation text if `userId` is falsy.
       Logging in with userId <code>{{this.userId}}</code>
 +   {{/if}}
   </p>
+```
+
+Finally, let's go back to our JS module and make sure that if the form is disabled we don't call `this.handleSignIn`, and we use `userId` directly from the component class rather than querying the DOM to get the value
+
+```diff
+   @action
+   onLoginFormSubmit(evt) {
+     evt.preventDefault();
+-    const { target } = evt;
+-    const { value } = target.querySelector('select');
+-    if (value) this.handleSignIn(value);
++    if (!this.isDisabled) this.handleSignIn(this.userId);
+   }
 ```
