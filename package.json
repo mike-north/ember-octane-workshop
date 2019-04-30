@@ -4,7 +4,7 @@
   "private": true,
   "description": "Small description for shlack goes here",
   "repository": "",
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "author": "",
   "main": "prod-server.js",
   "directories": {

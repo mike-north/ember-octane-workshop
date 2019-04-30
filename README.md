@@ -1,40 +1,16 @@
 <p align='center'>
-  <a href="https://mike.works" target='_blank'>
-    <img height=40 src='https://assets.mike.works/img/login_logo-33a9e523d451fb0d902f73d5452d4a0b.png' />
-  </a> 
+This is the  project used for the <a title="Mike North's" href="https://github.com/mike-north">Mike North's</a> <a title="Ember Octane" href="">Ember Octane</a> course.
 </p>
-<!--
-<p align='center'>
-  <a href="https://mike.works/course/ember-basics-cf22ed3" target='_blank'>
-    <img height=150 src='https://user-images.githubusercontent.com/558005/34076832-f366c976-e2b7-11e7-9085-73f3aeab3743.png' />
-  </a>
-</p>
-
-<!--
-<p align='center'>
-  <a href="https://travis-ci.org/mike-works/ember-fundamentals" title="Build Status">
-    <img title="Build Status" src="https://travis-ci.org/mike-works/ember-fundamentals.svg?branch=master"/>
-  </a>
-  <a href="https://github.com/semantic-release/semantic-release" title="Semantic Release">
-    <img title="Semantic Release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-blue.svg"/>
-  </a>
-</p>
--->
-
-<p align='center'>
-This is the  project used for the <a title="Mike.Works" href="https://mike.works">Mike.Works</a> <a title="Ember Octane" href="">Ember Octane</a> course.
-</p>
-
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
+- [Ember CLI](https://ember-cli.com/)
+- [Google Chrome](https://google.com/chrome/)
 
 # Getting Set Up
 
@@ -52,6 +28,7 @@ node --version # might look like "v10.15.3"
 ```
 
 ### Ember-CLI
+
 Ember-CLI is the official Ember.js build tool. It handles things like:
 
 - Running a development web server
@@ -82,17 +59,19 @@ os: darwin x64
 ### Visual Studio Code
 
 Particularly if you’ve never tried it before, you should install [Microsoft Visual Studio Code](https://code.visualstudio.com/). Some fantastic extensions that I use regularly include
-* [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-* [Ember-CLI in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=felixrieseberg.vsc-ember-cli)
-* [Ember Language Server](https://marketplace.visualstudio.com/items?itemName=emberjs.vscode-ember)
 
+- [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Ember-CLI in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=felixrieseberg.vsc-ember-cli)
+- [Ember Language Server](https://marketplace.visualstudio.com/items?itemName=emberjs.vscode-ember)
 
 ### Clone the Project
+
 ```sh
 git clone git@github.com:mike-north/ember-octane-workshop.git
 ```
 
 ### Install dependencies
+
 ```sh
 cd shlack
 yarn install
@@ -113,37 +92,42 @@ ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
 ### Start the development server
+
 ```sh
 ember serve
 ```
 
-* Visit your app at [http://localhost:4200](http://localhost:4200)
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests)
-* Your app runs on localhost `:4200` by default. You can customize this via `--port <port-number>`
+- Visit your app at [http://localhost:4200](http://localhost:4200)
+- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests)
+- Your app runs on localhost `:4200` by default. You can customize this via `--port <port-number>`
 
 ### Code Generators
 
-Make use of the many built-in Ember-CLI generators to get files that follow the latest practices (with matching tests_. To see available generators, run `ember help generate`
+Make use of the many built-in Ember-CLI generators to get files that follow the latest practices (with matching tests\_. To see available generators, run `ember help generate`
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+- `ember test`
+- `ember test --server`
 
 ### Linting
 
-* `yarn lint:hbs`
-* `yarn lint:js`
-* `yarn lint:js --fix`
+- `yarn lint:hbs`
+- `yarn lint:js`
+- `yarn lint:js --fix`
 
 ### Building
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+- `ember build` (development)
+- `ember build --environment production` (production)
 
 ## Further Reading / Useful Links
 
-* [ember.js](https://emberjs.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- [ember.js](https://emberjs.com/)
+- Development Browser Extensions
+  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## Legal
+
+&copy; 2019 LinkedIn and licensed under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) license
