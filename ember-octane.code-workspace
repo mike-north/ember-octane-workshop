@@ -10,8 +10,10 @@
       "lifeart.vscode-ember-unstable",
       "msjsdiag.debugger-for-chrome",
       "dbaeumer.vscode-eslint",
+      "aaron-bond.better-comments",
       "esbenp.prettier-vscode",
-      "humao.rest-client"
+      "humao.rest-client",
+      "auchenberg.vscode-browser-preview"
     ]
   }
 }
