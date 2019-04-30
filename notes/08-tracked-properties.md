@@ -156,4 +156,4 @@ Finally, let's go back to our JS module and make sure that if the form is disabl
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/36cef7d1b40c652b601bdd1cbd15c27c6caaca85)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/abe9a8a3e003dc5b2ec288d54642bbf7d30b4f1f)
