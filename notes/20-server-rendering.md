@@ -30,3 +30,48 @@ ember install ember-cookies
 ```
 
 Now let's stop and restart ember-cli -- we should see that the app is now being served with fastboot.
+
+Next, we'll have to make some adjustments to the auth service. Begin by importing the cookie service
+
+```js
+import CookiesService from 'ember-cookies/services/cookies';
+```
+
+and inject the `cookies` service onto the `auth` service
+
+```ts
+ /**
+  * @type {CookiesService}
+  */
+ @service cookies;
+```
+
+Update the `loginWithUserId` function so it writes to a cookie instead of `localStorage`
+
+```diff
+   async loginWithUserId(userId) {
+-    window.localStorage.setItem(AUTH_KEY, userId);
++    this.cookies.write(AUTH_KEY, userId);
+     this.router.transitionTo('teams');
+   }
+```
+
+Update the `currentUserId` getter so it reads from a cookie
+
+```diff
+   get currentUserId() {
+-    return window.localStorage.getItem(AUTH_KEY);
++    return this.cookies.read(AUTH_KEY);
+   }
+```
+
+and update `logout so it clears the value from the cookie instead of`localStorage`
+
+```diff
+   logout() {
+-    window.localStorage.removeItem(AUTH_KEY);
++    this.cookies.write(AUTH_KEY, null);
+     this.router.transitionTo('login');
+   }
+ }
+```
