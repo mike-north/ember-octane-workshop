@@ -120,7 +120,7 @@
       "id": 14,
       "name": "jQuery",
       "username": "jquery",
-      "iconUrl": "https://cdn-images-1.medium.com/max/1600/0*g3ns8QALNBBH7CBA"
+      "iconUrl": "https://github.com/jquery.png"
     },
     {
       "id": 15,
@@ -222,9 +222,7 @@
       "channelId": "general",
       "userId": 1,
       "body": "awqwdqwqwdq",
-      "enrichedBody": [
-        "awqwdqwqwdq"
-      ],
+      "enrichedBody": ["awqwdqwqwdq"],
       "createdAt": 1555872270175,
       "id": 14
     },
