@@ -14,7 +14,7 @@ jobs:
         inputs:
           pathtoPublish: $(Build.ArtifactStagingDirectory)
           artifactName: project-with-deps
-  - job: lint
+  - job: lint_js
     dependsOn: linux_build
     pool:
       vmImage: 'ubuntu-16.04'
@@ -23,6 +23,12 @@ jobs:
       - script: |
           yarn lint:js
         displayName: 'Lint JS'
+  - job: lint_hbs
+    dependsOn: linux_build
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - template: linux-build-job.yml
       - script: |
           yarn lint:hbs
         displayName: 'Lint HBS'
