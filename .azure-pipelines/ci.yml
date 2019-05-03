@@ -24,3 +24,12 @@ jobs:
           yarn lint:js
           yarn lint:hbs
         displayName: 'Lint'
+  - job: tests
+    dependsOn: linux_build
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - template: linux-build-job.yml
+      - script: |
+          yarn ember test
+        displayName: 'Lint'
