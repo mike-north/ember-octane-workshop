@@ -22,8 +22,10 @@ jobs:
       - template: linux-build-job.yml
       - script: |
           yarn lint:js
+        displayName: 'Lint JS'
+      - script: |
           yarn lint:hbs
-        displayName: 'Lint'
+        displayName: 'Lint HBS'
   - job: tests
     dependsOn: linux_build
     pool:
@@ -31,5 +33,5 @@ jobs:
     steps:
       - template: linux-build-job.yml
       - script: |
-          yarn ember test
-        displayName: 'Lint'
+          yarn test
+        displayName: 'Test'
