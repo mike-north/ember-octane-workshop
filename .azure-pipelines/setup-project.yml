@@ -1,0 +1,18 @@
+parameters:
+  nodeVersion: '8.x'
+  globalDependencies: ''
+  installCommand: yarn install --non-interactive
+
+steps:
+  - template: 'setup-node.yml'
+    parameters:
+      nodeVersion: ${{ parameters.nodeVersion }}
+
+  - ${{ if not(eq(parameters.globalDependencies, '')) }}:
+      - script: |
+          echo "Installing global dependencies"
+          npm install -g ${{ parameters.globalDependencies }}
+        displayName: 'Installing global dependencies ${{ parameters.globalDependencies }}'
+  - script: |
+      ${{ parameters.installCommand }}
+    displayName: 'Installing project dependencies'

@@ -1,0 +1,16 @@
+jobs:
+  - job: linux_build
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - template: setup-project.yml
+      - script: tar -cf project.tar ./*
+        displayName: 'Preparing Artifact'
+      - task: CopyFiles@2
+        inputs:
+          contents: 'project.tar'
+          targetFolder: $(Build.ArtifactStagingDirectory)
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathtoPublish: $(Build.ArtifactStagingDirectory)
+          artifactName: project-with-deps
