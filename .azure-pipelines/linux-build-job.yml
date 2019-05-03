@@ -1,0 +1,22 @@
+parameters:
+  nodeVersion: '8.x'
+
+steps:
+  - template: setup-node.yml
+    parameters:
+      nodeVersion: ${{ parameters.nodeVersion }}
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      allowPartiallySucceededBuilds: false
+      artifactName: project-with-deps
+      downloadPath: '$(System.ArtifactsDirectory)'
+
+  - script: |
+      mv '$(System.ArtifactsDirectory)/project-with-deps/project.tar' ./
+    displayName: 'Copy Build Artifact to Working Directory'
+  - script: |
+      tar -xf project.tar
+    displayName: 'Untar'
+  - script: |
+      rm project.tar
+    displayName: 'Remove tarball'
