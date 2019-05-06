@@ -2,6 +2,8 @@
 
 Helpers are like simple functions that can be used in templates. We'll create a simple one to allow us to create a string representation of a `Date` (or a `string`/`number` passed to the `Date` constructor). A library like [Moment.js](http://momentjs.com/) would be able to perform a similar task, but given that it's fairly large (16.7k minified, gzipped) it's probably overkill for just this one thing.
 
+Once defined, helpers can be used in _any_ of an app's templates.
+
 ## ⌨️ Task: Implementing a `dateToString` utility
 
 Your `app/utils` folder is a great place for low-level utilities. Let's generate a `utils` module for date-related concerns.
@@ -12,8 +14,8 @@ ember generate utils date
 
 Ember CLI will generate the following files:
 
-- [`app/utils/date.js`](../app/utils/date.js) - the utils module
-- [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) - a passing unit test
+-   [`app/utils/date.js`](../app/utils/date.js) - the utils module
+-   [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) - a passing unit test
 
 Replace the contents of [`app/utils/date.js`](../app/utils/date.js) with the following:
 
@@ -143,7 +145,7 @@ module('Unit | Utility | date', function() {
 
 </details>
 
-Now we can go to http://localhost:4200/tests?filter=date&nolint and see the test runner UI, showing our test passing
+Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing our test passing
 
 ![unit-test](./img/04-helpers/unit-test.png)
 
@@ -159,8 +161,8 @@ ember generate helper format-timestamp
 
 Ember CLI will generate the following files:
 
-- [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) - the helper
-- [`tests/integration/helpers/format-timestamp-test.js`](../tests/integration/helpers/format-timestamp-test.js) - a passing integration test
+-   [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) - the helper
+-   [`tests/integration/helpers/format-timestamp-test.js`](../tests/integration/helpers/format-timestamp-test.js) - a passing integration test
 
 The code in [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) will look something like this:
 
@@ -171,6 +173,7 @@ export default helper(function formatTimestamp(params, hash) {
   return params;
 });
 ```
+
 Note the arguments `formatTimestamp` receives: `params` and `hash`. When a helper is used like this:
 
 ```hbs
@@ -219,7 +222,7 @@ Now let's put our new helper to use. Open up [`app/templates/components/message.
 
 Integration tests are all about testing the junctions between parts of a system. In this case, we'll test our new helper's junction with the outside world: its public API. To do this, we'll set up a testing scenario using a small piece of [inline-compiled handlebars](https://github.com/ember-cli/ember-cli-htmlbars-inline-precompile) that matches exactly how we'd invoke the helper normally. We can then make assertions against `this.element`, which contains the test scenario.
 
-You can think of this as if `` hbs`{{format-timestamp "05-01-2019"}}` `` is transformed into
+You can think of this as if ``hbs`{{format-timestamp "05-01-2019"}}` `` is transformed into
 
 ```hbs
 <div> <!-- 👈 this.element -->
@@ -249,7 +252,7 @@ module('Integration | Helper | format-timestmp', function(hooks) {
 });
 ```
 
-You can view the current state of the tests by visiting http://localhost:4200/tests?hidepassed. Note that the `{{format-timestamp}}` test is failing. Let's make the first test more meaningful by passing it a more reasonably "date-ish" string
+You can view the current state of the tests by visiting <http://localhost:4200/tests?hidepassed>. Note that the `{{format-timestamp}}` test is failing. Let's make the first test more meaningful by passing it a more reasonably "date-ish" string
 
 ```diff
 - test('it renders', async function(assert) {
@@ -266,6 +269,7 @@ You can view the current state of the tests by visiting http://localhost:4200/te
 +    );
   });
 ```
+
 We can also add a negative test case below the first one (but still inside the callback passed to `module()`) to ensure the helper behaves reasonably when passed no arguments
 
 ```js

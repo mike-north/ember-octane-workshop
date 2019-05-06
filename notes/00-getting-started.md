@@ -4,16 +4,14 @@
 
 Ember-CLI is the official Ember.js build tool. It handles things like
 
-- Running a development web server
-- Running tests
-- Code generation
-- Compiling static assets
+-   Running a development web server
+-   Running tests
+-   Code generation
+-   Compiling static assets
 
 You can install ember-cli globally by running
 
-```
-npm install -g ember-cli
-```
+    npm install -g ember-cli
 
 Now you should be able to run
 
@@ -53,6 +51,4 @@ ember serve
 
 You should see some indication that the app is running on localhost (`:4200` by default, but customizable via `--port <port-number>`)
 
-```
-Build successful (2158ms) – Serving on http://localhost:4200/
-```
+    Build successful (2158ms) – Serving on http://localhost:4200/

@@ -4,13 +4,13 @@ To describe the HTML portion of a web application, Ember uses declarative templa
 
 For now, we'll just focus on one of these files: `app/templates/application.hbs`. Markup you put in this template will be shown anytime your app is on the screen, regardless of URL (we'll get into URLs later).
 
-## ⌨️ Task: Moving the initial HTML & CSS into our app 
+## ⌨️ Task: Moving the initial HTML & CSS into our app
 
 For now, paste the following HTML in [`app/templates/application.hbs`](../app/templates/application.hbs)
 
 <details>
 
-<summary>Click to show HTML</summary>
+<summary>Click to show <code>starter.html</code></summary>
 
 ```hbs {starter-file=starter.html}
 <!-- Team Selector -->
@@ -228,7 +228,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
 and the following in [`app/styles/app.css`](../app/styles/app.css)
 
 <details>
-<summary>Click to show CSS</summary>
+<summary>Click to show <code>starter.css</code></summary>
 
 ```css {starter-file=starter.css}
 @import "tailwind.css";

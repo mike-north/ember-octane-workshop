@@ -22,15 +22,15 @@ Let's start with our `<ChannelHeader />` component, parameterizing the channel's
 
 in [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
 
-1. find the text `general` and replace it with `{{@title}}`
-1. Find the text `Generally chatting about general things` and replace it with `{{@description}}`
+1.  find the text `general` and replace it with `{{@title}}`
+2.  Find the text `Generally chatting about general things` and replace it with `{{@description}}`
 
 Our component is now parameterized, and ready to receive data!
 
 ### Syntax breakdown
 
-- The `{{double-braces}}` indicate that the whatever is between them should be evaluted as a handlebars expression
-- The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
+-   The `{{double-braces}}` indicate that the whatever is between them should be evaluted as a handlebars expression
+-   The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
 
 ### Passing in data
 
