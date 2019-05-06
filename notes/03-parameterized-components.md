@@ -1,6 +1,22 @@
 # Parameterized Components
 
-We can parameterize components and pass data into them. Ember calls values that are passed into a component from the outside world `args`. We can recognize these named args in a template because they always start begin with an `@` sign.
+We can parameterize components by substituting some of our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
+
+```jsx
+// ⚠️️ Pesudocode ⚠️
+function renderChannelHeader(args) {
+    return
+        <header>
+            <h3>{{args.title}}</h3>
+            <p> {{args.description}}</p>
+        </header>
+    ;
+}
+```
+
+ Ember calls values that are passed into a component from the outside world in this fashion [`named args`](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign.
+
+## ⌨️ Task: Parameterizing `<ChannelHeader />`
 
 Let's start with our `<ChannelHeader />` component, parameterizing the channel's `title` and `description`.
 
@@ -11,19 +27,21 @@ in [`app/templates/components/channel-header.hbs`](../app/templates/components/c
 
 Our component is now parameterized, and ready to receive data!
 
-## Syntax breakdown
+### Syntax breakdown
 
 - The `{{double-braces}}` indicate that the whatever is between them should be evaluted as a handlebars expression
-- The `@` indicates that a value is passed into the component from the outside world
+- The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
 
-## Passing in data
+### Passing in data
 
-You may notice that your component is now blank. Instead of rendering hard-coded values, the component now expects to be passed `args` called `@title` and `@description`. Let's pass it some data:
+You may notice that your component now shows a blank title and description. Instead of rendering hard-coded values, the component now expects to be passed `args` called `@title` and `@description`. Let's pass it some data:
 
-Go to you [`app/templates/application.hbs`](../app/templates/application.hbs) and pass some values into the component using key-value pairs
+Go to your [`app/templates/application.hbs`](../app/templates/application.hbs) and pass some values into the component using key-value pairs
 
 ```hbs
-<ChannelHeader @title="compliments" @description="Say nice things about your teammates" />
+<ChannelHeader
+    @title="compliments"
+    @description="Say nice things about your teammates" />
 ```
 
 Now, you should see the title and description properly rendered in the channel header

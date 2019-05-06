@@ -9,7 +9,7 @@ Ember-CLI is the official Ember.js build tool. It handles things like
 - Code generation
 - Compiling static assets
 
-We can install ember-cli globally by running
+You can install ember-cli globally by running
 
 ```
 npm install -g ember-cli
@@ -23,7 +23,7 @@ ember --version
 
 and see something like
 
-```
+```sh
 ember-cli: 3.10.0
 node: 11.6.0
 os: darwin x64
@@ -31,7 +31,7 @@ os: darwin x64
 
 ## Creating a new app
 
-We can create a new app by running
+ We can create a new app by running
 
 ```sh
 ember new <app-name>

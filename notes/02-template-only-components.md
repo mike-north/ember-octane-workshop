@@ -1,10 +1,10 @@
 # Template-Only Components
 
-Components are modular chunksof UI, and can have a `.js` file a `.hbs` file or both. We'll start with the simplest kind of component -- ones that involve no state of their own.
+Components are modular chunksof UI, and can have a `.js` file, a `.hbs` file or both. We'll start with the simplest kind of component -- ones that involve no state of their own, and are defined only by a `.hbs` template file.
 
-These components can be thought of as pure functions, where `args` are passed in and HTML is returned. Whever the `args` changed, the component will automatically re-render so everything stays up-to-date.
+Usually we'd use Ember CLI to generate new components, but in this case we'll just create a new `.hbs` file for each.
 
-Usually we'd use Ember CLI to generate a new component, but in this case we'll just create a new template file -- that's all it takes.
+## ⌨️ Task: Break `application.hbs` up into several template-only components
 
 Move various parts of [`app/templates/application.hbs`](../app/templates/application.hbs) into their own respective `.hbs` files
 
