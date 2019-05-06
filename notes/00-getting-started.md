@@ -1,6 +1,10 @@
 # Getting Started
 
-## Installing Ember-CLI
+## ⌨️ Task: Installing Ember-CLI
+
+> _Goals_
+>
+> -   Install ember-cli onto your machine, so you can run the `ember` command in your terminal
 
 Ember-CLI is the official Ember.js build tool. It handles things like
 
@@ -27,7 +31,11 @@ node: 11.6.0
 os: darwin x64
 ```
 
-## Creating a new app
+## ⌨️ Task: Creating a new app
+
+> _Goals_
+>
+> -   Create a new ember app, using the official Ember Octane blueprint
 
  We can create a new app by running
 
@@ -41,7 +49,11 @@ This will create a project based on [the default Ember.js app blueprint](https:/
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
-## Starting an app
+## ⌨️ Task: Starting the development web server
+
+> _Goals_
+>
+> -   Serve up your newly created app in a browser
 
 While in the project directory, run
 

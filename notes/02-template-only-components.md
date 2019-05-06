@@ -5,6 +5,9 @@ Components are modular chunksof UI, and can have a `.js` file, a `.hbs` file or 
 Usually we'd use Ember CLI to generate new components, but in this case we'll just create a new `.hbs` file for each.
 
 ## ⌨️ Task: Break `application.hbs` up into several template-only components
+> _Goals_
+>
+> -   Separate your starting-point HTML into several template-only components
 
 Move various parts of [`app/templates/application.hbs`](../app/templates/application.hbs) into their own respective `.hbs` files
 

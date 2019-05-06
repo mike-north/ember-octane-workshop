@@ -6,6 +6,10 @@ For now, we'll just focus on one of these files: `app/templates/application.hbs`
 
 ## ⌨️ Task: Moving the initial HTML & CSS into our app
 
+> _Goals_
+>
+> -   Place the starting point HTML and CSS in your new app, and see what it looks like in a browser
+
 For now, paste the following HTML in [`app/templates/application.hbs`](../app/templates/application.hbs)
 
 <details>
