@@ -9,7 +9,7 @@ module.exports = server => {
   function SINGULAR_MIDDLEWARE(req, res, next) {
     const _send = res.send;
     res.send = function(body) {
-      if (new url.URL(req.url, true).query['singular']) {
+      if (req.url.indexOf('singular') >= 0) {
         try {
           const json = JSON.parse(body);
           if (Array.isArray(json)) {
