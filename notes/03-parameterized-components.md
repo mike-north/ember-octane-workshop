@@ -1,6 +1,6 @@
 # Parameterized Components
 
-We can parameterize components by substituting some of our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
+We can parameterize components by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
 
 ```jsx
 // ⚠️️ Pesudocode ⚠️
@@ -14,11 +14,11 @@ function renderChannelHeader(args) {
 }
 ```
 
- Ember calls values that are passed into a component from the outside world in this fashion [`named args`](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign.
+Ember calls values that are passed into a component from the outside world in this fashion [`named args`](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign.
 
 ## ⌨️ Task: Parameterizing `<ChannelHeader />`
 
-Let's start with our `<ChannelHeader />` component, parameterizing the channel's `title` and `description`.
+The goal of this task is to modify `<ChannelHeader />` such that we can pass in a title and description of our choice.
 
 in [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
 
@@ -29,8 +29,8 @@ Our component is now parameterized, and ready to receive data!
 
 ### Syntax breakdown
 
--   The `{{double-braces}}` indicate that the whatever is between them should be evaluted as a handlebars expression
--   The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
+- The `{{double-braces}}` indicate that the whatever is between them should be evaluted as a handlebars expression
+- The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
 
 ### Passing in data
 

@@ -20,7 +20,7 @@ The contents of our [app/templates/application.hbs](../app/templates/application
 
 The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs
 
-##### An Example Routing Higherarchy
+### An Example Routing Higherarchy
 
 ```yaml
 application # application.hbs
@@ -32,9 +32,11 @@ application # application.hbs
 
 ![routes](./img/05-first-routes/routes.gif)
 
-## The `/teams` route
+## ⌨️ Task: The `/teams` route
 
-[app/templates/application.hbs](../app/templates/application.hbs) file is going to show up on the screen regardless of URL, so we'll want to change that first
+In this task, we'll create a new top-level template that's displayed on the screen for URLs that begin with `/teams`.
+
+To start, recall that the [app/templates/application.hbs](../app/templates/application.hbs) template is going to show up on the screen regardless of URL, so we'll want to change that first so that it's only rendered for appropriate URLs.
 
 Run the following command to generate a `teams` route
 
@@ -51,14 +53,16 @@ This should result in new files being created
 You may also notice that your [`app/router.js`](../app/router.js) has been modified to "install" the new route.
 
 1. copy the contents of [`app/templates/application.hbs`](../app/templates/application.hbs) into [`app/templates/teams.hbs`](../app/templates/teams.hbs)
-1. replace the contents of [`app/templates/application.hbs`](../app/templates/application.hbs) with `{{outlet}}`, so that either [`teams.hbs`](../app/templates/teams.hbs) or [`login.hbs`](../app/templates/login.hbs) will be rendered into the outlet, depending on the URL
+1. replace the contents of [`app/templates/application.hbs`](../app/templates/application.hbs) with `{{outlet}}`, so that either of the sibling routes [`teams.hbs`](../app/templates/teams.hbs) or [`login.hbs`](../app/templates/login.hbs) will be rendered into the outlet, depending on the URL
 
 You should now see...
 
 - visiting http://localhost:4200/ shows a blank screen, with no JS errors in the console
 - visiting http://localhost:4200/teams shows the chat UI
 
-## The `/login` route
+## ⌨️ Task: The `/login` route
+
+The goal of this task is to get a login screen showing up whenever users visit URLs starting with `/login`.
 
 Run the following command to generate a `login` route
 
@@ -78,7 +82,7 @@ Paste the HTML below into [`app/templates/login.hbs`](../app/templates/login.hbs
 
 <summary>Click to reveal login screen HTML</summary>
 
-```html
+```html {starter-file=login.html}
 <div class="mx-auto">
   <div class="flex justify-center flex-row w-full leading-loose text-3xl">
     Login
@@ -132,9 +136,9 @@ You should now see...
 - visiting http://localhost:4200/login shows the login UI
 - visiting http://localhost:4200/teams shows the chat UI
 
-## Creating a basic link
+## ⌨️ Task: Creating a basic link
 
-In single-page apps we have to be careful when creating links. The default browser behavior when recieving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
+In this task, we'll create our first link between routes. The default browser behavior when recieving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
 
 Ember provides a tool for this called [`link-to`](https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/link-to?anchor=link-to).
 

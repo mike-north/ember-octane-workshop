@@ -6,7 +6,9 @@ Once defined, helpers can be used in _any_ of an app's templates.
 
 ## ⌨️ Task: Implementing a `dateToString` utility
 
-Your `app/utils` folder is a great place for low-level utilities. Let's generate a `utils` module for date-related concerns.
+The goal of this task is to define a JavaScript module for date-related utilities, a `dateToString` function within it that transforms date-like values into strings, and accompanying unit tests.
+
+Your `app/utils` folder is a great place for low-level utilities like these. Let's generate a `utils` module by running
 
 ```sh
 ember generate utils date
@@ -14,8 +16,8 @@ ember generate utils date
 
 Ember CLI will generate the following files:
 
--   [`app/utils/date.js`](../app/utils/date.js) - the utils module
--   [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) - a passing unit test
+- [`app/utils/date.js`](../app/utils/date.js) - the utils module
+- [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) - a passing unit test
 
 Replace the contents of [`app/utils/date.js`](../app/utils/date.js) with the following:
 
@@ -151,9 +153,9 @@ Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the te
 
 ## ⌨️ Task: Implementing the `{{format-timestamp}}` helper
 
-Now that we have the core utility for converting a date-like thing into a consistently-formatted string, we just need create a helper to allow us to consume this in our `.hbs` files.
+Now that we have the core utility for converting a date-like thing into a consistently-formatted string, we just need create a helper to allow us to consume this in our `.hbs` files
 
-We can use Ember CLI to generate a starting point for our helper, as well as an integration test.
+We can use Ember CLI to generate a starting point for our helper, as well as basic (passing) integration test.
 
 ```sh
 ember generate helper format-timestamp
@@ -161,8 +163,8 @@ ember generate helper format-timestamp
 
 Ember CLI will generate the following files:
 
--   [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) - the helper
--   [`tests/integration/helpers/format-timestamp-test.js`](../tests/integration/helpers/format-timestamp-test.js) - a passing integration test
+- [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) - the helper
+- [`tests/integration/helpers/format-timestamp-test.js`](../tests/integration/helpers/format-timestamp-test.js) - a passing integration test
 
 The code in [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) will look something like this:
 
@@ -220,9 +222,11 @@ Now let's put our new helper to use. Open up [`app/templates/components/message.
 
 ## ⌨️ Task: Implementing an integration test
 
+Next, we should also write integration tests for our helper, just to make sure the helper is hooked up to the underlying "utils" function correctly.
+
 Integration tests are all about testing the junctions between parts of a system. In this case, we'll test our new helper's junction with the outside world: its public API. To do this, we'll set up a testing scenario using a small piece of [inline-compiled handlebars](https://github.com/ember-cli/ember-cli-htmlbars-inline-precompile) that matches exactly how we'd invoke the helper normally. We can then make assertions against `this.element`, which contains the test scenario.
 
-You can think of this as if ``hbs`{{format-timestamp "05-01-2019"}}` `` is transformed into
+You can think of this as if `` hbs`{{format-timestamp "05-01-2019"}}` `` is transformed into
 
 ```hbs
 <div> <!-- 👈 this.element -->
@@ -273,10 +277,10 @@ You can view the current state of the tests by visiting <http://localhost:4200/t
 We can also add a negative test case below the first one (but still inside the callback passed to `module()`) to ensure the helper behaves reasonably when passed no arguments
 
 ```js
-  test('No argument passed', async function(assert) {
-    await render(hbs`{{format-timestamp}}`);
-    assert.equal(this.element.textContent.trim(), '(unknown)');
-  });
+test('No argument passed', async function(assert) {
+  await render(hbs`{{format-timestamp}}`);
+  assert.equal(this.element.textContent.trim(), '(unknown)');
+});
 ```
 
 We don't have to worry about too much more than this, given that we've already unit tested the interesting part.
