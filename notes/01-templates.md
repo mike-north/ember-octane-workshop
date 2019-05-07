@@ -6,9 +6,7 @@ For now, we'll just focus on one of these files: `app/templates/application.hbs`
 
 ## ⌨️ Task: Moving the initial HTML & CSS into our app
 
-> _Goals_
->
-> -   Place the starting point HTML and CSS in your new app, and see what it looks like in a browser
+The goal of this step is to place the starting point HTML and CSS in your new app, and see what it looks like in a browser.
 
 For now, paste the following HTML in [`app/templates/application.hbs`](../app/templates/application.hbs)
 
@@ -235,7 +233,7 @@ and the following in [`app/styles/app.css`](../app/styles/app.css)
 <summary>Click to show <code>starter.css</code></summary>
 
 ```css {starter-file=starter.css}
-@import "tailwind.css";
+@import 'tailwind.css';
 
 .hover-target .show-on-hover {
   opacity: 0;

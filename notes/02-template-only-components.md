@@ -5,30 +5,8 @@ Components are modular chunksof UI, and can have a `.js` file, a `.hbs` file or 
 Usually we'd use Ember CLI to generate new components, but in this case we'll just create a new `.hbs` file for each.
 
 ## ⌨️ Task: Break `application.hbs` up into several template-only components
-> _Goals_
->
-> -   Separate your starting-point HTML into several template-only components
 
-Move various parts of [`app/templates/application.hbs`](../app/templates/application.hbs) into their own respective `.hbs` files
-
-1.  Create [`app/templates/components/team-selector.hbs`](../app/templates/components/team-selector.hbs)
-    -   Move `<nav class="team-selector">...</nav>` into it
-    -   Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSelector />`
-2.  Create [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs)
-    -   Move `<section class="team-sidebar">...</section>` into it
-    -   Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSidebar />`
-3.  Create [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
-    -   Move `<header class="channel-header">...</header>` into it
-    -   Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelHeader />`
-4.  Create [`app/templates/components/channel-footer.hbs`](../app/templates/components/channel-footer.hbs)
-    -   Move `<footer class="channel-footer">...</footer>` into it
-    -   Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelFooter />`
-5.  Create [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs)
-    -   Move one of the `<div class="message">...</div>` into it
-        -   NOTE: the starting point HTML has more than one of these. Pick one to use for the component, and for now we'll just repeat it several times
-    -   Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with 2 `<ChannelMessage />`s
-
-At the end of this, your [`app/templates/application.hbs`](../app/templates/application.hbs) should look like
+The goal of this step is to break various parts of [`app/templates/application.hbs`](../app/templates/application.hbs) into their own respective `.hbs` files as template-only components. In the end, your `application.hbs` should look like
 
 ```hbs
 <TeamSelector />
@@ -45,7 +23,24 @@ At the end of this, your [`app/templates/application.hbs`](../app/templates/appl
 </main>
 ```
 
-You should see no change to the rendered HTML at <http://localhost:4200>.
+1.  Create [`app/templates/components/team-selector.hbs`](../app/templates/components/team-selector.hbs)
+    - Move `<nav class="team-selector">...</nav>` into it
+    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSelector />`
+1.  Create [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs)
+    - Move `<section class="team-sidebar">...</section>` into it
+    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSidebar />`
+1.  Create [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
+    - Move `<header class="channel-header">...</header>` into it
+    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelHeader />`
+1.  Create [`app/templates/components/channel-footer.hbs`](../app/templates/components/channel-footer.hbs)
+    - Move `<footer class="channel-footer">...</footer>` into it
+    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelFooter />`
+1.  Create [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs)
+    - Move one of the `<div class="message">...</div>` into it
+      - NOTE: the starting point HTML has more than one of these. Pick one to use for the component, and for now we'll just repeat it several times
+    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with 2 `<ChannelMessage />`s
+
+At the end of this, you should see no change to the rendered HTML at <http://localhost:4200>.
 
 ![done](./img/app.png)
 

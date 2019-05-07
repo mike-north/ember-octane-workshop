@@ -2,16 +2,14 @@
 
 ## ⌨️ Task: Installing Ember-CLI
 
-> _Goals_
->
-> -   Install ember-cli onto your machine, so you can run the `ember` command in your terminal
+The goal of this task is to install ember-cli onto your machine, so you can run the `ember` command in your terminal.
 
 Ember-CLI is the official Ember.js build tool. It handles things like
 
--   Running a development web server
--   Running tests
--   Code generation
--   Compiling static assets
+- Running a development web server
+- Running tests
+- Code generation
+- Compiling static assets
 
 You can install ember-cli globally by running
 
@@ -33,11 +31,9 @@ os: darwin x64
 
 ## ⌨️ Task: Creating a new app
 
-> _Goals_
->
-> -   Create a new ember app, using the official Ember Octane blueprint
+The goal of this task is to create a new ember app (roughly equivalent to the starting point of this course), using the official Ember Octane blueprint.
 
- We can create a new app by running
+We can create a new app by running
 
 ```sh
 ember new <app-name>
@@ -51,9 +47,7 @@ ember new -b @ember/octane-app-blueprint <app-name>
 
 ## ⌨️ Task: Starting the development web server
 
-> _Goals_
->
-> -   Serve up your newly created app in a browser
+The goal of this task is to serve your ember app using Ember CLI, and to view it in a browser.
 
 While in the project directory, run
 
