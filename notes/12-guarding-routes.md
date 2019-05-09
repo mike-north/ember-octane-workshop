@@ -7,7 +7,7 @@ So let's get started.
 
 ## Changes Needed in Javascript
 
-First let's implement the auth service that we will be using to do session validation(or invalidation). This auth service is defined at `app/services/auth.js`.
+First let's enhance the auth service so that we can easily tell if there's a logged in user, and implement a `logout` action. This auth service is defined at [`app/services/auth.js`](../app/services/auth.js). 
 
 Import the action decorator at the top of the file:
 
@@ -15,7 +15,7 @@ Import the action decorator at the top of the file:
 import { action } from '@ember/object';
 ```
 
-Then add a property, `isAuthenticated` that will be used to store if the session is in an authenticated state, and an action method, `logout`, for invalidating the authenticated session and signing off the user.
+Then add a getter-based property, `isAuthenticated` that will be `true` if the user is logged in and `false` otherwise. Add an action called `logout` that clears the user ID we write to localStorage on login, and sends the user to the `/login` page.
 
 ```js
   get isAuthenticated() {
@@ -29,9 +29,9 @@ Then add a property, `isAuthenticated` that will be used to store if the session
   }
 ```
 
-In the login route, present at `app/routes/login.js`, add a `beforeModel` hook to perform session validations and handle the UI flow accordingly.
+In the login route, present at [`app/routes/login.js`](../app/routes/login.js), add a `beforeModel` hook to check whether the user is authenticated, and either redirect the user or not.
 
-In the login route, inject the imported `auth` service and add the `beforeModel` hook to perform session validation.
+In the login route, inject the imported `auth` service and add the following `beforeModel` hook.
 
 ```js
    /**
@@ -55,7 +55,7 @@ import AuthService from 'shlack/services/auth';
 ```
 
 Now let's move on to `teams` route.
-Similar to `login` route, handle session validation in the `beforeModel` hook of the `teams` route after injecting the auth service into the route. There is a key difference to note here - the validation logic is flipped, that is the redirection will happen only when an authenticated session _does not exists_
+The `login` route should have a similar `beforeModel` hook, but note that the validation logic is flipped. We redirect to the `/login` page only the user is _logged out_.
 
 In the `teams` route, inject the imported `auth` service and add the `beforeModel` hook to perform session validation.
 
@@ -101,7 +101,7 @@ In `app/templates/components/team-sidebar.hbs`, replace the `LinkTo` component w
 
 ## Adding Tests
 
-Now that we have the implementation in place for this exercise, lets add some tests for the same.
+Now that we have the implementation in place for our redirect logic, lets add some tests for the same.
 First, let's add some acceptance tests to make sure the UI interactions are working as expected.
 
 In `tests/acceptance/login-test.js`, import the `StubbedAuthService` service:
@@ -154,7 +154,7 @@ Now let's add acceptance tests to test when users for logged out. The test file 
 import StubbedAuthService from '../test-helpers/auth-service';
 ```
 
-Then, remove the definition for test with label, 'visiting /teams'.
+Remove the definition for test with label, 'visiting /teams'.
 And add a test with label, `visiting /teams while logged in`.
 
 Modify the `beforeEach` in the same way we did for the previous test.
