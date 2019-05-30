@@ -11,7 +11,7 @@ The goal of this task is to define a JavaScript module for date-related utilitie
 Your `app/utils` folder is a great place for low-level utilities like these. Let's generate a `utils` module by running
 
 ```sh
-ember generate utils date
+ember generate util date
 ```
 
 Ember CLI will generate the following files:
