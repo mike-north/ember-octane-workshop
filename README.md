@@ -144,6 +144,25 @@ ember install ember-cli-tailwind ember-on-modifier ember-cli-pretender
 
 Added the files in the `server` folder, and the `db.json` to provide a development JSON API, and created the `notes` folder and markdown files inside it.
 
+## Thank You!
+
+A lot of people helped in incredibly significant ways to make this curriculum possible. Special thanks to the following people for going way above and beyond
+
+### Project Reviews & Refactors
+*Lisa Huang-North* - [LinkedIn](https://www.linkedin.com/in/lisaychuang/) | [GitHub](https://github.com/lisaychuang) | [Twitter](https://twitter.com/lisaychuang)
+> Comprehensive review, usability and “newcomer acceptance testing”
+
+*John Robinson* - [LinkedIn](https://www.linkedin.com/in/robomalo/) | [GitHub](http://github.com/robomalo) |  [Twitter](http://twitter.com/robomalo)
+> Semantic HTML, a11y
+
+### Curriculum
+*Shankar Sridhar* - [LinkedIn](https://linkedin.com/in/shankar123/) | [GitHub](https://github.com/shankarsridhar)
+> _Huge_ contributions to the [workshop notes](./notes)
+
+### Starting Point HTML/CSS
+*Adam Wathan* - [LinkedIn](https://www.linkedin.com/in/adam-wathan-9418984a/) | [GitHub](http://github.com/adamwathan) |  [Twitter](https://twitter.com/adamwathan)
+> Used [his HTML/CSS](https://adamwathan.me/flex-layout-demo/) to make this workshop’s starting point
+
 ## Legal
 
 &copy; 2019 LinkedIn and licensed under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) license
