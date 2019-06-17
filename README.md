@@ -69,7 +69,7 @@ Particularly if you’ve never tried it before, you should install [Microsoft Vi
 ### Clone the Project
 
 ```sh
-git clone git@github.com:mike-north/ember-octane-workshop.git shlack
+git clone https://github.com/mike-north/ember-octane-workshop.git shlack
 ```
 
 ### Install dependencies
