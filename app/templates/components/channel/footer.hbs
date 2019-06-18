@@ -1,0 +1,26 @@
+  <!-- Channel Footer -->
+  <footer class="pb-6 px-4 flex-none channel-footer">
+    <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labeledby="message-label">
+      <h1 id="message-label" class="sr-only">
+        Message Input
+      </h1>
+
+      <button class="text-3xl text-grey border-r-2 border-grey p-2" aria-label="File menu" type="button">
+        <svg class="fill-current h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path
+            d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z">
+          </path>
+        </svg>
+      </button>
+
+      <label for="message-input" class="sr-only">Message</label>
+
+      <input id="message-input" class="channel-footer__message-input w-full px-4" placeholder="Message #general"
+        type="text">
+
+      <button disabled
+        class="channel-footer__message-send-button font-bold uppercase opacity-50 bg-grey-dark text-white border-teal-dark p-2">
+        SEND
+      </button>
+    </form>
+  </footer>
