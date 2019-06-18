@@ -56,5 +56,5 @@ export function dateToString(date) {
   )}:${padLeadingZeroes(
     d.getMinutes(),
     2
-  )}.${padLeadingZeroes(d.getSeconds(), 2)} ${ampm}`;
+  )}:${padLeadingZeroes(d.getSeconds(), 2)} ${ampm}`;
 }
