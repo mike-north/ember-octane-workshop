@@ -11,7 +11,7 @@
           <circle cx="10" cy="10" r="10"></circle>
         </svg>
         <span class="team-sidebar__current-user-name text-white opacity-50 text-sm">
-          Mike North
+          {{this.auth.currentUser.name}}
         </span>
       </div>
     </div>
@@ -38,12 +38,11 @@
       </button>
     </div>
     {{#each @team.channels as |channel|}}
-      <LinkTo @route="teams.team.channel" @model={{channel.id}} data-channel-id="general"
-        @activeClass="bg-teal-dark"
-        class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75">
-        <span aria-hidden="true">#</span>
-        {{channel.name}}
-      </LinkTo>
+    <LinkTo @route="teams.team.channel" @model={{channel.id}} data-channel-id="general" @activeClass="bg-teal-dark"
+      class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75">
+      <span aria-hidden="true">#</span>
+      {{channel.name}}
+    </LinkTo>
     {{/each}}
   </nav>
 

@@ -13,8 +13,8 @@ module('Acceptance | logout', function(hooks) {
   test('visiting /teams and logging out', async function(assert) {
     const auth = this.owner.lookup('service:auth');
     auth._setUserId('1');
-    await visit('/teams/linkedin');
-    assert.equal(currentURL(), '/teams/linkedin');
+    await visit('/teams/linkedin/recruiting');
+    assert.equal(currentURL(), '/teams/linkedin/recruiting');
 
     await click('.team-sidebar__logout-button');
     assert.equal(currentURL(), '/login');
