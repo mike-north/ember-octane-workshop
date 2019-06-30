@@ -4,31 +4,31 @@
       "id": "linkedin",
       "name": "LinkedIn",
       "order": 2,
-      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png"
+      "iconUrl": "/assets/img/linkedin.png"
     },
     {
       "id": "ms",
       "name": "Microsoft",
       "order": 3,
-      "iconUrl": "https://gravatar.com/avatar/0ca1be2eaded508606982feb9fea8a2b?s=200&d=https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
+      "iconUrl": "/assets/img/microsoft.png"
     },
     {
       "id": "avengers",
       "name": "Avengers",
       "order": 4,
-      "iconUrl": "https://pbs.twimg.com/profile_images/1113336188956434432/7XUkmgrG_400x400.jpg"
+      "iconUrl": "/assets/img/avengers.jpg"
     },
     {
       "id": "angrycat",
       "name": "Angry Cat",
       "order": 5,
-      "iconUrl": "https://scontent-ort2-2.cdninstagram.com/vp/3ba32467db3879cb511b8fe66aebea28/5D744C59/t51.2885-19/s320x320/31007051_1785230941534197_6444464665186533376_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com"
+      "iconUrl": "/assets/img/angry-cat.jpg"
     },
     {
       "id": "javascript",
       "name": "Javascript",
       "order": 6,
-      "iconUrl": "https://pbs.twimg.com/profile_images/634644295618658304/UuIqtEJ8_400x400.png"
+      "iconUrl": "/assets/img/js.png"
     }
   ],
   "users": [
@@ -36,97 +36,97 @@
       "id": 0,
       "name": "Dilbert",
       "username": "dilbert",
-      "iconUrl": "https://pbs.twimg.com/profile_images/631245346379689984/GqseXcd4_400x400.jpg"
+      "iconUrl": "/assets/img/dilbert.jpg"
     },
     {
       "id": 1,
       "name": "Mike North",
       "username": "mike",
-      "iconUrl": "https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg"
+      "iconUrl": "/assets/img/mike.jpeg"
     },
     {
       "id": 2,
       "name": "Lisa Huang-North",
       "username": "lisa",
-      "iconUrl": "https://gravatar.com/avatar/96c332a96737c6668906232e39cb16ef?s=200"
+      "iconUrl": "/assets/img/lisa.jpeg"
     },
     {
       "id": 3,
       "name": "Clippy",
       "username": "clippy",
-      "iconUrl": "http://images1.wikia.nocookie.net/__cb20110716185610/central/images/c/cb/Clippy.png"
+      "iconUrl": "/assets/img/clippy.png"
     },
     {
       "id": 4,
       "name": "office97",
       "username": "office",
-      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Microsoft_Office_9x_logo.svg/1200px-Microsoft_Office_9x_logo.svg.png"
+      "iconUrl": "/assets/img/office97.png"
     },
     {
       "id": 5,
       "name": "Tony Stark",
       "username": "ironman",
-      "iconUrl": "https://avatarfiles.alphacoders.com/128/thumb-128336.jpg"
+      "iconUrl": "/assets/img/ironman.jpg"
     },
     {
       "id": 6,
       "name": "Thor",
       "username": "thor",
-      "iconUrl": "http://starrymag.com/wp-content/uploads/2014/03/15053_1385058882.jpg"
+      "iconUrl": "/assets/img/thor.jpg"
     },
     {
       "id": 7,
       "name": "Dr Stephen Strange",
       "username": "strange",
-      "iconUrl": "https://am23.akamaized.net/tms/cnt/uploads/2015/06/TheGameWorldDoctorStrange-832x1024.jpg"
+      "iconUrl": "/assets/img/drstrange.jpg"
     },
     {
       "id": 8,
       "name": "Lil Bub",
       "username": "bub",
-      "iconUrl": "https://pbs.twimg.com/profile_images/796521014041706497/sP2bB10n_400x400.jpg"
+      "iconUrl": "/assets/img/cat.jpg"
     },
     {
       "id": 9,
       "name": "Colonel Meow",
       "username": "meow",
-      "iconUrl": "https://i.kym-cdn.com/entries/icons/facebook/000/011/372/colonel-meow.jpg"
+      "iconUrl": "/assets/img/colonel-meow.jpg"
     },
     {
       "id": 10,
       "name": "Maru",
       "username": "maru",
-      "iconUrl": "http://mousebreath.com/wp-content/uploads/2011/08/maru__02.jpg"
+      "iconUrl": "/assets/img/maru.jpg"
     },
     {
       "id": 11,
       "name": "NodeJS",
       "username": "nodejs",
-      "iconUrl": "https://pbs.twimg.com/profile_images/702185727262482432/n1JRsFeB_400x400.png"
+      "iconUrl": "/assets/img/node.png"
     },
     {
       "id": 12,
       "name": "Engineer Anon",
       "username": "anonymous",
-      "iconUrl": "https://i.kym-cdn.com/entries/icons/original/000/006/725/desk_flip.jpg"
+      "iconUrl": "/assets/img/desk_flip.jpg"
     },
     {
       "id": 13,
       "name": "Typescript",
       "username": "typescript",
-      "iconUrl": "https://pbs.twimg.com/profile_images/743155381661143040/bynNY5dJ_400x400.jpg"
+      "iconUrl": "/assets/img/ts.png"
     },
     {
       "id": 14,
       "name": "jQuery",
       "username": "jquery",
-      "iconUrl": "https://github.com/jquery.png"
+      "iconUrl": "/assets/img/jquery.png"
     },
     {
       "id": 15,
       "name": "boss man",
       "username": "boss",
-      "iconUrl": "https://memegenerator.net/img/images/10908777.jpg"
+      "iconUrl": "/assets/img/boss.jpg"
     }
   ],
   "channels": [
