@@ -49,7 +49,7 @@ and implement [`app/services/notifications.js`](../app/services/notifications.js
 
 ```js
 import Service from '@ember/service';
-import { action, set as emberSet } from '@ember/object';
+import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 const getId = () => Math.round(Math.random() * 10000000);
@@ -67,20 +67,12 @@ export default class NotificationsService extends Service {
       id,
       body,
       color,
-      entering: false,
-      leaving: false,
     };
-    // adds a css class to animate in
-    emberSet(newNotification, 'entering', true);
-
     // tracked property update via assignment
     this.messages = [...this.messages, newNotification];
 
     // REMOVE after elapsed time is complete
     setTimeout(() => {
-      // adds a css class to animate out
-      emberSet(newNotification, 'leaving', true);
-
       // remove notification by ID
       const idx = this.messages.map(n => `${n.id}`).indexOf(`${id}`);
       this.messages.splice(idx, 1);
@@ -92,4 +84,137 @@ export default class NotificationsService extends Service {
 }
 ```
 
-`
+now, anywhere we need to be able to provide notifications, we need only inject this service and call `notifications.notify('Message');`.
+
+## The List of Notifications
+
+We'll need a component for the list of notifications. Let's use ember-cli to generate one
+
+```sh
+ember generate component notification-list
+```
+
+and implement its JS module [`app/components/notification-list.js`](../app/components/notification-list.js) as
+
+```js
+export default class NotificationListComponent extends Component {
+  @service notifications;
+}
+```
+
+and its HBS file [`app/templates/components/notification-list.hbs`](../app/templates/components/notification-list.hbs) as
+
+```hbs
+<div class="notifications-container z-10">
+  {{#each this.notifications.messages as |msg|}}
+    {{#if (eq msg.color "green-dark")}}
+      <Notification @notification={{msg}}>
+        <img src="https://media.giphy.com/media/toBi2rizjV8CswqIXG/giphy.gif" width="140" class="mr-20">
+        {{msg.body}}
+      </Notification>
+    {{else}}
+      <Notification @notification={{msg}} />
+    {{/if}}
+  {{/each}}
+</div>
+```
+
+Let's use this component at the top of the channel, above all of the messages. Open [`app/templates/teams/team/channel.hbs`](../app/templates/teams/team/channel.hbs) and make the following change
+
+```diff
+  <ChannelHeader @title={{this.model.name}} @description={{this.model.description}} />
++ <NotificationList />
+  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+    {{#each ch.messages as |message|}}
+      <ChatMessage @message={{message}} @onDelete={{fn ch.acts.deleteMessage message}}/>
+    {{/each}}
+  </div>
+```
+
+## Notifying on Important Events
+
+Now all we have left to do is use the service to create notifications in response to important events. Go ahead and inject our new `notifications` service onto the `<ChannelContainer />` component, and replace the exceptions on message creation and deletion with notifications. Additionally, create a notification upon successful completion of these operations.
+
+```diff
+
+  /**
+   * @type {AuthService}
+   */
+  @service auth;
+
++ /**
++  * @type {NotificationsService}
++  */
++ @service notifications;
+
+  @action async deleteMessage(message) {
+    const resp = await fetch(
+      `/api/messages/${message.id}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    if (!resp.ok) {
+-     throw new Error(
+-       'Problem deleting message: ' + (await resp.text())
+-     );
++   if (resp.ok) {
++     const idx = this.messages
++       .map(m => m.id)
++       .indexOf(message.id);
++     this.messages.splice(idx, 1);
++     this.messages = this.messages;
++     this.notifications.notify('Deleted message');
++   } else {
++     this.notifications.notify('Problem deleting message', 'red');
+    }
+-   const idx = this.messages
+-     .map(m => m.id)
+-     .indexOf(message.id);
+-   this.messages.splice(idx, 1);
+-   this.messages = this.messages;
+  }
+
+  @action
+  async createMessage(body) {
+    const {
+      channel: { id: channelId, teamId },
+    } = this.args;
+    const resp = await fetch(`/api/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        channelId,
+        teamId,
+        body,
+        userId: this.auth.currentUserId,
+      }),
+    });
+    if (this.isDestroyed || this.isDestroying) return;
+    if (!resp.ok) {
+-     throw new Error(
+-       'Problem creating message: ' + (await resp.text()));
++     this.notifications.notify(
++       'Problem creating message: ' + (await resp.text()),
++       'red');
+
++   } else {
++     this.notifications.notify('Created new message', 'green-dark');
+    }
+
+    const newMessage = await resp.json();
+    if (this.isDestroyed || this.isDestroying) return;
+    this.messages = [
+      ...this.messages,
+      { ...newMessage, user: this.auth.currentUser },
+    ];
+    return newMessage;
+  }
+```
+
+You should now see notifications upon creation and deletion of messages, both for successful completion of these operations and when the app encounters an error.
