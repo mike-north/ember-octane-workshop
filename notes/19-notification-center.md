@@ -224,4 +224,4 @@ You should now see notifications upon creation and deletion of messages, both fo
 
 ## Completed File
 
-[view here](https://github.com/mike-north/ember-octane-workshop/commit/7670d6d56cc6d80d306a1761c3d50971598dd1f1)
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/634428ff6a3ac1775342e6b80b597cec8a0fc1c1)

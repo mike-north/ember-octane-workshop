@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 import fetch from 'fetch';
 import { inject as service } from '@ember/service';
 import AuthService from 'shlack/services/auth';
+import NotificationsService from 'shlack/services/notifications';
 
 export default class ChannelContainerComponent extends Component {
   @tracked
@@ -13,6 +14,11 @@ export default class ChannelContainerComponent extends Component {
    * @type {AuthService}
    */
   @service auth;
+
+  /**
+   * @type {NotificationsService}
+   */
+  @service notifications;
 
   @action
   async loadMessages() {
@@ -28,25 +34,21 @@ export default class ChannelContainerComponent extends Component {
   }
 
   @action async deleteMessage(message) {
-    const resp = await fetch(
-      `/api/messages/${message.id}`,
-      {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-    if (!resp.ok) {
-      throw new Error(
-        'Problem deleting message: ' + (await resp.text())
-      );
+    const resp = await fetch(`/api/messages/${message.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (resp.ok) {
+      const idx = this.messages.map(m => m.id).indexOf(message.id);
+      this.messages.splice(idx, 1);
+      this.messages = this.messages;
+      console.log('deleting');
+      this.notifications.notify('Deleted message', 'indigo-dark');
+    } else {
+      this.notifications.notify('Problem deleting message', 'red-dark');
     }
-    const idx = this.messages
-      .map(m => m.id)
-      .indexOf(message.id);
-    this.messages.splice(idx, 1);
-    this.messages = this.messages;
   }
 
   @action
@@ -69,9 +71,11 @@ export default class ChannelContainerComponent extends Component {
     });
     if (this.isDestroyed || this.isDestroying) return;
     if (!resp.ok) {
-      throw new Error(
+      this.notifications.notify(
         'Problem creating message: ' + (await resp.text())
       );
+    } else {
+      this.notifications.notify('Created new message', 'green-dark');
     }
 
     const newMessage = await resp.json();
@@ -79,7 +83,10 @@ export default class ChannelContainerComponent extends Component {
 
     this.messages = [
       ...this.messages,
-      { ...newMessage, user: this.auth.currentUser },
+      {
+        ...newMessage,
+        user: this.auth.currentUser,
+      },
     ];
     return newMessage;
   }
