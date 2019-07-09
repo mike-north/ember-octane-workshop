@@ -3,7 +3,7 @@
 We can parameterize components by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
 
 ```jsx
-// ⚠️️ Pesudocode ⚠️
+// ⚠️️ Pseudocode ⚠️
 function renderChannelHeader(args) {
     return
         <header>
