@@ -180,4 +180,8 @@ A lot of people helped in incredibly significant ways to make this curriculum po
 
 ## Legal
 
-&copy; 2019 LinkedIn and licensed under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) license
+&copy; 2019 LinkedIn
+
+### Licensing
+
+The _code_ in this project is licensed as [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) license, and the written content in the `./notes` folder is licensed under [CC-BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
