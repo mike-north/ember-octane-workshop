@@ -120,7 +120,7 @@ Let's show the ID of the currently logged in user in the chat sidebar component.
 **BE SURE NOT TO OVERWRITE THE TEMPLATE**
 
 ```sh
-ember generate component chat-sidebar
+ember generate component team-sidebar
 ```
 
 in the newly-created [`app/components/team-sidebar.js`](../app/components/team-sidebar.js), add the following service injection
@@ -138,7 +138,7 @@ in the newly-created [`app/components/team-sidebar.js`](../app/components/team-s
  }
 ```
 
-in [`app/templates/components/chat-sidebar.hbs`](../app/templates/components/chat-sidebar.hbs) use the currentUserId value from the service
+in [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs) use the currentUserId value from the service
 
 ```diff
          <span class="team-sidebar__current-user-name text-white opacity-50 text-sm">
