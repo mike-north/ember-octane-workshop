@@ -20,7 +20,7 @@ The contents of our [app/templates/application.hbs](../app/templates/application
 
 The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs
 
-### An Example Routing Higherarchy
+### An Example Routing Hierarchy
 
 ```yaml
 application # application.hbs
@@ -138,7 +138,7 @@ You should now see...
 
 ## ⌨️ Task: Creating a basic link
 
-In this task, we'll create our first link between routes. The default browser behavior when recieving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
+In this task, we'll create our first link between routes. The default browser behavior when receiving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
 
 Ember provides a tool for this called [`link-to`](https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/link-to?anchor=link-to).
 

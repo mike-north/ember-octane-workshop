@@ -20,7 +20,7 @@ The pattern of container and presentational components was made popular by [this
 
 First, let's define two ideas that are central to this topic
 
-- A _container component_ owns state and may have some state-manipulating actions, doesn't do much in terms of rendering somethign to the screen. The primary purpose of one of these components is to "do things"
+- A _container component_ owns state and may have some state-manipulating actions, doesn't do much in terms of rendering something to the screen. The primary purpose of one of these components is to "do things"
 - A _presentational component_ owns no state, and has no state-manipulating actions (although it may be passed these things as arguments). The primary purpose of one of these components is to "display things"
 
 In our app, we're going to use a container component to load channel messages, and in future exercises, create and delete messages.
@@ -118,7 +118,7 @@ export default class ChannelContainerComponent extends Component {
 
 One piece of code that's worth pointing out is that last line in our new action: `this.messages = messages;`. This looks a little strange, but sheds light on the fact that _updates to tracked properties are triggered on assignment_. You can think of this like a `this.set('messages', this.get('messages'));` in the classic ember world, or `this.setState({ messages: this.messages });` in the react world.
 
-Messages should now load with the app, but they're visually idential regardless of the data passed to them. This is because we haven't parameterized them yet. In [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) we can fix this by using the `@message` param that's now passed to this component
+Messages should now load with the app, but they're visually identical regardless of the data passed to them. This is because we haven't parameterized them yet. In [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) we can fix this by using the `@message` param that's now passed to this component
 
 ```diff
  <!-- Message -->
