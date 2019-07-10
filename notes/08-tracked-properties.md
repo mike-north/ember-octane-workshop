@@ -4,7 +4,7 @@ Ember Octane's `tracked` property system allows us to decorate our lowest-level 
 
 Let's use tracked properties to enhance our `<LoginForm />` component in the following ways:
 
-- We should have a class field `userId` that's kept in sync with the `<select>`'s valuee
+- We should have a class field `userId` that's kept in sync with the `<select>`'s value
   - The example validation message should be replaced with `"Logging in with userId {{this.userId}}"`, and should only be displayed if/when a valid `userId` is present
 - We should have an `isDisabled` field that indicates whether the form has an invalid `userId` or not
   - The `input[type="submit"]` should be disabled whenever `isDisabled` is true
@@ -13,7 +13,7 @@ Let's use tracked properties to enhance our `<LoginForm />` component in the fol
 
 Let's get started!
 
-Opene up your component JS module [`app/components/login-form.js`](../app/components/login-form.js) and add the userId class field. For now, let's initialize it to `'1'`.
+Open up your component JS module [`app/components/login-form.js`](../app/components/login-form.js) and add the userId class field. For now, let's initialize it to `'1'`.
 
 ```js
 /**
@@ -22,7 +22,7 @@ Opene up your component JS module [`app/components/login-form.js`](../app/compon
 userId = '1';
 ```
 
-Also, let's add a very simple piece of derivied state for `isDisabled`. Its value should be true if `userId` is falsy.
+Also, let's add a very simple piece of derived state for `isDisabled`. Its value should be true if `userId` is falsy.
 
 ```ts
 get isDisabled() {

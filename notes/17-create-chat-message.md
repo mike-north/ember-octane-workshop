@@ -58,7 +58,7 @@ Next, let's enhance our channel container by implementing a `createMessage` acti
   }
 ```
 
-In this component's template, let's create a new `acts` object that's yielded out, and pass our new action along as a property. Conusmers can then do something like `channel.acts.createMessate` to access this function. Make the following change to [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs)
+In this component's template, let's create a new `acts` object that's yielded out, and pass our new action along as a property. Consumers can then do something like `channel.acts.createMessage` to access this function. Make the following change to [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs)
 
 ```diff
 <main class="flex-1 flex flex-col bg-white overflow-hidden channel"
@@ -139,8 +139,8 @@ Now let's hook up that submit event. Make one more change to [`app/templates/com
 ```diff
 <!-- Channel Footer -->
 <footer class="pb-6 px-4 flex-none channel-footer">
-- <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labeledby="message-label">
-+ <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labeledby="message-label"
+- <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labelledby="message-label">
++ <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labelledby="message-label"
 +   {{on "submit" this.onSubmit}} >
     <h1 id="message-label" class="sr-only">
       Message Input

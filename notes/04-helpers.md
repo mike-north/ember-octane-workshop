@@ -242,14 +242,14 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Helper | format-timestmp', function(hooks) {
+module('Integration | Helper | format-timestamp', function(hooks) {
   setupRenderingTest(hooks);
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
     this.set('inputValue', '1234');
 
-    await render(hbs`{{format-timestmp inputValue}}`);
+    await render(hbs`{{format-timestamp inputValue}}`);
 
     assert.equal(this.element.textContent.trim(), '1234');
   });
@@ -263,7 +263,7 @@ You can view the current state of the tests by visiting <http://localhost:4200/t
 + test('01-01-2019', async function(assert) {
 -   this.set('inputValue', '1234');
 -
--   await render(hbs`{{format-timestmp inputValue}}`);
+-   await render(hbs`{{format-timestamp inputValue}}`);
 +   await render(hbs`{{format-timestamp '01-01-2019'}}`);
 
 -   assert.equal(this.element.textContent.trim(), '1234');

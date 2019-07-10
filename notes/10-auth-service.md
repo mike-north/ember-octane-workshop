@@ -40,7 +40,7 @@ This is pretty ugly, and gets uglier as more of these cross-cutting areas are ad
       <img src="https://github.com/mike-north.png" height=64 align="left" style="margin-right: 10px" />
     </a>
     <p>
-      Sharing state "horizontaly" across many different concerns in an app is not unique to Ember.js. <a href="https://reactjs.org/docs/context.html">React's Context API</a> and <a href="https://angular.io/guide/dependency-injection">Angular's Dependency Injection</a> system are designed to solve the same problem.
+      Sharing state "horizontally" across many different concerns in an app is not unique to Ember.js. <a href="https://reactjs.org/docs/context.html">React's Context API</a> and <a href="https://angular.io/guide/dependency-injection">Angular's Dependency Injection</a> system are designed to solve the same problem.
     </p>
   </blockquote>
 </p>

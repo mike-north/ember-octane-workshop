@@ -198,7 +198,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
 
   <!-- Channel Footer -->
   <footer class="pb-6 px-4 flex-none channel-footer">
-    <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labeledby="message-label">
+    <form class="flex w-full rounded-lg border-2 border-grey overflow-hidden" aria-labelledby="message-label">
       <h1 id="message-label" class="sr-only">
         Message Input
       </h1>
@@ -260,7 +260,7 @@ and the following in [`app/styles/app.css`](../app/styles/app.css)
 
 </details>
 
-If `ember serve` is runing, you should be able to visit `http://localhost:4200` and see something on the screen like this
+If `ember serve` is running, you should be able to visit `http://localhost:4200` and see something on the screen like this
 
 <p align='center'>
 

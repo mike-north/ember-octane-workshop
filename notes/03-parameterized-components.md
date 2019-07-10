@@ -29,7 +29,7 @@ Our component is now parameterized, and ready to receive data!
 
 ### Syntax breakdown
 
-- The `{{double-braces}}` indicate that the whatever is between them should be evaluted as a handlebars expression
+- The `{{double-braces}}` indicate that the whatever is between them should be evaluated as a handlebars expression
 - The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
 
 ### Passing in data
