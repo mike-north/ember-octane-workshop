@@ -151,10 +151,9 @@ First, open up [`app/templates/components/team-sidebar.hbs`](../app/templates/co
    </nav>
 
    <footer class="mx-4 mb-2 text-white">
--    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button">
+-    <button class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
 +    <LinkTo @route='login' {{! destination route }}
-+            @tagName="button" {{! use <button> instead of <a> }}
-+            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button"
++            class="text-white rounded bg-grey-darker no-underline hover:bg-red-darker p-2 team-sidebar__logout-button"
 +    >
        Logout
 -    </button>
@@ -162,6 +161,8 @@ First, open up [`app/templates/components/team-sidebar.hbs`](../app/templates/co
    </footer>
  </section>
 ```
+
+A11y tip: Notice that this logout "button" is still a link, even though it looks like a button. A way to remember when to use a link and when to use a button is to use a link if it goes to a URL, and a button if it's a toggle.
 
 You should now be able to click on the "Logout" button and find yourself looking at the login screen with a `/login` url.
 
