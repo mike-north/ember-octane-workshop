@@ -45,6 +45,22 @@ This will create a project based on [the default Ember.js app blueprint](https:/
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
+## ⌨️ Task: Installing dependencies
+
+The goal of this task is to install the dependencies listed in your package.json. 
+
+
+While in the project directory, run
+
+```sh
+npm install
+```
+or if using yarn
+
+```sh
+yarn install
+```
+
 ## ⌨️ Task: Starting the development web server
 
 The goal of this task is to serve your ember app using Ember CLI, and to view it in a browser.
