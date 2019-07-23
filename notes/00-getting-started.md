@@ -55,7 +55,11 @@ While in the project directory, run
 ```sh
 npm install
 ```
+or if using yarn
 
+```sh
+yarn install
+```
 
 ## ⌨️ Task: Starting the development web server
 
