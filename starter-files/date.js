@@ -47,23 +47,20 @@ export function dateToString(date) {
   )
     return null;
   const d = new Date(date);
-  const ampm = d.getHours() > 12 ? 'PM' : 'AM';
-  if (d.getHours() === 12) {
-    return `${
-      MONTH_NAMES[d.getMonth()]
-    } ${d.getDate()}, ${d.getFullYear()} ${d.getHours()}:${padLeadingZeroes(
-      d.getMinutes(),
-      2
-    )}.${padLeadingZeroes(d.getSeconds(), 2)} ${ampm}`;
-  } else {
-    return `${
-      MONTH_NAMES[d.getMonth()]
-    } ${d.getDate()}, ${d.getFullYear()} ${padLeadingZeroes(
-      d.getHours() % 12,
-      2
-    )}:${padLeadingZeroes(d.getMinutes(), 2)}.${padLeadingZeroes(
-      d.getSeconds(),
-      2
-    )} ${ampm}`;
+  let hrs = d.getHours();
+  let ampm = 'AM';
+  if (hrs >= 12) {
+    // afternoon
+    ampm = 'PM';
+    hrs = hrs % 12;
   }
+  return `${
+    MONTH_NAMES[d.getMonth()]
+  } ${d.getDate()}, ${d.getFullYear()} ${padLeadingZeroes(
+    d.getHours(),
+    2
+  )}:${padLeadingZeroes(d.getMinutes(), 2)}.${padLeadingZeroes(
+    d.getSeconds(),
+    2
+  )} ${ampm}`;
 }
