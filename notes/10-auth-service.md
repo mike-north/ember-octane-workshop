@@ -60,7 +60,7 @@ This will result in two new files being created
 First, let's flesh out the service so that we can use it in a few places.
 
 ```js
-import Service from '@ember/service';
+import Service, { inject as service } from '@ember/service';
 
 export default class AuthService extends Service {
   /**
