@@ -1,71 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-
-const ALL_TEAMS = [
-  {
-    id: 'linkedin',
-    name: 'LinkedIn',
-    order: 2,
-    iconUrl: '/assets/img/linkedin.png',
-    channels: [
-      {
-        id: 'recruiting',
-        name: 'recruiting',
-        description:
-          'The Next Generation Of Recruiting. Find top talents today!',
-        teamId: 'linkedin',
-      },
-      {
-        id: 'jobs',
-        name: 'Job hunting',
-        description: 'Discover companies that fit you.',
-        teamId: 'linkedin',
-      },
-    ],
-  },
-  {
-    id: 'ms',
-    name: 'Microsoft',
-    order: 3,
-    iconUrl: '/assets/img/microsoft.png',
-    channels: [
-      {
-        id: 'recruiting',
-        name: 'recruiting',
-        description:
-          'The Next Generation Of Recruiting. Find top talents today!',
-        teamId: 'linkedin',
-      },
-      {
-        id: 'jobs',
-        name: 'Job hunting',
-        description: 'Discover companies that fit you.',
-        teamId: 'linkedin',
-      },
-    ],
-  },
-  {
-    id: 'avengers',
-    name: 'Avengers',
-    order: 4,
-    iconUrl: '/assets/img/avengers.jpg',
-    channels: [
-      {
-        id: 'recruiting',
-        name: 'recruiting',
-        description:
-          'The Next Generation Of Recruiting. Find top talents today!',
-        teamId: 'linkedin',
-      },
-      {
-        id: 'jobs',
-        name: 'Job hunting',
-        description: 'Discover companies that fit you.',
-        teamId: 'linkedin',
-      },
-    ],
-  },
-];
+import fetch from 'fetch';
 
 export default class TeamsRoute extends Route {
   @service auth;
@@ -79,7 +14,11 @@ export default class TeamsRoute extends Route {
     }
   }
 
-  model() {
-    return ALL_TEAMS;
+  async model() {
+    const resp = await fetch('/api/teams');
+    if (!resp.ok) {
+      throw new Error('Problem requesting teams');
+    }
+    return await resp.json();
   }
 }
