@@ -1,4 +1,4 @@
-import AuthService from "shlack/services/auth";
+import AuthService from 'shlack/services/auth';
 
 // function currentDate(dateConstructor = () => Date.now()) {
 //   return dateConstructor();
@@ -6,9 +6,8 @@ import AuthService from "shlack/services/auth";
 
 // currentDate(() => 0 );
 
-
 export default class StubAuthService extends AuthService {
-  _uid = null;
+  _uid = '';
   _readUserID() {
     return this._uid;
   }
@@ -17,6 +16,6 @@ export default class StubAuthService extends AuthService {
   }
 
   setUserId(uid) {
-    this._uid = uid
+    this._uid = uid;
   }
 }

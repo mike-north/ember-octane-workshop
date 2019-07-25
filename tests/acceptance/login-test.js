@@ -18,7 +18,6 @@ module('Acceptance | login', function(hooks) {
 
     await click('input[type="submit"]'); // click "sign in"
 
-    assert.equal(currentURL(), '/teams'); // got there ok
-
+    assert.equal(currentURL(), '/teams/linkedin/recruiting'); // got there ok
   });
 });

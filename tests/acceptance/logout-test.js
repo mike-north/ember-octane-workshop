@@ -13,8 +13,8 @@ module('Acceptance | logout', function(hooks) {
   test('visiting /logout', async function(assert) {
     const auth = this.owner.lookup('service:auth');
     auth.setUserId('1'); // start logged in
-    await visit('/teams/linkedin');
-    assert.equal(currentURL(), '/teams/linkedin');
+    await visit('/teams/linkedin/jobs');
+    assert.equal(currentURL(), '/teams/linkedin/jobs');
 
     await click('.team-sidebar__logout-button');
     assert.equal(currentURL(), '/login');
@@ -22,7 +22,6 @@ module('Acceptance | logout', function(hooks) {
     // await click('select'); // ???
     // assert.equal(currentURL(), '/login');
 
-    assert.equal(auth.currentUserId, '',
-    'User is logged out at the end');
+    assert.equal(auth.currentUserId, '', 'User is logged out at the end');
   });
 });

@@ -1,0 +1,8 @@
+<main
+  {{did-insert this.loadMessages}}
+  {{did-update this.loadMessages @channel}}
+  class="flex-1 flex flex-col bg-white overflow-hidden channel">
+
+  {{yield this.messages}}
+
+</main>
