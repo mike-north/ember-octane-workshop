@@ -12,7 +12,7 @@
           <circle cx="10" cy="10" r="10"></circle>
         </svg>
         <span class="team-sidebar__current-user-name text-white text-sm">
-          Mike North
+          Mike North - {{this.auth.currentUserId}}
         </span>
       </div>
     </div>
@@ -48,9 +48,9 @@
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
-    {{link-to "Logout" "login"}}
-    <LinkTo @route="login" class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
+    {{!-- {{link-to "Logout" "login"}} --}}
+    <a {{on "click" this.auth.logout}} class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
       Logout
-    </LinkTo>
+    </a>
   </footer>
 </section>

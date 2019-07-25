@@ -1,4 +1,15 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default class TeamsRoute extends Route {
+  @service auth;
+
+  async beforeModel(transition) {
+    await super.beforeModel(transition);
+    // if the user user is NOT authenticated
+    if (!this.auth.currentUserId) {
+      // send them to login
+      this.transitionTo('login');
+    }
+  }
 }
