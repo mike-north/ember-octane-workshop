@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, currentURL, click, pauseTest } from '@ember/test-helpers';
+import { visit, currentURL, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | logout', function(hooks) {
@@ -10,7 +10,9 @@ module('Acceptance | logout', function(hooks) {
     assert.equal(currentURL(), '/teams');
 
     await click('.team-sidebar__logout-button');
-    await pauseTest();
-    assert.equal(currentURL(), '/logssin');
+    assert.equal(currentURL(), '/login');
+
+    await click('select');
+    assert.equal(currentURL(), '/login');
   });
 });
