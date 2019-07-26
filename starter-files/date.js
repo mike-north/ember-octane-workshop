@@ -47,20 +47,18 @@ export function dateToString(date) {
   )
     return null;
   const d = new Date(date);
-  let hrs = d.getHours();
-  let ampm = 'AM';
-  if (hrs >= 12) {
-    // afternoon
-    ampm = 'PM';
-    hrs = hrs % 12;
-  }
+  const ampm = d.getHours() >= 12 ? 'PM' : 'AM';
+  const hrsConverted = ( d.getHours() === 0 || d.getHours() > 12 ) ?
+                          Math.abs( 12 - d.getHours() ) :
+                          d.getHours();
+
   return `${
     MONTH_NAMES[d.getMonth()]
   } ${d.getDate()}, ${d.getFullYear()} ${padLeadingZeroes(
-    d.getHours(),
+    hrsConverted,
     2
-  )}:${padLeadingZeroes(d.getMinutes(), 2)}.${padLeadingZeroes(
-    d.getSeconds(),
+  )}:${padLeadingZeroes(
+    d.getMinutes(),
     2
-  )} ${ampm}`;
+  )}.${padLeadingZeroes(d.getSeconds(), 2)} ${ampm}`;
 }
