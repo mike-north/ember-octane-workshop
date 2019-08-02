@@ -9,12 +9,13 @@ export default class AuthService extends Service {
    * @type {Router}
    */
   @service router;
+  @service cookies;
 
   _writeUserId(userId) {
-    window.localStorage.setItem(USER_ID_KEY, userId);
+    this.cookies.write(USER_ID_KEY, userId);
   }
   _readUserID() {
-    return window.localStorage.getItem(USER_ID_KEY);
+    return this.cookies.read(USER_ID_KEY);
   }
 
   get currentUserId() {

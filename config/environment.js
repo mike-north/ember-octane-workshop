@@ -21,7 +21,9 @@ module.exports = function(environment) {
         Date: false,
       },
     },
-
+    fastboot: {
+      hostWhitelist: [/localhost/]
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
