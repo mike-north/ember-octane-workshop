@@ -18,6 +18,6 @@ module('Acceptance | login', function(hooks) {
     await fillIn('select', '1');
 
     await click('input[type="submit"]');
-    assert.equal(currentURL(), '/teams', 'arrived on teams');
+    assert.ok(currentURL().startsWith('/teams'), 'arrived on teams');
   });
 });

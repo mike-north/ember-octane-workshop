@@ -15,7 +15,17 @@ module('Integration | Component | login-form', function(hooks) {
   setupRenderingTest(hooks);
 
   test('initially, no user selected, button disabled', async function(assert) {
-    await render(hbs`<LoginForm />`);
+    this.set('users', [
+      {
+        id: '1',
+        name: 'Testy Testerson',
+      },
+      {
+        id: '2',
+        name: 'Sample McData',
+      },
+    ]);
+    await render(hbs`<LoginForm @users={{this.users}}/>`);
 
     assert.deepEqual(
       lines(this.element),

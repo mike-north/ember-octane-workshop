@@ -16,7 +16,7 @@ module('Acceptance | logout', function(hooks) {
     auth._userId = '1';
 
     await visit('/teams'); // visit the teams page
-    assert.equal(currentURL(), '/teams'); // make sure we got there
+    assert.ok(currentURL().startsWith('/teams')); // make sure we got there
     await click('.team-sidebar__logout-button'); // click "logout"
     assert.equal(currentURL(), '/login'); // should be looking at the login screen
 
