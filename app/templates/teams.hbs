@@ -1,0 +1,21 @@
+<TeamSelector />
+<TeamSidebar />
+
+<!-- Channel -->
+<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+
+  <Channel::Header {{!-- class='bg-red' --}} @title="Professional Chat"
+    @description="Totally professional stuff in my professional network" />
+
+  <!-- Channel Message List -->
+  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+
+    <Channel::Message />
+    <Channel::Message />
+    <Channel::Message />
+
+  </div>
+
+  <Channel::Footer />
+
+</main>
