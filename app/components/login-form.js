@@ -1,12 +1,15 @@
 import Component from '@glimmer/component';
-import { action, computed } from '@ember/object';
+import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
 export default class LoginFormComponent extends Component {
   @tracked userId;
 
+  @service auth;
+
   handleSignIn() {
-    console.log('Logging in as ', this.userId);
+    this.auth.loginWithUserId(this.userId);
   }
   get isDisabled() {
     return !this.userId;

@@ -47,10 +47,9 @@
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
-    <LinkTo
-      @route="login"
+    <a href="/login" {{on "click" this.auth.logout}}
       class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
       Logout
-    </LinkTo>
+    </a>
   </footer>
 </section>
