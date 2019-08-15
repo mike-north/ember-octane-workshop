@@ -1,0 +1,6 @@
+<div {{did-insert this.loadMessages}} {{did-update this.loadMessages @channel}}
+  class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+  {{yield this.messages (hash
+    createMessage=this.createMessage 
+  ) }}
+</div>

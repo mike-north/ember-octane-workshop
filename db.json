@@ -222,7 +222,9 @@
       "channelId": "general",
       "userId": 1,
       "body": "awqwdqwqwdq",
-      "enrichedBody": ["awqwdqwqwdq"],
+      "enrichedBody": [
+        "awqwdqwqwdq"
+      ],
       "createdAt": 1555872270175,
       "id": 14
     },
@@ -569,6 +571,94 @@
       "userId": "1",
       "createdAt": 1556683077121,
       "id": 57
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "body": "hello",
+      "userId": "2",
+      "createdAt": 1565825733618,
+      "id": 58
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "body": "hello",
+      "userId": "2",
+      "createdAt": 1565825774008,
+      "id": 59
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "body": "hello",
+      "userId": "2",
+      "createdAt": 1565825841428,
+      "id": 60
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "body": "hello",
+      "userId": "2",
+      "createdAt": 1565825851369,
+      "id": 61
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "hello",
+      "userId": "2",
+      "createdAt": 1565825935638,
+      "id": 62
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "",
+      "userId": "2",
+      "createdAt": 1565826538217,
+      "id": 63
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "this is a new message",
+      "userId": "2",
+      "createdAt": 1565826607477,
+      "id": 64
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "awdakhwdhawd",
+      "userId": "2",
+      "createdAt": 1565826742947,
+      "id": 65
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "asdasdas",
+      "userId": "2",
+      "createdAt": 1565826779319,
+      "id": 66
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "foo",
+      "userId": "2",
+      "createdAt": 1565826781794,
+      "id": 67
+    },
+    {
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "body": "bar",
+      "userId": "2",
+      "createdAt": 1565826782801,
+      "id": 68
     }
   ]
 }
