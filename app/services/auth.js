@@ -1,20 +1,25 @@
 import Service, { inject as service } from '@ember/service';
 import { action } from '@ember/object';
+import CookiesService from 'ember-cookies/services/cookies';
 
 const USER_ID_KEY = 'shlack-user-id';
 
 export default class AuthService extends Service {
   @service router;
+  /**
+   * @type {CookiesService}
+   */
+  @service cookies;
 
   get currentUserId() {
     return this._readUserId();
   }
 
   _writeUserId(userId) {
-    window.localStorage.setItem(USER_ID_KEY, userId);
+    this.cookies.write(USER_ID_KEY, userId);
   }
   _readUserId() {
-    return window.localStorage.getItem(USER_ID_KEY);
+    return this.cookies.read(USER_ID_KEY);
   }
 
   loginWithUserId(userId) {
