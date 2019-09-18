@@ -1,13 +1,15 @@
 <!-- Channel -->
-<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+<Channel::Container
+  @team={{this.model.team}}
+  @channelId={{this.model.channelId}} as |messages|>
   <Channel::Header @title="Jobs" @description="Finding great opportunities" class="bg-yellow" />
 
   <!-- Channel Message List -->
   <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
-    <Channel::Message />
-    <Channel::Message />
-    <Channel::Message />
+    {{#each messages as |message|}}
+      <Channel::Message @message={{message}} />
+    {{/each}}
   </div>
   <Channel::Footer />
-</main>
+</Channel::Container>
 {{outlet}}

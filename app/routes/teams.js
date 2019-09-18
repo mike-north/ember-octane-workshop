@@ -24,7 +24,8 @@ export default class TeamsRoute extends Route {
 /*
 
 teams
-------
+------|
+      |----index---|
       |----team---|
                   |---channel|
 
