@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, find, fillIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 const TRIMMED_LINES = /\s*\n+\s*/g;
@@ -9,10 +9,7 @@ export const asLines = str => str.replace(TRIMMED_LINES, '\n').split('\n');
 module('Integration | Component | login-form', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
+  test('initially no user selected, and then we select one', async function(assert) {
     await render(hbs`<LoginForm />`);
 
     assert.deepEqual(asLines(this.element.textContent.trim()), [
@@ -22,5 +19,20 @@ module('Integration | Component | login-form', function(hooks) {
       'Sample McData',
       'A validation message',
     ]);
+    /**
+     * @type {HTMLButtonElement}
+     */
+    const btn = find('input[value="Sign In"]');
+    /**
+     * @type {HTMLSelectElement}
+     */
+    const select = find('select');
+    assert.ok(btn.disabled, 'Button is initially disabed');
+    assert.ok(!select.value, 'Select value is falsy');
+
+    await fillIn('select', '1');
+
+    assert.ok(!btn.disabled, 'Button is no longer disabed');
+    assert.equal(select.value, '1', 'Select value is "1"');
   });
 });
