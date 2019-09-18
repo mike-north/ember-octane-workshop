@@ -7,7 +7,7 @@ module('Acceptance | logout', function(hooks) {
 
   test('clicking the logout button should result in us arriving at the login screen', async function(assert) {
     await visit('/teams');
-
+    // await this.pauseTest(); // resumeTest();
     await click('.team-sidebar__logout-button');
 
     assert.equal(currentURL(), '/login');
