@@ -12,5 +12,22 @@ export default class TeamsRoute extends Route {
       this.transitionTo('login');
     }
   }
+
   // model - fetching data
+  model() {
+    return [
+      {
+        id: 'linkedin',
+        name: 'LinkedIn',
+        order: 2,
+        iconUrl: '/assets/img/linkedin.png',
+      },
+      {
+        id: 'ms',
+        name: 'Microsoft',
+        order: 3,
+        iconUrl: '/assets/img/microsoft.png',
+      },
+    ];
+  }
 }
