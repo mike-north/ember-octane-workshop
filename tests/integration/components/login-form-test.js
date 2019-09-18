@@ -10,7 +10,11 @@ module('Integration | Component | login-form', function(hooks) {
   setupRenderingTest(hooks);
 
   test('initially no user selected, and then we select one', async function(assert) {
-    await render(hbs`<LoginForm />`);
+    this.set('sampleUsers', [
+      { name: 'Testy Testerson', id: '1' },
+      { name: 'Sample McData', id: '2' },
+    ]);
+    await render(hbs`<LoginForm @users={{this.sampleUsers}}/>`);
 
     assert.deepEqual(asLines(this.element.textContent.trim()), [
       'Login',

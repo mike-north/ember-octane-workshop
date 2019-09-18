@@ -33,12 +33,6 @@
   ],
   "users": [
     {
-      "id": 0,
-      "name": "Dilbert",
-      "username": "dilbert",
-      "iconUrl": "/assets/img/dilbert.jpg"
-    },
-    {
       "id": 1,
       "name": "Mike North",
       "username": "mike",
