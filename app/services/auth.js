@@ -1,6 +1,7 @@
 import Service from '@ember/service';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
+import CookiesService from 'ember-cookies/services/cookies';
 
 const TOKEN_NAME = 'shlack-userid-sept';
 export default class AuthService extends Service {
@@ -8,12 +9,16 @@ export default class AuthService extends Service {
    * @type {import('@ember/routing').Router}
    */
   @service router;
+  /**
+   * @type {CookiesService}
+   */
+  @service cookies;
 
   get _userId() {
-    return window.localStorage.getItem(TOKEN_NAME);
+    return this.cookies.read(TOKEN_NAME);
   }
   set _userId(userId) {
-    window.localStorage.setItem(TOKEN_NAME, userId);
+    this.cookies.write(TOKEN_NAME, userId);
   }
 
   get currentUserId() {

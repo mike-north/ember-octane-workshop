@@ -7,20 +7,26 @@
 //   setupRenderingTest(hooks);
 
 //   test('it renders', async function(assert) {
-//     // Set any properties with this.set('myProperty', 'value');
-//     // Handle any actions with this.set('myAction', function(val) { ... });
-
-//     await render(hbs`{{channel/container}}`);
-
-//     assert.equal(this.element.textContent.trim(), '');
-
+//     this.set('team', {
+//       id: 'javascript',
+//     });
 //     // Template block usage:
+
 //     await render(hbs`
-//       {{#channel/container}}
-//         template block text
-//       {{/channel/container}}
+//       <Channel::Container
+//         @team={{this.team}}
+//         @channelId="funny"
+//         as |messages|
+//       >
+//         <ul>
+//           {{#each messages as |m|}}
+//             <li>{{m.body}}</li>
+//           {{/each}}
+//         </ul>
+//       </Channel::Container>
 //     `);
 
+//     await new Promise(res => setTimeout(res, 1000));
 //     assert.equal(this.element.textContent.trim(), 'template block text');
 //   });
 // });

@@ -1,13 +1,13 @@
 <!-- Channel -->
 <Channel::Container
   @team={{this.model.team}}
-  @channelId={{this.model.channelId}} as |messages|>
+  @channelId={{this.model.channelId}} as |messages acts|>
   <Channel::Header @title="Jobs" @description="Finding great opportunities" class="bg-yellow" />
 
   <!-- Channel Message List -->
   <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
     {{#each messages as |message|}}
-      <Channel::Message @message={{message}} />
+      <Channel::Message @delete={{fn acts.deleteMessage message}} @message={{message}} />
     {{/each}}
   </div>
   <Channel::Footer />

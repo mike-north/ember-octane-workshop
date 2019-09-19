@@ -2,5 +2,7 @@
   {{did-insert this.loadMessages}}
   {{did-update this.loadMessages @team}}
   class="flex-1 flex flex-col bg-white overflow-hidden channel">
-  {{yield this.messages}}
+  {{yield this.messages (hash
+    deleteMessage=this.deleteMessage
+  )}}
 </main>
