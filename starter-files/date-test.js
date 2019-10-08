@@ -5,8 +5,8 @@ module('Unit | Utility | date', function() {
   // Replace this with your real tests.
   test('string inputs', function(assert) {
     assert.equal(
-      dateToString('04/05/1983'),
-      'Apr 5, 1983 00:00.00 AM',
+      dateToString('04/05/1983 1:31 AM'),
+      'Apr 5, 1983 01:31.00 AM',
       'MM/DD/YYYY'
     );
     assert.equal(
