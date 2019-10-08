@@ -31,7 +31,7 @@ module('Integration | Component | login-form', function(hooks) {
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      ['Login', 'Select a user', 'Testy Testerson', 'Sample McData']
+      ['Login', 'Select a user', 'Select a user', 'Testy Testerson', 'Sample McData']
     );
   });
 });
@@ -78,6 +78,12 @@ let button = /** @type {HTMLInputElement} */ (find('input[type="submit"]'));
 let select = /** @type {HTMLSelectElement} */ (find('select'));
 ```
 
+We will also need to import `find` from `@ember/test-helpers` by updating line 3: 
+
+```js
+import { render, find } from '@ember/test-helpers';
+```
+
 Now we can write two assertions against these
 
 ```js
@@ -121,6 +127,7 @@ assert.deepEqual(
     .split('\n'),
   [
     'Login',
+    'Select a user',
     'Select a user',
     'Testy Testerson',
     'Sample McData',
