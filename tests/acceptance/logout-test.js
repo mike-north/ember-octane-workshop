@@ -15,6 +15,5 @@ module('Acceptance | logout', function(hooks) {
     assert.equal(currentURL(), '/login');
 
     // await click('button');
-    await this.pauseTest();
   });
 });
