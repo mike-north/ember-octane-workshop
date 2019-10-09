@@ -4,8 +4,13 @@
 
 <!-- Channel -->
 <main class="flex-1 flex flex-col bg-white overflow-hidden channel">
-  <Channel::Header />
-
+  {{!  app/templates/components   CHANNEL/HEADER.HBS}}
+  <Channel::Header
+    id="channel-header"
+    class="bg-blue"
+    @title="Jobs"
+    @description="New opportunities at LinkedIn" />
+  
   <!-- Channel Message List -->
   <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
  
