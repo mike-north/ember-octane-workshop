@@ -42,6 +42,7 @@
         </svg>
       </button>
     </div>
+    {{!   @team.channels.forEach( ch =>    }}
     {{#each @team.channels as |ch|}}
       <LinkTo @route="teams.team.channel" @model={{ch.id}} data-channel-id={{ch.name}}
         @activeClass="bg-teal"
