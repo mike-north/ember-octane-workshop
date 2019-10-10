@@ -1,0 +1,5 @@
+<div class="notification-container z-10">
+  {{#each this.notifications.toasts as |toast|}}
+    <Notification @toast={{toast}} />
+  {{/each}}
+</div>

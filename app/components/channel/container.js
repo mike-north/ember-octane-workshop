@@ -28,6 +28,7 @@ Content-Type: application/json
 
 export default class ChannelContainerComponent extends Component {
   @service auth;
+  @service notifications;
 
   @tracked
   messages = [];
@@ -68,6 +69,10 @@ export default class ChannelContainerComponent extends Component {
 
     // Option 2
     this.messages = [...this.messages, newRecord];
+    this.notifications.notify({
+      body: 'Success! Your message has been saved',
+      color: 'green',
+    });
   }
 
   @action
@@ -82,5 +87,9 @@ export default class ChannelContainerComponent extends Component {
     if (!resp.ok) throw new Error('Trouble deleting message');
     if (this.isDestroying) return;
     this.messages = this.messages.filter(m => m.id !== messageId);
+    this.notifications.notify({
+      body: 'Success! Your message has been deleted',
+      color: 'indigo',
+    });
   }
 }

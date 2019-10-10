@@ -260,22 +260,6 @@
     {
       "channelId": "endgame",
       "teamId": "avengers",
-      "body": "Hey... has someone seen my hammer? I can't find it and I need a can opener...",
-      "userId": "6",
-      "createdAt": 1556680603106,
-      "id": 31
-    },
-    {
-      "channelId": "endgame",
-      "teamId": "avengers",
-      "body": "No, if you remember the exact date and time you last used it, I can open a time portal for you",
-      "userId": "7",
-      "createdAt": 1556680649251,
-      "id": 32
-    },
-    {
-      "channelId": "endgame",
-      "teamId": "avengers",
       "body": "I'm pretty sure I saw whats-his-name take it. You might want to work out more or the hammer might choose *him* instead",
       "userId": "5",
       "createdAt": 1556680753815,
@@ -528,6 +512,30 @@
       "userId": "1",
       "createdAt": 1570703784238,
       "id": 65
+    },
+    {
+      "body": "test",
+      "teamId": "avengers",
+      "channelId": "endgame",
+      "userId": "1",
+      "createdAt": 1570705091318,
+      "id": 66
+    },
+    {
+      "body": "test",
+      "teamId": "avengers",
+      "channelId": "endgame",
+      "userId": "1",
+      "createdAt": 1570705092902,
+      "id": 67
+    },
+    {
+      "body": "test",
+      "teamId": "avengers",
+      "channelId": "endgame",
+      "userId": "1",
+      "createdAt": 1570705093934,
+      "id": 68
     }
   ]
 }
