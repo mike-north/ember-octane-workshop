@@ -7,10 +7,24 @@ module('Integration | Component | login-form', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
+    this.set('users', [
+      {
+        id: 0,
+        name: 'Dilbert',
+        username: 'dilbert',
+        iconUrl: '/assets/img/dilbert.jpg',
+      },
+      {
+        id: 1,
+        name: 'Mike North',
+        username: 'mike',
+        iconUrl: '/assets/img/mike.jpeg',
+      },
+    ]);
     await render(hbs`
     
    <h3>Testing!!!</h3> 
-    <LoginForm />`);
+    <LoginForm @users={{this.users}}/>`);
 
     assert.ok(
       this.element.textContent.includes('Select a user'),
@@ -23,7 +37,6 @@ module('Integration | Component | login-form', function(hooks) {
     assert.ok(btn, '<input type="submit"> is found');
     assert.notOk(select.value, '<select> value is falsy');
     assert.equal(btn.disabled, true, 'button is initially disabled');
-
     await fillIn('select', '1');
     assert.equal(select.value, '1', '<select>.value = 1');
     assert.equal(btn.disabled, false, 'button is no longer disabled');

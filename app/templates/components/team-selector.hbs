@@ -3,7 +3,6 @@
   class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
   {{! @teams.forEach(team => }}
   {{#each @teams as |team|}}
-    {{log team}}
     <LinkTo @route="teams.team" @model={{team.id}} data-team-id={{team.id}}
       class="team-selector__team-button cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
       <div

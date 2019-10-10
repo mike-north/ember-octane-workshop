@@ -16,10 +16,10 @@ module('Acceptance | logout', function(hooks) {
     authSvc.testingUserId = '1';
 
     // type "/teams" into address bar, press enter
-    await visit('/teams/linkedin');
+    await visit('/teams/linkedin/recruiting');
     // await this.pauseTest();
 
-    assert.equal(currentURL(), '/teams/linkedin');
+    assert.equal(currentURL(), '/teams/linkedin/recruiting');
 
     await click('.team-sidebar__logout-button');
     assert.equal(currentURL(), '/login');
