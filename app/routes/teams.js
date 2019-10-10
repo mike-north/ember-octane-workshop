@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import fetch from 'fetch';
 
 export default class TeamsRoute extends Route {
   @service auth;
@@ -15,19 +16,7 @@ export default class TeamsRoute extends Route {
   }
   // "fetch data from my API"
   async model() {
-    return [
-      {
-        id: 'linkedin',
-        name: 'LinkedIn',
-        order: 2,
-        iconUrl: '/assets/img/linkedin.png',
-      },
-      {
-        id: 'ms',
-        name: 'Microsoft',
-        order: 3,
-        iconUrl: '/assets/img/microsoft.png',
-      },
-    ];
+    const resp = await fetch('/api/teams');
+    return await resp.json();
   }
 }

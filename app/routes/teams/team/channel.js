@@ -1,12 +1,9 @@
 import Route from '@ember/routing/route';
 
 export default class TeamsTeamChannelRoute extends Route {
-  async model() {
-    return {
-      id: 'recruiting',
-      name: 'recruiting',
-      description: 'The Next Generation Of Recruiting. Find top talents today!',
-      teamId: 'linkedin',
-    };
+  async model({ channelId }) {
+    const parentModel = this.modelFor('teams.team');
+    const matches = parentModel.channels.filter(ch => ch.id === channelId);
+    return matches[0];
   }
 }

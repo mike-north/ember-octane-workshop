@@ -1,27 +1,15 @@
 import Route from '@ember/routing/route';
-
+import fetch from 'fetch';
+import RSVP from 'rsvp';
 export default class TeamsTeamRoute extends Route {
-  async model() {
-    return {
-      id: 'linkedin',
-      name: 'LinkedIn',
-      order: 2,
-      iconUrl: '/assets/img/linkedin.png',
-      channels: [
-        {
-          id: 'recruiting',
-          name: 'recruiting',
-          description:
-            'The Next Generation Of Recruiting. Find top talents today!',
-          teamId: 'linkedin',
-        },
-        {
-          id: 'jobs',
-          name: 'Job hunting',
-          description: 'Discover companies that fit you.',
-          teamId: 'linkedin',
-        },
-      ],
-    };
+  async model({ teamId }) {
+    const pResp1 = fetch(`/api/teams/${teamId}`);
+    // const pResp2 = fetch(`/api/teams/${teamId}`);
+    // return RSVP.hash({
+    //   value: 'Mike',
+    //   teams1: (await pResp1).json(),
+    //   teams2: (await pResp1).json(),
+    // });
+    return await (await pResp1).json();
   }
 }

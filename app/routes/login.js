@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import fetch from 'fetch';
 
 export default class LoginRoute extends Route {
   @service auth;
@@ -9,5 +10,8 @@ export default class LoginRoute extends Route {
     if (this.auth.currentUserId) {
       this.router.transitionTo('teams');
     }
+  }
+  async model() {
+    return await (await fetch('/api/users')).json();
   }
 }
