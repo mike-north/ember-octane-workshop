@@ -1,12 +1,12 @@
 import AuthService from 'shlack/services/auth';
 
 export default class StubAuthService extends AuthService {
-  ___testingUserId = null;
+  testingUserId = null;
 
   _readUserId() {
-    return this.___testingUserId;
+    return this.testingUserId;
   }
   _writeUserId(uid) {
-    this.___testingUserId = uid;
+    this.testingUserId = uid;
   }
 }

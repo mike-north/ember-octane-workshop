@@ -11,10 +11,15 @@ module('Acceptance | logout', function(hooks) {
   });
 
   test('visiting /logout', async function(assert) {
-    // type "/teams" into address bar, press enter
-    await visit('/teams');
+    // get the auth service (it will be our stub)
+    const authSvc = this.owner.lookup('service:auth');
+    authSvc.testingUserId = '1';
 
-    assert.equal(currentURL(), '/teams');
+    // type "/teams" into address bar, press enter
+    await visit('/teams/linkedin');
+    // await this.pauseTest();
+
+    assert.equal(currentURL(), '/teams/linkedin');
 
     await click('.team-sidebar__logout-button');
     assert.equal(currentURL(), '/login');
