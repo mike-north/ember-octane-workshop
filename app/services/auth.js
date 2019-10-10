@@ -3,18 +3,23 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import fetch from 'fetch';
+import CookiesService from 'ember-cookies/services/cookies';
 
 const USER_ID_KEY = 'slack-userid-09';
 
 export default class AuthService extends Service {
   @service router;
+  /**
+   * @type {CookiesService}
+   */
+  @service cookies;
 
   // current user id
   _readUserId() {
-    return window.localStorage.getItem(USER_ID_KEY);
+    return this.cookies.read(USER_ID_KEY);
   }
   _writeUserId(uid) {
-    window.localStorage.setItem(USER_ID_KEY, uid);
+    this.cookies.write(USER_ID_KEY, uid);
   }
   get currentUserId() {
     return this._readUserId();
