@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
-import { action, computed, set } from '@ember/object';
+import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { readOnly } from '@ember/object/computed';
 
 class LoginFormModel {
   @tracked

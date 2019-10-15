@@ -1,6 +1,6 @@
 <main class="mx-auto">
   <h1 class="flex justify-center flex-row w-full leading-loose text-3xl">
-    Login {{this.fullName}} {{this.reverseName}}
+    Login
   </h1>
   <div class="flex justify-center flex-row w-full">
     <div class="w-full max-w-xs">
@@ -20,11 +20,9 @@
             </svg>
           </div>
         </div>
-        {{#if this.validationError}}
-          <p class="text-blue-lighter text-sm italic my-4">
-            A validation message {{this.model.currentId}}
-          </p>
-        {{/if}}
+        <p class="text-blue-lighter text-sm italic my-4">
+          A validation message {{this.model.currentId}}
+        </p>
         <div class="flex items-center justify-between">
           <input disabled={{this.isDisabled}} class="{{if this.isDisabled "bg-grey" "bg-teal"}} text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             value="Sign In" type="submit" />
