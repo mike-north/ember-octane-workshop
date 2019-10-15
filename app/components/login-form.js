@@ -22,8 +22,8 @@ export default class LoginFormComponent extends Component {
 
   lastName = 'north';
 
-  @combineStrings('firstName', 'lastName') fullName;
-  @combineStrings('lastName', 'firstName') reverseName;
+  // @combineStrings('firstName', 'lastName') fullName;
+  // @combineStrings('lastName', 'firstName') reverseName;
 
   get isDisabled() {
     console.log('isDisabled ', ct++);
@@ -85,8 +85,8 @@ function sample(obj, propName) {
 //   reverseName: combineStrings('lastName', 'firstName'),
 // });
 
-function combineStrings(str1, str2) {
-  return computed(str1, str2, function() {
-    return `${this[str1]} ${this[str2]}`;
-  });
-}
+// function combineStrings(str1, str2) {
+//   return computed(str1, str2, function() {
+//     return `${this[str1]} ${this[str2]}`;
+//   });
+// }
