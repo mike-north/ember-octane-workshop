@@ -1,0 +1,15 @@
+<!-- Channel -->
+<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+  <Channel::Header id="channel-header" class="bg-blue" data-test="foo"
+    @title={{this.model.name}}
+    @description={{this.model.description}} />
+
+  <!-- Channel Message List -->
+  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+    <Channel::Message />
+    <Channel::Message />
+    <Channel::Message />
+  </div>
+
+  <Channel::Footer />
+</main>

@@ -3,7 +3,7 @@
   <header class="team-sidebar__header text-white mb-2 mt-3 px-4 flex justify-between">
     <div class="flex-auto">
       <h1 class="team-sidebar__team-name font-semibold text-xl leading-tight mb-1 truncate">
-        LinkedIn
+        {{@team.name}}
       </h1>
 
       <div class="team-sidebar__current-user-indicator flex items-center mb-6">
@@ -11,7 +11,7 @@
           <circle cx="10" cy="10" r="10"></circle>
         </svg>
         <span class="team-sidebar__current-user-name text-white text-sm">
-          Mike North
+          {{this.auth.currentUser.name}}
         </span>
       </div>
     </div>
@@ -38,18 +38,23 @@
         </svg>
       </button>
     </div>
-
-    <a href="/li/general" data-channel-id="general"
-      class="team-sidebar__channel-link py-1 px-4 text-black no-underline block bg-teal">
-      <span aria-hidden="true">#</span>
-      general
-    </a>
+    {{log @team.channels}}
+    {{#each @team.channels as |ch|}}
+      <LinkTo @route="teams.team.channel" @model={{ch.id}} data-channel-id={{ch.id}}
+        @activeClass="bg-teal"
+        class="team-sidebar__channel-link py-1 px-4 no-underline block text-white">
+        <span aria-hidden="true">#</span>
+        <span  class="sr-only">the</span>
+        {{ch.name}}
+        <span  class="sr-only">channel</span>
+      </LinkTo>
+    {{/each}}
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
-    <LinkTo @tagName='button' @route="login" aria-label="Log out of Shlack" class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
+    <button {{on "click" this.auth.logout }} aria-label="Log out of Shlack" class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
       Logout
-    </LinkTo>
+    </button>
 
   </footer>
 </section>

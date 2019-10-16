@@ -8,7 +8,30 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('teams');
+  /**
+   * * BEFORE: teams.html
+   * * AFTER:
+   * *         teams/
+   * *               index.html
+   * *               team.html
+   */
+  //   /teams
+  this.route('teams', function() {
+    /**
+     * * BEFORE: teams/team.html
+     * * AFTER:
+     * *         teams/team/
+     * *               index.html
+     * *               channel.html
+     */
+    //   /teams/LINKEDIN
+    this.route('team', { path: ':teamId' }, function() {
+      //   /teams/<LINKEDIN>/<PEMBERLY>
+      this.route('channel', {
+        path: ':channelId',
+      });
+    });
+  });
 });
 
 export default Router;

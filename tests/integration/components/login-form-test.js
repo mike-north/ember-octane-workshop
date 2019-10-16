@@ -18,6 +18,12 @@ module('Integration | Component | login-form', function(hooks) {
 
     assert.ok(btn.disabled, 'Button is initially disabled');
     assert.equal(sel.value, '', 'No user selected');
+    assert.equal(
+      sel.options[sel.selectedIndex].disabled,
+      true,
+      'Initial selection cannot be picked by a user'
+    );
+    assert.ok(sel.options);
 
     await fillIn(sel, '1');
 

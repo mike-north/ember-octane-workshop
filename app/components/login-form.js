@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { inject as svc } from '@ember/service';
 
 class LoginFormModel {
   @tracked
@@ -18,20 +19,24 @@ let ct = 0;
 export default class LoginFormComponent extends Component {
   model = new LoginFormModel();
 
-  firstName = 'mike';
+  // firstName = 'mike';
 
-  lastName = 'north';
+  // lastName = 'north';
 
   // @combineStrings('firstName', 'lastName') fullName;
   // @combineStrings('lastName', 'firstName') reverseName;
+
+  @svc auth;
 
   get isDisabled() {
     console.log('isDisabled ', ct++);
     return !this.model.currentId;
   }
 
-  doLogin(userId) {
+  async doLogin(userId) {
     console.log(`Logging in as user (${userId})`);
+    await this.auth.login(userId);
+    console.log('Login complete', this.auth.currentUser);
   }
 
   /**
@@ -47,7 +52,7 @@ export default class LoginFormComponent extends Component {
   @action
   handleSubmit(evt) {
     evt.preventDefault();
-    this.doLogin(1);
+    this.doLogin(this.model.currentId);
   }
 }
 
