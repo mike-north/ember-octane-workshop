@@ -12,6 +12,10 @@ export default class AuthService extends Service {
    * @type {import('@ember/routing').Router}
    */
   @service router;
+  /**
+   * @type {import('ember-cookies/services/cookies').default}
+   */
+  @service cookies;
 
   // current user id
   get currentUserId() {
@@ -67,9 +71,9 @@ export default class AuthService extends Service {
 
   // storing the user id somewhere
   _readUserId() {
-    return window.localStorage.getItem(USER_ID_TOKEN);
+    return this.cookies.read(USER_ID_TOKEN);
   }
   _writeUserId(uid) {
-    window.localStorage.setItem(USER_ID_TOKEN, uid);
+    this.cookies.write(USER_ID_TOKEN, uid);
   }
 }
