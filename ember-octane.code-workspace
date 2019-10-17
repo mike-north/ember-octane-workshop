@@ -4,7 +4,9 @@
       "path": "."
     }
   ],
-  "settings": {},
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib"
+  },
   "extensions": {
     "recommendations": [
       "lifeart.vscode-ember-unstable",

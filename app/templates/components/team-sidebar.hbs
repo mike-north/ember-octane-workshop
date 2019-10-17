@@ -27,7 +27,7 @@
 
   <nav class="mb-8 flex-1 team-sidebar__channels-list">
     <div class="px-4 mb-2 text-white flex justify-between items-center">
-      <h2 class="opacity-75 text-lg">Channels</h2>
+      <h2  aria class="opacity-75 text-lg">Channels</h2>
 
       <button class="team-sidebar__join-channel-button text-white" aria-label="join a new channel" role="button">
         <svg aria-hidden="true" class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +42,17 @@
       <LinkTo @route="teams.team.channel" @model={{ch.id}} data-channel-id={{ch.id}}
         @activeClass="bg-teal"
         class="team-sidebar__channel-link py-1 px-4 no-underline block text-white">
+        {{!-- 
         <span aria-hidden="true">#</span>
-        <span  class="sr-only">the</span>
         {{ch.name}}
-        <span  class="sr-only">channel</span>
+        <span class="sr-only">the</span>
+        <span class="sr-only">channel</span> --}}
+
+        <Dont-Say>#</Dont-Say>
+        <Say @phrase="the" />
+        {{ch.name}}
+        <Say @phrase="channel" />
+
       </LinkTo>
     {{/each}}
   </nav>

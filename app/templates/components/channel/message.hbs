@@ -1,28 +1,28 @@
 <!-- Message -->
-<div class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest message" role="listitem">
+<div title="Description of thing" class="flex items-start px-6 py-2 text-sm hover-target hover:bg-grey-lightest message" role="listitem">
   <figure class="w-10 h-10 rounded overflow-hidden mr-3">
     <img class="message__user-avatar"
-      src="https://en.gravatar.com/userimage/4584631/86f74019598950f6efd7b1b8e493259a.jpeg" alt="" />
+      src={{@message.user.iconUrl}} alt={{@message.user.name}} />
   </figure>
 
   <div class="flex-1">
     <h5 class="text-sm">
       <a href="#" class="message__user-name text-black font-bold no-underline hover:underline">
-        Mike North
+        {{@message.user.name}}
       </a>
       <span class="sr-only">at</span>
       <time class="message__timestamp text-grey-darker text-xs font-normal">
-        {{format-timestamp "Apr 2019" timeZone="CST"}}
+        {{format-timestamp @message.createdAt}}
       </time>
     </h5>
 
     <p class="message__body text-black leading-normal">
-      Hello developer, I looked at your profile and am impressed by your 14
-      years of COBOL experience. Are you happy in your current role?
+      {{@message.body}}
     </p>
   </div>
 
   <button
+    {{on "click" @delete}}
     class="message__delete-button border-transparent hover:border-red-light show-on-hover hover:bg-red-lightest border-1 rounded mb-1 pl-3 pr-2 py-1"
     aria-label="permanently delete this message">
     🗑

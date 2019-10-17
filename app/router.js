@@ -6,6 +6,21 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL,
 });
 
+/*
+   /
+    index.html << "if logged out, /login, otherwise /teams"
+    /teams
+      index.html  <<  "default to the first team"
+      /:teamId
+        index.html <<  "default to the first channel"
+        /:channelId
+    /login
+
+
+
+
+*/
+
 Router.map(function() {
   this.route('login');
   /**
@@ -17,6 +32,7 @@ Router.map(function() {
    */
   //   /teams
   this.route('teams', function() {
+    // this.route('index', { path: '' });
     /**
      * * BEFORE: teams/team.html
      * * AFTER:

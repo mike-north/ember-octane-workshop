@@ -1,0 +1,16 @@
+<main
+
+  {{did-insert this.loadMessages}}
+  {{did-update this.loadMessages @channel}}
+  class="flex-1 flex flex-col bg-white overflow-hidden channel">
+  {{yield this.messages (hash
+    create=this.createMessage
+    delete=this.deleteMessage
+  )}}
+</main>
+
+<section>
+  {{#if this.usingForm}}
+    <form action=""></form>
+  {{/if}}
+</section>

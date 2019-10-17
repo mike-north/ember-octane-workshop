@@ -1,15 +1,22 @@
 <!-- Channel -->
-<main class="flex-1 flex flex-col bg-white overflow-hidden channel">
+{{! create a container, and pass function(messages, actions) {  }}
+<Channel::Container @channel={{this.model}} as |messages actions|>
+
   <Channel::Header id="channel-header" class="bg-blue" data-test="foo"
     @title={{this.model.name}}
     @description={{this.model.description}} />
 
+  <NotificationCenter />
   <!-- Channel Message List -->
   <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
-    <Channel::Message />
-    <Channel::Message />
-    <Channel::Message />
+    {{#each messages as |m|}}
+      <Channel::Message
+        @message={{m}}
+        {{!      actions.delete.bind(null, m)     }}
+        @delete={{fn actions.delete m}}
+        />
+    {{/each}}
   </div>
 
-  <Channel::Footer />
-</main>
+  <Channel::Footer @create={{actions.create}} />
+</Channel::Container>

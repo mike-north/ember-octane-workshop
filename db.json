@@ -170,103 +170,6 @@
   ],
   "messages": [
     {
-      "teamId": "li",
-      "channelId": "compliments",
-      "userId": 2,
-      "createdAt": "2019-04-21T17:48:33.421Z",
-      "body": "Your penmanship is excellent!",
-      "id": 1
-    },
-    {
-      "teamId": "li",
-      "channelId": "compliments",
-      "userId": 1,
-      "createdAt": "2019-04-21T17:54:38.556Z",
-      "body": "I admire your punctuality",
-      "id": 2
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 2,
-      "createdAt": "2019-04-21T17:55:08.713Z",
-      "body": "Hello shlack!",
-      "id": 3
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T18:36:30.995Z",
-      "body": "awda",
-      "id": 11
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "createdAt": "2019-04-21T18:40:34.648Z",
-      "body": "wad",
-      "id": 12
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "body": "wdw",
-      "createdAt": 1555872178322,
-      "id": 13
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "body": "awqwdqwqwdq",
-      "enrichedBody": ["awqwdqwqwdq"],
-      "createdAt": 1555872270175,
-      "id": 14
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "body": "qdq",
-      "createdAt": 1555872790592,
-      "id": 15
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "body": "w",
-      "createdAt": 1555872792437,
-      "id": 16
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 2,
-      "body": "Would you like to join my professional network?",
-      "createdAt": 1555874498634,
-      "id": 17
-    },
-    {
-      "teamId": "li",
-      "channelId": "general",
-      "userId": 1,
-      "body": "Hello developer, I looked at your profile and am impressed by your 14 years of COBOL experience. Are you happy in your current role?",
-      "createdAt": 1555874584752,
-      "id": 18
-    },
-    {
-      "channelId": "bofny",
-      "teamId": "avengers",
-      "body": "Hey dudes",
-      "userId": "3",
-      "createdAt": 1556676377508,
-      "id": 19
-    },
-    {
       "channelId": "funny",
       "teamId": "javascript",
       "body": "\"How do you comfort a JavaScript bug?\" ",
@@ -555,20 +458,108 @@
       "id": 55
     },
     {
-      "channelId": "recruiting",
-      "teamId": "linkedin",
-      "body": "Ah nvm, probably doesn't matter. I'll just spray and pray",
-      "userId": "0",
-      "createdAt": 1556682987555,
-      "id": 56
-    },
-    {
       "channelId": "jobs",
       "teamId": "linkedin",
       "body": "Somebody just gave me a LinkedIn endorsement for \"Copying & Pasting from Stackoverflow\" and \"Private API usage.\" Are they trying to tell me something?",
       "userId": "1",
       "createdAt": 1556683077121,
       "id": 57
+    },
+    {
+      "body": "awldhhwdwd",
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "userId": "1",
+      "createdAt": 1571216967846,
+      "id": 58
+    },
+    {
+      "body": "hello!",
+      "teamId": "linkedin",
+      "channelId": "jobs",
+      "userId": "1",
+      "createdAt": 1571219699375,
+      "id": 59
+    },
+    {
+      "body": "a new comment",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "1",
+      "createdAt": 1571293381245,
+      "id": 60
+    },
+    {
+      "body": "I lost my hammer",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571293607435,
+      "id": 61
+    },
+    {
+      "body": "does this work?",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296198659,
+      "id": 62
+    },
+    {
+      "body": "hello?",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296200958,
+      "id": 63
+    },
+    {
+      "body": "ad",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296202168,
+      "id": 64
+    },
+    {
+      "body": "asd",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296202399,
+      "id": 65
+    },
+    {
+      "body": "ads",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296202564,
+      "id": 66
+    },
+    {
+      "body": "a",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296202740,
+      "id": 67
+    },
+    {
+      "body": "d",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296202931,
+      "id": 68
+    },
+    {
+      "body": "",
+      "teamId": "linkedin",
+      "channelId": "recruiting",
+      "userId": "6",
+      "createdAt": 1571296203122,
+      "id": 69
     }
   ]
 }
