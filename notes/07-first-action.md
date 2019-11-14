@@ -86,7 +86,7 @@ In this example
 <div class={{my-helper}} >
 ```
 
-because the `{{my-helper}}` is associated with the `class` attribute of the `<div>` -- we know it cannot be a modifier.
+because the `{{my-helper}}` is associated with the `class` attribute of the `<div>` we know it cannot be a modifier.
 
 In this example
 
