@@ -170,7 +170,16 @@ Can you spot the problem? What about `this`?
 
 The way the DOM API works, event handlers are called with `this` as the DOM element that received the event. This is not good in our case -- we want `this` to be the `<LoginForm />` component instance.
 
-To fix this, we'll have to `bind` the `onLoginFormSubmit` method, so that no matter who invokes it or how, `this` will always be the component instance. In Ember Octane, this can be done easily by applying the **action decorator**
+To fix this, we'll have to `bind` the `onLoginFormSubmit` method, so that no matter who invokes it or how, `this` will always be the component instance. In Ember Octane, this can be done easily by applying the **action decorator**.
+
+First import the decorator:
+
+```js
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+```
+
+Then apply it to our `onLoginFormSubmit` method:
 
 ```js
 /**
