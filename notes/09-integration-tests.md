@@ -9,21 +9,18 @@ For our learning purposes, we'll just worry about two scenarios
 - When the component is initially rendered, no user is selected, and the `input[type="submit"]` is disabled
 - Once a user is chosen, the `input[type="submit"]` is enabled, and the `<select>` should have a value of the appropriate user's id
 
-Open up the integration test for `<LoginForm />` - [`tests/integration/components/login-form-test.js`](../tests/integration/components/login-form-test.js). It should look like this
+Open up the integration test for `<LoginForm />` -- [`tests/integration/components/login-form-test.js`](../tests/integration/components/login-form-test.js). Replace its contents with this:
 
 ```ts
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
+import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | login-form', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<LoginForm />`);
 
     assert.deepEqual(
@@ -31,10 +28,17 @@ module('Integration | Component | login-form', function(hooks) {
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      ['Login', 'Select a user', 'Select a user', 'Testy Testerson', 'Sample McData']
+      [
+        'Login',
+        'Select a user',
+        'Select a user',
+        'Testy Testerson',
+        'Sample McData',
+      ]
     );
   });
 });
+
 ```
 
 The `'Integration | Component | login-form'` is the test module name, `'it renders'` is the test name, and `assert.*` are assertions. Think of these as folders, subfolders and files.
@@ -135,6 +139,12 @@ assert.deepEqual(
   ],
   'validation text now shows up'
 );
+```
+
+We will also need to import `fillIn` from `@ember/test-helpers` by updating line 3: 
+
+```js
+import { render, find, fillIn } from '@ember/test-helpers';
 ```
 
 Going back to http://localhost:4200/tests?filter=login-form&nolint, you should see the new test and all of our nice assertion labels in the test runner UI
