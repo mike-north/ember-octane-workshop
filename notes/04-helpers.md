@@ -209,7 +209,7 @@ export default helper(function formatTimestamp([date]) {
 });
 ```
 
-While, we'll see in a moment that writing tests for helpers is quick and easy, I still recommend that helpers of this kind be implemented as a thin layer wrapping some unit-tested pure vanilla JS function. This approach allows you to use the same code easily in both the `.hbs` and `.js` worlds.
+While we'll see in a moment that writing tests for helpers is quick and easy, I still recommend that helpers of this kind be implemented as a thin layer wrapping some unit-tested pure vanilla JS function. This approach allows you to use the same code easily in both the `.hbs` and `.js` worlds.
 
 Now let's put our new helper to use. Open up [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) and replace the hardcoded timestamp with an invocation of our new helper
 
