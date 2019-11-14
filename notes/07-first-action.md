@@ -88,7 +88,7 @@ In this example
 
 because the `{{my-helper}}` is associated with the `class` attribute of the `<div>` we know it cannot be a modifier.
 
-Open your devtools and try your use of the `{{on}}` modifier out. You may notice that the selected user ID is logged to the console _briefly_ and then disappears. Why is this?
+Open your devtools and try your use of the `{{on}}` modifier out by clicking "Sign in". You may notice that the selected user ID is logged to the console _briefly_ and then disappears. Why is this?
 
 The default behavior of a form submit is to make a GET request to the current URL w/ form data serialized into queryParams. This means our single-page app is reloaded -- not what we want. We need to prevent this default behavior -- any ideas as to how we might do this?
 
