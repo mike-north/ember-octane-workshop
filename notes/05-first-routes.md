@@ -18,7 +18,7 @@ Each route is associated with a top-level template (the `.hbs` files in `app/tem
 
 The contents of our [app/templates/application.hbs](../app/templates/application.hbs) file will show up on the screen regardless of URL, but if we add a `{{outlet}}` to the template, any "child routes" will render their content into the outlet.
 
-The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs
+The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we have URL-specific content to meet our app's needs
 
 ### An Example Routing Hierarchy
 
