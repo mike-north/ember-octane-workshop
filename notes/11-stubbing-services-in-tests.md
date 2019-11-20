@@ -1,6 +1,6 @@
 # Stubbing Services in Tests
 
-We have a problem: our tests only pass, when we're logged in with a particular userId -- because they're actually reading/writing to cookies! This is a leak, and we need to fix it
+We have a problem: our tests only pass, when we're logged in with a particular userId -- because they're actually reading/writing to localStorage! This is a leak, and we need to fix it
 
 Create a file in your tests folder like [`tests/test-helpers/auth-service.js`](../tests/test-helpers/auth-service.js), where we'll put our "stub" service that will be used in place of the real one during tests
 
