@@ -169,18 +169,18 @@ Create a new acceptance test for logging in
 ember generate acceptance-test login
 ```
 
-Open [`tests/acceptance/login-test.js`](../tests/acceptance/login-test.js) and replace the example assertions with
+Open [`tests/acceptance/login-test.js`](../tests/acceptance/login-test.js) and replace the example test with the following:
 
-```ts
+```js
+test('starting logged out, then logging in', async function(assert) {
 await visit('/login');
-
 assert.equal(currentURL(), '/login');
 
 await fillIn('select', '1');
-
 await click('form input[type="submit"]');
 
 assert.equal(currentURL(), '/teams');
+});
 ```
 
 Being sure to import what you need from `@ember/test-helpers`

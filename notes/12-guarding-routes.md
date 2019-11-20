@@ -117,7 +117,7 @@ Reasons why acceptance tests are preferred (over unit tests or an integration te
 
 ### Test login
 
-In [`../tests/acceptance/login-test.js`](../tests/acceptance/login-test.js), import the `StubbedAuthService` service:
+In [`tests/acceptance/login-test.js`](../tests/acceptance/login-test.js), import the `StubbedAuthService` service:
 
 ```js
 import StubbedAuthService from '../test-helpers/auth-service';
@@ -163,7 +163,7 @@ test('already logged in', async function(assert) {
 
 ### Test logout
 
-Now let's add acceptance tests to test when users are logged out. The test file is present at [`../tests/acceptance/logout-test.js`](../tests/acceptance/logout-test.js).
+Now let's add acceptance tests to test when users are logged out. The test file is present at [`tests/acceptance/logout-test.js`](../tests/acceptance/logout-test.js).
 
 And as in the previous test, first import the `StubbedAuthService` service:
 
