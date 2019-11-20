@@ -29,6 +29,28 @@ Then add a getter-based property, `isAuthenticated` that will be `true` if the u
   }
 ```
 
+Remember the `StubbedAuthService` that we just added? It needs to have the same interface as the real auth service. Let’s add `isAuthenticated` and `logout` to `StubbedAuthService` too:
+
+```js
+  get isAuthenticated() {
+    return !!this.currentUserId;
+  }
+
+  @action
+  logout() {
+    this.currentUserId = null;
+    this.router.transitionTo('login');
+  }
+``` 
+
+We also need to import `action` at the top of the file:
+
+
+```js
+import { action } from '@ember/object';
+```
+
+
 ## Adding a redirect to the /teams page
 
 In the login route, present at [`app/routes/login.js`](../app/routes/login.js), add a [`beforeModel`](https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel) hook to check whether the user is authenticated, and either redirect the user or not.
