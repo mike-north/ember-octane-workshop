@@ -62,6 +62,8 @@ First, let's flesh out the service so that we can use it in a few places.
 ```js
 import Service, { inject as service } from '@ember/service';
 
+const AUTH_KEY = 'shlack-auth-id';
+
 export default class AuthService extends Service {
   /**
    * @type {Router}
