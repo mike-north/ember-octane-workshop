@@ -1,7 +1,10 @@
 # Guarding Routes
 
 In this exercise, we will be adding redirection in the UI flow based on whether the user is logged in or not.
-Specifically, users should be able to access the `login` route, only when they are _not logged in_. And similarly, users should be able to access the `teams` route only they are _logged in_.
+Specifically, users should be able to access the `login` route, only when they are _not logged in_. And similarly, users should be able to access the `teams` route only they are _logged in_. Clear? Let’s use a diagram just to be sure:
+
+![Login redirection flow chart](./img/12-guarding-routes/flow-chart.png)
+
 
 So let's get started.
 
