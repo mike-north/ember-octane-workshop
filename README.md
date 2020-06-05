@@ -106,6 +106,7 @@ ember serve
 ```
 
 - Visit your app at [http://localhost:4200](http://localhost:4200)
+  - You will see a Congratulations message if the app is correctly spun up
 - Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests)
 - Your app runs on localhost `:4200` by default. You can customize this via `--port <port-number>`
 
