@@ -151,17 +151,17 @@ We _could_ create a new Ember app by running the following command (you don't ne
 ember new <app-name>
 ```
 
-This would create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app). If we want to create an Ember Octane app, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
+This would create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app).
+
+If we want to create an Ember Octane app, [Ember Octane](https://emberjs.com/editions/octane/) being the newest version of Ember.js, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
 
 ```sh
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
-Beyond this, all I've done is...
+Next, I installed a few packages like:
 
-Installed a few packages like
-
-- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind)
+- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) (depricated)
 - [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)
 - [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
 
