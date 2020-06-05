@@ -129,6 +129,12 @@ Make use of the many built-in Ember-CLI generators to get files that follow the 
 
 - `ember build` (development)
 - `ember build --environment production` (production)
+<!-- When should a user use which, in the case of the eng workshop? Provide more documentation -->
+
+## Troubleshooting
+
+- Be sure your watchman is up-to-date by running `brew install watchman` or follow the documentation [embercli](https://ember-cli.com/user-guide/#watchman)
+-
 
 ## Further Reading / Useful Links
 
