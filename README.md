@@ -97,6 +97,8 @@ cd shlack
 yarn install
 ```
 
+<!-- Are there options for users to use npm vs yarn if npm is their default dependency installer? -->
+
 ### Start the development server
 
 ```sh
