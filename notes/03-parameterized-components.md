@@ -1,6 +1,6 @@
 # Parameterized Components
 
-We can parameterize components by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
+We can parameterize (to represent with parameters) components by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
 
 ```jsx
 // ⚠️️ Pseudocode ⚠️
