@@ -97,7 +97,7 @@ import { dateToString } from 'shlack/utils/date';
 dateToString('5/3/1985'); // 'May 3, 1985 00:00.00 AM'
 ```
 
-## Task: ⌨️ Implementing a unit test
+## ⌨️ Task: Implementing a unit test
 
 Now let's fill in the regular [QUnit](http://qunitjs.com) test module that Ember CLI created for us. Replace the contents of [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) with the `date-test.js` below
 
@@ -110,9 +110,9 @@ import { dateToString } from 'shlack/utils/date';
 import { module, test } from 'qunit';
 
 // A QUnit Module
-module('Unit | Utility | date', function() {
+module('Unit | Utility | date', function () {
   // A QUnit Test
-  test('string inputs', function(assert) {
+  test('string inputs', function (assert) {
     // A QUnit Assertion
     assert.equal(
       dateToString('04/05/1983'),
@@ -132,7 +132,7 @@ module('Unit | Utility | date', function() {
   });
 
   // A QUnit Test
-  test('empty and invalid inputs', function(assert) {
+  test('empty and invalid inputs', function (assert) {
     // @ts-ignore
     assert.equal(dateToString(), null);
     // @ts-ignore
@@ -242,11 +242,11 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Helper | format-timestamp', function(hooks) {
+module('Integration | Helper | format-timestamp', function (hooks) {
   setupRenderingTest(hooks);
 
   // Replace this with your real tests.
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     this.set('inputValue', '1234');
 
     await render(hbs`{{format-timestamp inputValue}}`);
@@ -277,7 +277,7 @@ You can view the current state of the tests by visiting <http://localhost:4200/t
 We can also add a negative test case below the first one (but still inside the callback passed to `module()`) to ensure the helper behaves reasonably when passed no arguments
 
 ```js
-test('No argument passed', async function(assert) {
+test('No argument passed', async function (assert) {
   await render(hbs`{{format-timestamp}}`);
   assert.equal(this.element.textContent.trim(), '(unknown)');
 });
