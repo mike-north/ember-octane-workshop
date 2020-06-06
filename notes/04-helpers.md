@@ -8,7 +8,7 @@ Once defined, helpers can be used in _any_ of an app's templates.
 
 The goal of this task is to define a JavaScript module for date-related utilities, a `dateToString` function within it that transforms date-like values into strings, and accompanying unit tests.
 
-Your `app/utils` folder is a great place for low-level utilities like these. Let's generate a `utils` module by running
+Your `app/utils` folder is a great place for low-level utilities like these. Ember allows modules to quickly be created using the `generate` command in the cli. Let's generate a `utils` module by running
 
 ```sh
 ember generate util date
@@ -89,7 +89,7 @@ export function dateToString(date) {
 
 </details>
 
-Now, any code that needs to use this function can import it and do so
+Now, any code that needs to use this function can import it and do so. For Example:
 
 ```js
 import { dateToString } from 'shlack/utils/date';
@@ -147,7 +147,7 @@ module('Unit | Utility | date', function () {
 
 </details>
 
-Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing our test passing
+Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing our passing tests:
 
 ![unit-test](./img/04-helpers/unit-test.png)
 
@@ -155,7 +155,7 @@ Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the te
 
 Now that we have the core utility for converting a date-like thing into a consistently-formatted string, we just need create a helper to allow us to consume this in our `.hbs` files
 
-We can use Ember CLI to generate a starting point for our helper, as well as basic (passing) integration test.
+We can use Ember CLI to generate a starting point for our helper, as well as basic (passing) integration test. Let's run:
 
 ```sh
 ember generate helper format-timestamp
@@ -165,6 +165,8 @@ Ember CLI will generate the following files:
 
 - [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) - the helper
 - [`tests/integration/helpers/format-timestamp-test.js`](../tests/integration/helpers/format-timestamp-test.js) - a passing integration test
+
+### Understanding Helpers
 
 The code in [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) will look something like this:
 
@@ -286,3 +288,5 @@ test('No argument passed', async function (assert) {
 We don't have to worry about too much more than this, given that we've already unit tested the interesting part.
 
 Congrats! We're done with this helper!
+
+<!-- It would be great to have the completed files shown so users can compare it to their repo in case there are any mistakes in their work -->
