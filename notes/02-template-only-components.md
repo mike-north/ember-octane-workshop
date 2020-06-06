@@ -26,19 +26,19 @@ The goal of this step is to break various parts of [`app/templates/application.h
 1.  Create [`app/templates/components/team-selector.hbs`](../app/templates/components/team-selector.hbs)
     - Move `<nav class="team-selector">...</nav>` into it
     - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSelector />`
-1.  Create [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs)
+2.  Create [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs)
     - Move `<section class="team-sidebar">...</section>` into it
     - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<TeamSidebar />`
-1.  Create [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
+3.  Create [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
     - Move `<header class="channel-header">...</header>` into it
     - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelHeader />`
-1.  Create [`app/templates/components/channel-footer.hbs`](../app/templates/components/channel-footer.hbs)
+4.  Create [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs)
+    - Move one of the `<div class="message">...</div>` into it
+      - NOTE: the starting point HTML has more than one of these. Pick one to use to create the component, and for now we'll just use the one component several times
+    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with 2 `<ChatMessage />`s
+5.  Create [`app/templates/components/channel-footer.hbs`](../app/templates/components/channel-footer.hbs)
     - Move `<footer class="channel-footer">...</footer>` into it
     - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with `<ChannelFooter />`
-1.  Create [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs)
-    - Move one of the `<div class="message">...</div>` into it
-      - NOTE: the starting point HTML has more than one of these. Pick one to use for the component, and for now we'll just repeat it several times
-    - Replace what you deleted from [`application.hbs`](../app/templates/application.hbs) with 2 `<ChatMessage />`s
 
 At the end of this, you should see no change to the rendered HTML at <http://localhost:4200>.
 
