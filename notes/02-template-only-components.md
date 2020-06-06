@@ -1,6 +1,6 @@
 # Template-Only Components
 
-Components are modular chunks of UI, and can have a `.js` file, a `.hbs` file or both. We'll start with the simplest kind of component -- ones that involve no state of their own, and are defined only by a `.hbs` template file.
+Components are modular chunks of UI, and can have a `.js` file, a `.hbs` file or both. We'll start with the simplest kind of component -- ones that involve no state of their own and are logic-less, and are defined only by a `.hbs` template file. We will reserve the components with logic for the `.js` files.
 
 Usually we'd use Ember CLI to generate new components, but in this case we'll just create a new `.hbs` file for each.
 
