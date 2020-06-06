@@ -1,6 +1,6 @@
 # Templates
 
-To describe the HTML portion of a web application, Ember uses declarative templates based on [Handlebars.js](https://handlebarsjs.com/) markup.
+To create the HTML portion of a web application, Ember uses declarative templates based on [Handlebars.js](https://handlebarsjs.com/) markup.
 
 For now, we'll just focus on one of these files: `app/templates/application.hbs`. Markup you put in this template will be shown anytime your app is on the screen, regardless of URL (we'll get into URLs later).
 
