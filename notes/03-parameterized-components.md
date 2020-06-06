@@ -14,7 +14,7 @@ function renderChannelHeader(args) {
 }
 ```
 
-Ember calls values that are passed into a component from the outside world in this fashion [`named args`](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign.
+Ember calls values that are passed into a component from the outside world in this fashion [`named args`](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign like this `{{ @something }}`.
 
 ## ⌨️ Task: Parameterizing `<ChannelHeader />`
 
@@ -29,7 +29,7 @@ Our component is now parameterized, and ready to receive data!
 
 ### Syntax breakdown
 
-- The `{{double-braces}}` indicate that the whatever is between them should be evaluated as a handlebars expression
+- The `{{double-braces}}` indicate that the whatever is between them should be evaluated as a [handlebars expression](https://handlebarsjs.com/guide/expressions.html)
 - The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
 
 ### Passing in data
