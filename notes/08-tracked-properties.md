@@ -2,6 +2,8 @@
 
 Ember Octane's `tracked` property system allows us to decorate our lowest-level mutable state, and then (for the most part) treat anything downstream as if it's regular modern JavaScript.
 
+<!-- What does this mean in terms of this project? Why should a dev care? -->
+
 Let's use tracked properties to enhance our `<LoginForm />` component in the following ways:
 
 - We should have a class field `userId` that's kept in sync with the `<select>`'s value
@@ -39,7 +41,7 @@ Update the validation message in the component's template [`app/templates/compon
    </p>
 ```
 
-And hook up `isDisabled` to the `input[type="submit"]`
+And hook up `isDisabled` to the `input[type="submit"]`.
 
 ```hbs
   <input disabled={{this.isDisabled}} type="submit">
@@ -52,7 +54,7 @@ We should also show some visual indication of whether this button is disabled. R
     class="{if this.isDisabled "bg-grey" "bg-teal-dark"}} ...">
 ```
 
-And also update the `<option>` tags so their `selected` attribute is true when the `userId` property matches the selected value
+And also update the `<option>` tags so their `selected` attribute is true when the `userId` property matches the selected value.
 
 ```diff
 -   <option value="">Select a user</option>
@@ -63,12 +65,12 @@ And also update the `<option>` tags so their `selected` attribute is true when t
 +   <option value="2" selected={{eq this.userId "2"}}>Sample McData</option>
 ```
 
-We can now make two observations
+We can now make two observations:
 
 1. If we change the initializer of the `userId` class field in the component JS module, the appropriate user ends up being selected (and the validation text is also correctly initialized)
 1. If we change the selected user, the validation text is not updated properly
 
-What we're missing is a mechanism for receiving the `<select>`'s `"change"` DOM event, and updating `userId` appropriately
+What we're missing is a mechanism for receiving the `<select>`'s `"change"` DOM event, and updating `userId` appropriately.
 
 In [`app/components/login-form.js`](../app/components/login-form.js), add an action
 
@@ -83,7 +85,7 @@ onSelectChanged(evt) {
 }
 ```
 
-and in [`app/templates/components/login-form.hbs`](../app/templates/components/login-form.hbs), find the `<select>` and use the `{{on}}` modifier, so that whenever the `"change"` event is fired, the `this.onSelectChanged` action is invoked
+and in [`app/templates/components/login-form.hbs`](../app/templates/components/login-form.hbs), find the `<select>` and use the `{{on}}` modifier, so that whenever the `"change"` event is fired, the `this.onSelectChanged` action is invoked.
 
 ```hbs
 <select {{on "change" this.onSelectChanged}} >
@@ -99,6 +101,8 @@ Assertion Failed: You must use set() to set the `userId` property (of [object Ob
 ```
 
 What we're seeing is evidence that class fields work for the initial render without any special treatment, _until their value is mutated_. If we expect properties to be mutated, and those changes to cause re-renders we'll need to opt in to change tracking.
+
+<!-- Say more about this. Why do we need to opt-in to change tracking? -->
 
 First, import the `@tracked` decorator in [`app/components/login-form.js`](../app/components/login-form.js)
 
@@ -121,7 +125,7 @@ Now, try once more, and you should see that:
 - Changes to the selected user should no longer throw errors
 - The validation message should be kept in sync with the selected user
 
-Let's make our initial state a little bit more reasonable. Let's start with no user selected -- all we have to do for this is initialize `userId` to null
+Let's make our initial state a little bit more reasonable. Let's start with no user selected -- all we have to do for this is initialize `userId` to null.
 
 ```ts
 userId = null;
@@ -137,7 +141,7 @@ Let's also hide the validation text if `userId` is falsy.
   </p>
 ```
 
-Finally, let's go back to our JS module and make sure that if the form is disabled we don't call `this.handleSignIn`, and we use `userId` directly from the component class rather than querying the DOM to get the value
+Finally, let's go back to our JS module and make sure that if the form is disabled we don't call `this.handleSignIn`, and we use `userId` directly from the component class rather than querying the DOM to get the value.
 
 ```diff
    @action
