@@ -12,13 +12,13 @@ and the chat UI showing up when users visit http://localhost:4200/teams
 
 ## What's routing
 
-Whenever we think about URL-driven state (or content), [Routing](https://octane-guides-preview.emberjs.com/release/routing/) is likely to be involved. Our router [`app/router.js`](../app/router.js) responds to URL changes, and the appropriate routes take care of the particulars of bringing the application into the correct state for that URL (fetching the right data, rendering the right thing, etc...)
+Whenever we think about URL-driven state (or content), [Routing](https://octane-guides-preview.emberjs.com/release/routing/) is likely to be involved. Our router [`app/router.js`](../app/router.js) responds to URL changes, and the appropriate routes take care of the particulars of bringing the application into the correct state for that URL (fetching the right data, rendering the right thing, etc...).
 
 Each route is associated with a top-level template (the `.hbs` files in `app/templates` _other than_ the ones in `app/templates/components`) of a similar name. For example [`app/routes/teams.js`](../app/routes/teams.js) would have [`app/templates/teams.hbs`](../app/templates/teams.hbs) as its corresponding top-level template.
 
 The contents of our [app/templates/application.hbs](../app/templates/application.hbs) file will show up on the screen regardless of URL, but if we add a `{{outlet}}` to the template, any "child routes" will render their content into the outlet.
 
-The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs
+The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs.
 
 ### An Example Routing Hierarchy
 
@@ -26,7 +26,7 @@ The `application` route (we have no corresponding file for this in our project) 
 application # application.hbs
   login     # login.hbs
   teams     # teams.hbs
-    team    #   teams/team.hbs
+    team    # teams/team.hbs
       channel # teams/team/channel.hbs
 ```
 
@@ -166,4 +166,4 @@ A11y tip: Notice that this logout "button" is still a link, even though it looks
 
 You should now be able to click on the "Logout" button and find yourself looking at the login screen with a `/login` url.
 
-Congrats! we've just set up our first routes!
+Congrats! We've just set up our first routes!
