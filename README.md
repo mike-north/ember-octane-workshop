@@ -161,7 +161,7 @@ ember new -b @ember/octane-app-blueprint <app-name>
 
 Next, I installed a few packages like:
 
-- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) (depricated)
+- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) (deprecated)
 - [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)
 - [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
 
