@@ -1,6 +1,6 @@
 # Forwarding Routes & Simulating Api Responses In Tests
 
-In this exercise, we will be mainly focussing on:
+In this exercise, we will be mainly focusing on:
 
 - Conditionally forwarding routes
 - Simulating API responses for tests
@@ -22,11 +22,11 @@ And we will be creating/editing the following files:
 
 ## Forwarding Routes
 
-For forwarding a user to a different route, other than the one that was attempted initially, we will use the [beforeModel](https://www.emberjs.com/api/ember/release/classes/Route/methods/transitionTo?anchor=beforeModel) hook, which is a good place to intercept requests, since it gets executed before the route fetches the data that UI needs.
+For forwarding a user to a different route, other than the one that was attempted initially, we will use the [beforeModel](https://www.emberjs.com/api/ember/release/classes/Route/methods/transitionTo?anchor=beforeModel) hook, which is a good place to intercept requests, since it gets executed before the route fetches the data that the UI needs.
 
 And for the actual forwarding of a route to a different route, we will use the [transitionTo](https://api.emberjs.com/ember/release/classes/Route/methods/transitionTo?anchor=transitionTo) method, that is available on all routes.
 
-Based on whether a user is logged in or not, a user trying to visit the main `index` route of the application, should be forwarded accordingly, to different routes. That is, logged in users should get forwarded to `teams` route, and users who are not logged in, should get forwarded to the `login` route.
+Based on whether a user is logged in or not, a user trying to visit the main `index` route of the application, should be forwarded accordingly, to different routes. That is, logged in users should get forwarded to the `teams` route, and users who are not logged in, should get forwarded to the `login` route.
 
 _Index routes are child routes that will be displayed first by default, when a user visits any route. You can [read more about index routes](https://guides.emberjs.com/release/routing/defining-your-routes/#toc_index-routes) in emberjs from the [emberjs guides website](https://guides.emberjs.com)_.
 
@@ -56,9 +56,9 @@ For implementing this, define the `index` route at [`../app/routes/index.js`](..
 
 Similarly when a user tries to visit the `index` route under the `teams` or the `team` route, the user should be conditionally forwarded to different routes.
 
-For `teams` route, if there is at least 1 team, the first team should be automatically displayed. Else, the index route is displayed with an appropriate message saying that that are no teams to display.
+For the `teams` route, if there is at least 1 team, the first team should be automatically displayed. Else, the index route is displayed with an appropriate message saying that that are no teams to display.
 
-Add an `index` child route for `teams` route, at [`../app/routes/teams/index.js`](../app/routes/teams/index.js):
+Add an `index` child route for the `teams` route, at [`../app/routes/teams/index.js`](../app/routes/teams/index.js):
 
 ```diff
 +   import Route from '@ember/routing/route';
@@ -105,7 +105,7 @@ Add an `index` child route for `channel` route, at [`../app/routes/teams/team/in
 
 ## Display Data In Templates
 
-Now that we have all the data that we need, let's display them, by creating the needed templates. We will be using index route templates, which are templates that will be displayed first by default, when a user visits a route.
+Now that we have all the data that we need, let's display it, by creating the needed templates. We will be using index route templates, which are templates that will be displayed first by default, when a user visits a route.
 
 For the `teams` route, if there are no teams to be displayed, an appropriate message is displayed in it's corresponding index route, which we will be creating at [`../app/templates/teams/index.hbs`](../app/templates/teams/index.hbs):
 
@@ -118,7 +118,7 @@ For the `teams` route, if there are no teams to be displayed, an appropriate mes
 -   {{outlet}}
 ```
 
-Similarly, for `channels` route, if there are no channels to be displayed, an appropriate message is displayed in it's corresponding index route, which we will be creating at [`../app/templates/teams/team/index.hbs`](../app/templates/teams/team/index.hbs):
+Similarly, for the `channels` route, if there are no channels to be displayed, an appropriate message is displayed in it's corresponding index route, which we will be creating at [`../app/templates/teams/team/index.hbs`](../app/templates/teams/team/index.hbs):
 
 ```diff
 +   <div class="mx-auto">
@@ -131,7 +131,7 @@ Similarly, for `channels` route, if there are no channels to be displayed, an ap
 
 ## Tests
 
-We modified the team and teams routes, for conditionally forwarding a user to different routes. So, let's update the tests accordingly.
+We modified the `team` and `teams` routes, for conditionally forwarding a user to different routes. So, let's update the tests accordingly.
 
 In the `login-test` test located at [`../tests/acceptance/login-test.js`](../tests/acceptance/login-test.js):
 
@@ -213,7 +213,7 @@ Now, let's add some tests for testing the route forwarding implementation, that 
 
 In the acceptance tests, we will be simulating API responses using [pretender](https://github.com/pretenderjs/pretender)(a mock server library), which we include in this application, by using the [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender) addon.
 
-Create a new file for adding acceptance test at [`../tests/acceptance/forwarding-routes-test.js`](../tests/acceptance/forwarding-routes-test.js):
+Create a new file for adding an acceptance test at [`../tests/acceptance/forwarding-routes-test.js`](../tests/acceptance/forwarding-routes-test.js):
 
 ```diff
 +   import { module, test } from 'qunit';
@@ -310,4 +310,4 @@ In the above code that we added, apart from the actual tests, there are other fu
 - `setupServer` - function that takes care of simulating API responses used in the acceptance tests, by intercepting http requests using [pretender](https://github.com/pretenderjs/pretender), and responding with hard coded data.
 - `jsonResponse` - helper function that converts the raw response data, in this case, an array of objects, and converts it into a format that can be used by `setupServer` method.
 
-And that's it. We have now successfully implemented conditional route forwarding, and added tests for the same.
+And that's it. We have now successfully implemented conditional route forwarding, and added tests.
