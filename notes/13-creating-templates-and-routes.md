@@ -128,9 +128,9 @@ Similar to how we created the `team` route, create a new `.js` file for `channel
 +   }
 ```
 
-In the code shown above, the `model` hook does something similar to what the `model` hook in `team` route did; that is, it will return an object from the array of objects that we defined earlier in the [`teams`](../app/routes/teams.js) route. The object that will be returned will be the one whose `id` property matches the `channelId` specified in the url for this `channel` route.
+In the code shown above, the `model` hook does something similar to what the `model` hook in the `team` route did; that is, it will return an object from the array of objects that we defined earlier in the [`teams`](../app/routes/teams.js) route. The object that will be returned will be the one whose `id` property matches the `channelId` specified in the url for this `channel` route.
 
-## Displaying Static Data in templates
+## Displaying Static Data in Templates
 
 We have now configured routes to return hard coded static data from their respective `model` hooks. Now let's start creating the templates, so that we can display the data returned from the routes.
 
@@ -146,7 +146,7 @@ In this section, we will be creating/editing the following template files:
 - [`../app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs)
 - [`../app/templates/teams/team/channel.hbs`](../app/templates/teams/team/channel.hbs)
 
-First, refactor the [`teams`](../app/templates/teams.hbs) template by replacing the existing content with `TeamSelector` component, that gets passed the `teams` data into it, to be displayed in its own template.
+First, refactor the [`teams`](../app/templates/teams.hbs) template by replacing the existing content with the `TeamSelector` component, which gets passed the `teams` data, to be displayed in its own template.
 
 ```diff
 -   <TeamSelector />
@@ -223,7 +223,7 @@ Here `@team` refers to the attribute that was passed in to this team-sidebar com
 +   {{@team.name}}
 ```
 
-And iterate the `channels` array that was passed in as part of the @team attribute using the [`each`](https://api.emberjs.com/ember/3.9/classes/Ember.Templates.helpers/methods/each?anchor=each) helper.
+Iterate the `channels` array that was passed in as part of the @team attribute using the [`each`](https://api.emberjs.com/ember/3.9/classes/Ember.Templates.helpers/methods/each?anchor=each) helper.
 
 ```diff
 -   <a href="/li/general" data-channel-id="general"
@@ -295,7 +295,7 @@ The `team-sidebar` component is now used with an argument, `@team`. So modify th
 +   await render(hbs`<TeamSidebar @team={{this.myTeam}}/>`);
 ```
 
-Next, add test for the new route, `team`, which is a child route of `teams` route.
+Next, add test for the new route, `team`, which is a child route of the `teams` route.
 
 For `team` (child) route, corresponding test file should be defined at [`tests/unit/routes/teams/team-test.js`](../tests/unit/routes/teams/team-test.js):
 
@@ -313,8 +313,8 @@ For `team` (child) route, corresponding test file should be defined at [`tests/u
 +   });
 ```
 
-And finally, add a test for another new route that we added, `channel`, which is a child route of `team` route.
-For `channel` (child) route, corresponding test file should be defined at [`tests/unit/routes/teams/team/channel-test.js`](../tests/unit/routes/teams/team/channel-test.js):
+And finally, add a test for another new route that we added, `channel`, which is a child route of the `team` route.
+For the `channel` (child) route, the corresponding test file should be defined at [`tests/unit/routes/teams/team/channel-test.js`](../tests/unit/routes/teams/team/channel-test.js):
 
 ```diff
 +   import { module, test } from 'qunit';
