@@ -2,7 +2,7 @@
 
 In this exercise, we will be replacing the hard coded data that we added in previous exercises, with data fetched from server.
 
-For fetching data from server, we are going to use the [fetch](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) method that is natively available in most modern browsers. In our app, we use the [ember-fetch](https://github.com/ember-cli/ember-fetch) ember addon that uses a polyfill for fetch method, in browsers that don't support the fetch method. You can find more info about browser support for fetch method [here](https://caniuse.com/#feat=fetch).
+To fetch data from the server, we are going to use the [fetch](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) method that is natively available in most modern browsers. In our app, we use the [ember-fetch](https://github.com/ember-cli/ember-fetch) ember addon that uses a polyfill fetch method, in browsers that don't support the fetch method. You can find more info about browser support for fetch method [here](https://caniuse.com/#feat=fetch).
 
 We will be creating/editing the following files:
 
@@ -26,7 +26,7 @@ First, in the `login` route defined at [`../app/routes/login.js`](../app/routes/
 +   import fetch from 'fetch';
 ```
 
-Then, add a `model()` hook that returns the list of users fetched from server, by using the `fetch` method.
+Then, add a `model()` hook that returns the list of users fetched from the server, by using the `fetch` method.
 
 ```diff
 +   async model() {
@@ -38,7 +38,7 @@ Then, add a `model()` hook that returns the list of users fetched from server, b
 In the `teams` route defined at [`../app/routes/teams.js`](../app/routes/teams.js), we need to fetch the following data related to the logged in user:
 
 - User information
-- list of related teams
+- List of related teams
 
 Once again, import the `fetch` method at the top of the file, like we did for the login route:
 
@@ -114,16 +114,16 @@ Now that we are using data fetched from server, we don't need the hard coded arr
 
 ```
 
-Next file to be modified is the `team` route, defined at [`../app/routes/teams/team.js`](../app/routes/teams/team.js).
+The next file to be modified is the `team` route, defined at [`../app/routes/teams/team.js`](../app/routes/teams/team.js).
 
-Replace the import for the hard coded array, with import for `fetch`.
+Replace the import for the hard coded array, with the import for `fetch`.
 
 ```diff
 -   import { ALL_TEAMS } from '../teams';
 +   import fetch from 'fetch';
 ```
 
-Then, edit the `model()` hook to fetch data for a specific selected team from server.
+Then, edit the `model()` hook to fetch data for a specific selected team from the server.
 
 ```diff
 -   model({ teamId }) {
@@ -142,7 +142,7 @@ Next file to be modified is the `channel` route defined at [`../app/routes/teams
 +   import fetch from 'fetch';
 ```
 
-Edit the `model()` hook to fetch data from server.
+Edit the `model()` hook to fetch data from the server.
 
 ```diff
 -   model({ channelId }) {
@@ -211,7 +211,7 @@ In the [`login`](../app/templates/login.hbs) template, pass the model data into 
 +   <LoginForm @users={{this.model}}/>
 ```
 
-In the [`login-form`](`../app/templates/components/login-form.hbs`) component template, replace the hard coded values in the user selection dropdown to dynamic values fetched from server. Here `@users` contains the dynamic data that was feed into it from the `login.hbs` template.
+In the [`login-form`](`../app/templates/components/login-form.hbs`) component template, replace the hard coded values in the user selection dropdown to dynamic values fetched from the server. Here `@users` contains the dynamic data that was feed into it from the `login.hbs` template.
 
 ```diff
 -   <option selected={{eq this.userId "1"}} value="1">Testy Testerson</option>
@@ -223,7 +223,7 @@ In the [`login-form`](`../app/templates/components/login-form.hbs`) component te
 
 ## Test helper
 
-In the `auth` service defined at [`../app/services/auth.js`](../app/services/auth.js), we added some new methods. Lets update the test helper present at [`../tests/test-helpers/auth-service.js`](../tests/test-helpers/auth-service.js) accordingly. This test helper makes sure every time tests are run, there is no state leakage across tests, and application state stored on the auth service is reset, before each test is run.
+In the `auth` service defined at [`../app/services/auth.js`](../app/services/auth.js), we added some new methods. Let's update the test helper present at [`../tests/test-helpers/auth-service.js`](../tests/test-helpers/auth-service.js) accordingly. This test helper makes sure every time tests are run, there is no state leakage across tests, and application state stored on the auth service is reset, before each test is run.
 
 Add the import for `action` at the top of the file, in the imports section.
 
@@ -264,7 +264,7 @@ Note that in the above updated method definition for `loginWithUserId`, we added
 
 ## Tests
 
-Update the tests for the [`login-form`](../tests/integration/components/login-form-test.js) component to reflect the changes we made earlier in this exercise, to replace all occurrences of hard coded data with data fetched from server.
+Update the tests for the [`login-form`](../tests/integration/components/login-form-test.js) component to reflect the changes we made earlier in this exercise, to replace all occurrences of hard coded data with data fetched from the server.
 
 ```diff
 -   await render(hbs`<LoginForm />`);
