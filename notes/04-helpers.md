@@ -4,7 +4,7 @@ Helpers are like simple functions that can be used in templates. We'll create a 
 
 Once defined, helpers can be used in _any_ of an app's templates.
 
-## ⌨️ Task: Implementing a `dateToString` utility
+## Implementing a `dateToString` utility
 
 The goal of this task is to define a JavaScript module for date-related utilities, a `dateToString` function within it that transforms date-like values into strings, and accompanying unit tests.
 
@@ -97,7 +97,7 @@ import { dateToString } from 'shlack/utils/date';
 dateToString('5/3/1985'); // 'May 3, 1985 00:00.00 AM'
 ```
 
-## ⌨️ Task: Implementing a unit test
+## Implementing a unit test
 
 Now let's fill in the regular [QUnit](http://qunitjs.com) test module that Ember CLI created for us. Replace the contents of [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) with the `date-test.js` below
 
@@ -151,7 +151,7 @@ Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the te
 
 ![unit-test](./img/04-helpers/unit-test.png)
 
-## ⌨️ Task: Implementing the `{{format-timestamp}}` helper
+## Implementing the `{{format-timestamp}}` helper
 
 Now that we have the core utility for converting a date-like thing into a consistently-formatted string, we just need create a helper to allow us to consume this in our `.hbs` files
 
@@ -222,7 +222,7 @@ Now let's put our new helper to use. Open up [`app/templates/components/chat-mes
   </time>
 ```
 
-## ⌨️ Task: Implementing an integration test
+## Implementing an integration test
 
 Next, we should also write integration tests for our helper, just to make sure the helper is hooked up to the underlying "utils" function correctly.
 

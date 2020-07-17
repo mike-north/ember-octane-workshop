@@ -16,7 +16,7 @@ function renderChannelHeader(args) {
 
 Ember calls values that are passed into a component from the outside world in this fashion [`named args`](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign like this `{{ @something }}`.
 
-## ⌨️ Task: Parameterizing `<ChannelHeader />`
+## Parameterizing `<ChannelHeader />`
 
 The goal of this task is to modify `<ChannelHeader />` such that we can pass in a title and description of our choice.
 

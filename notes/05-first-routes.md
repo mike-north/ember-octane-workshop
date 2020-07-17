@@ -32,7 +32,7 @@ application # application.hbs
 
 ![routes](./img/05-first-routes/routes.gif)
 
-## ⌨️ Task: The `/teams` route
+## The `/teams` route
 
 In this task, we'll create a new top-level template that's displayed on the screen for URLs that begin with `/teams`.
 
@@ -60,7 +60,7 @@ You should now see...
 - visiting http://localhost:4200/ shows a blank screen, with no JS errors in the console
 - visiting http://localhost:4200/teams shows the chat UI
 
-## ⌨️ Task: The `/login` route
+## The `/login` route
 
 The goal of this task is to get a login screen showing up whenever users visit URLs starting with `/login`.
 
@@ -136,7 +136,7 @@ You should now see...
 - visiting http://localhost:4200/login shows the login UI
 - visiting http://localhost:4200/teams shows the chat UI
 
-## ⌨️ Task: Creating a basic link
+## Creating a basic link
 
 In this task, we'll create our first link between routes. The default browser behavior when receiving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
 

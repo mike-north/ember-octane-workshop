@@ -2,7 +2,7 @@
 
 Note: If you already cloned down the repo, start fresh in a new project folder.
 
-## ⌨️ Task: Installing Ember-CLI
+## Installing Ember-CLI
 
 The goal of this task is to install ember-cli onto your machine, so you can run the `ember` command in your terminal.
 
@@ -33,7 +33,7 @@ node: 11.6.0
 os: darwin x64
 ```
 
-## ⌨️ Task: Creating a new app
+## Creating a new app
 
 The goal of this task is to create a new ember app (roughly equivalent to the starting point of this course), using the official Ember Octane blueprint.
 
@@ -53,7 +53,7 @@ If we want to create an Ember Octane app, we can use the [official Ember Octane 
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
-## ⌨️ Task: Installing dependencies
+## Installing dependencies
 
 The goal of this task is to install the dependencies listed in your package.json.
 
@@ -69,7 +69,7 @@ or if using yarn
 yarn install
 ```
 
-## ⌨️ Task: Starting the development web server
+## Starting the development web server
 
 The goal of this task is to serve your ember app using Ember CLI, and to view it in a browser.
 

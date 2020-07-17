@@ -130,7 +130,7 @@ Similar to how we created the `team` route, create a new `.js` file for `channel
 
 In the code shown above, the `model` hook does something similar to what the `model` hook in the `team` route did; that is, it will return an object from the array of objects that we defined earlier in the [`teams`](../app/routes/teams.js) route. The object that will be returned will be the one whose `id` property matches the `channelId` specified in the url for this `channel` route.
 
-## Displaying Static Data in Templates
+## Displaying Static Data in templates
 
 We have now configured routes to return hard coded static data from their respective `model` hooks. Now let's start creating the templates, so that we can display the data returned from the routes.
 

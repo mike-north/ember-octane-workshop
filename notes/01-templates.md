@@ -4,7 +4,7 @@ To create the HTML portion of a web application, Ember uses declarative template
 
 For now, we'll just focus on this file: `app/templates/application.hbs`. Markup you put in this template will be shown anytime your app is on the screen, regardless of URL (we'll get into URLs later).
 
-## ⌨️ Task: Moving the initial HTML & CSS into our app
+## Moving the initial HTML & CSS into our app
 
 The goal of this step is to place the starting point HTML and CSS in your new app, and see what it looks like in a browser.
 
