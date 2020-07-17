@@ -6,7 +6,7 @@ The idea is that you should _not_ be writing two apps (despite needing to run on
 
 ![js environments](./img/20-server-rendering/js-envs.png)
 
-First, let's install fastboot to enable server-rendering
+First, let's install fastboot to enable server-rendering.
 
 ```
 ember install ember-cli-fastboot
@@ -23,7 +23,7 @@ Open your [`config/environment.js`](../config/environment.js), and add a `fastbo
 
 We'll have to refactor our `auth` service so that it doesn't use any browser-specific APIs.
 
-To do this we can install `ember-cookies`, a unified abstraction that can provide us with a way of dealing with cookies both in node and in a browser environment
+To do this we can install `ember-cookies`, a unified abstraction that can provide us with a way of dealing with cookies both in node and in a browser environment.
 
 ```
 ember install ember-cookies
@@ -37,7 +37,7 @@ Next, we'll have to make some adjustments to the auth service. Begin by importin
 import CookiesService from 'ember-cookies/services/cookies';
 ```
 
-and inject the `cookies` service onto the `auth` service
+and inject the `cookies` service onto the `auth` service.
 
 ```ts
  /**
@@ -46,7 +46,7 @@ and inject the `cookies` service onto the `auth` service
  @service cookies;
 ```
 
-Update the `loginWithUserId` function so it writes to a cookie instead of `localStorage`
+Update the `loginWithUserId` function so it writes to a cookie instead of `localStorage`.
 
 ```diff
    async loginWithUserId(userId) {
@@ -65,7 +65,7 @@ Update the `currentUserId` getter so it reads from a cookie
    }
 ```
 
-and update `logout so it clears the value from the cookie instead of`localStorage`
+and update `logout so it clears the value from the cookie instead of`localStorage`.
 
 ```diff
    logout() {
