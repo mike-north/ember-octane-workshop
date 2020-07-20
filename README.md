@@ -116,7 +116,7 @@ Make use of the many built-in Ember-CLI generators to get files that follow the 
 ### Running Tests
 
 - `ember test # to run all tests`
-- `ember test --server` (to re-run tests on every file change)
+- `ember test --server # to re-run tests on every file change`
 
 ### Linting
 
