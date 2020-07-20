@@ -147,7 +147,7 @@ module('Unit | Utility | date', function () {
 
 </details>
 
-Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing our passing tests:
+Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing that our new test is now passing:
 
 ![unit-test](./img/04-helpers/unit-test.png)
 
