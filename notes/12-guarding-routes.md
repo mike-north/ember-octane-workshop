@@ -92,7 +92,7 @@ The jsdoc comment above, for `AuthService`, improves the developer experience wh
 
 ## Changes in Templates
 
-Now that we have the javascript implementation in place, lets add the UI for the same.
+Now that we have the javascript part of our component in place, let's work on the matching handlebars template.
 
 <!-- What is this inreference to - "for the same"  -->
 
