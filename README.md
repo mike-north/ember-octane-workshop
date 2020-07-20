@@ -129,7 +129,6 @@ Make use of the many built-in Ember-CLI generators to get files that follow the 
 Depending on whether you want an un-minified development build or a minified production build (takes longer, but results in smaller file sizes) you may run either of the following
 - `ember build # development`
 - `ember build --environment production # production`
-<!-- When should a user use which, in the case of the eng workshop? Provide more documentation -->
 
 ## Troubleshooting
 
