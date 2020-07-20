@@ -4,7 +4,7 @@ Services allow state and functionality (i.e., regular functions, actions) to be 
 
 <!-- Explain what services are. Even if things are so simple that there's nothing more to say, we should make that clear -->
 
-In our case, there are various things that may need to "see" or "use" authentication concerns (i.e., a `currentUser`):
+In our case, there are various things that may need to "see" or "use" authentication state/functionality (i.e., a `currentUser`, the `logOut` and `logIn` functions, etc...):
 
 <!-- Clearify "authentication concerns" - state it differently  -->
 
