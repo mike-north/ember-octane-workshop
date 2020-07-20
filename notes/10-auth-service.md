@@ -13,7 +13,7 @@ In our case, there are various things that may need to "see" or "use" authentica
 - Logging in
 - Logging out
 
-We could use a component for this, but it would increase the complexity of our templates, and would involve passing extra arguements through the component tree.
+We could use a component for this, but it would increase the complexity of our templates and would involve passing extra named args (the things that look like `{{ @firstName }}`) through the component tree.
 
 ```hbs
 <Auth as |authApi|>
