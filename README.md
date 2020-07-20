@@ -71,6 +71,7 @@ and see something like
 <!-- The term "see something like" may confuse users from the standpoint of a user wondering if the versions should be the exact match or not and if not when does a version stray too far from the listed version below that it becomes a problem. Changing the language to something like:  "You will see the following if everything is installed correctly" may be clearer to the user. -->
 
 ```
+# NOTE: your version numbers may be different. This is fine!
 ember-cli: 3.10.0
 node: 11.6.0
 os: darwin x64
