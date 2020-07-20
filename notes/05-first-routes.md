@@ -26,7 +26,7 @@ The `application` route (we have no corresponding file for this in our project) 
 application # application.hbs
   login     # login.hbs
   teams     # teams.hbs
-    team    # teams/team.hbs
+    team    #   teams/team.hbs
       channel # teams/team/channel.hbs
 ```
 
