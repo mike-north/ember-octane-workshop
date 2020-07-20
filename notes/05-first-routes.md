@@ -27,7 +27,7 @@ application # application.hbs
   login     # login.hbs
   teams     # teams.hbs
     team    # teams/team.hbs
-      channel # teams/team/channel.hbs
+      channel #   teams/team/channel.hbs
 ```
 
 ![routes](./img/05-first-routes/routes.gif)
@@ -167,3 +167,7 @@ A11y tip: Notice that this logout "button" is still a link, even though it looks
 You should now be able to click on the "Logout" button and find yourself looking at the login screen with a `/login` url.
 
 Congrats! We've just set up our first routes!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/8e0808c0ec8aef96cfb638f5e7f144effebfaf72)

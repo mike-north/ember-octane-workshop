@@ -329,3 +329,7 @@ For the `channel` (child) route, the corresponding test file should be defined a
 +     });
 +   });
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/610c5bfac850ecf0d87a0aa588fbaecaf15bd403)

@@ -221,3 +221,7 @@ Now all we have left to do is use the service to create notifications in respons
 ```
 
 You should now see notifications upon creation and deletion of messages, both for successful completion of these operations and when the app encounters an error.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/7670d6d56cc6d80d306a1761c3d50971598dd1f1)

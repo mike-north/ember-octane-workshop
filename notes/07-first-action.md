@@ -194,3 +194,7 @@ onLoginFormSubmit(evt) {
 Stop at the `debugger;` again and observe: we now have what we want, and the logging works properly again!
 
 Delete the `debugger;` inside `onLoginFormSubmit()` before we continue.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/b38fd546b42681006a7ffc7df82cbf51da396c3e)

@@ -47,3 +47,7 @@ Go to your [`app/templates/application.hbs`](../app/templates/application.hbs) a
 Now, you should see the title and description properly rendered in the channel header
 
 ![done](./img/03-parameterized-components/done.png)
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/e9f0827798ef0d11bb91f1d059702738885f3028)

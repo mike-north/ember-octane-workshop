@@ -60,3 +60,7 @@ Now, to test out our ability to go offline:
 The app will load! You can even turn off your wifi and the app will still work!
 
 Note that as soon as you try to see anything you haven't previously seen (i.e., a channel you haven't clicked on), you'll get an error. You're caching API payloads _as they fly by_. Deliberately caching particular URLs is a very easy change to make, but beyond the scope of this course.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/1e9096c8021ca184407128f9b2e95b8fa8400865)

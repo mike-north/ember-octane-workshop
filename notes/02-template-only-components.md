@@ -45,3 +45,7 @@ At the end of this, you should see no change to the rendered HTML at <http://loc
 ![done](./img/app.png)
 
 Congrats! You've just broken down all of that HTML into components!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/2ebe97bfe90a921a280056831595dc6cc8bf3c01)

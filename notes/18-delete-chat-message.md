@@ -65,3 +65,7 @@ Finally, let's go into the component, and hook the action up to the existing but
 ```
 
 You should now be able to hover over each message to see a "delete" button, and clicking on one of these should result in the `DELETE` api call being made, and the message being removed from the screen (and your `db.json` database).
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/20c4578f07ae35ac64b867dc0ad0ec00d53bf8a7)

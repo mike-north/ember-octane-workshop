@@ -194,3 +194,7 @@ Being sure to import what you need from `@ember/test-helpers`.
 ```ts
 import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/5a7cd8b74ac6bf429b3e15e2419d91a71a6829ec)

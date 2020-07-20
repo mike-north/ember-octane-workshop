@@ -53,3 +53,7 @@ this.owner.lookup('service:auth').currentUserId = 'LOL';
 ```
 
 Make an appropriate adjustment to the assertion value, taking the userId into account and you should be good to go!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/1e1cc2df48af28de0004fe787a7faa91d2573cef)

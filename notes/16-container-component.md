@@ -244,3 +244,7 @@ module('Integration | Component | channel-container', function (hooks) {
   });
 });
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/cbf48e6fff59e0f76d9460c9793544b18cee2ef3)

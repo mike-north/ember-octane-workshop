@@ -301,3 +301,7 @@ Update the tests for the [`login-form`](../tests/integration/components/login-fo
 ```
 
 And that's it. You are now done with this exercise!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/a48ce28356bc96e9e479399c6591dbc514628e7c)

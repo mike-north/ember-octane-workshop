@@ -20,25 +20,13 @@ There are a few things you need to ensure you have installed, in order to be rea
 
 ### Node.js
 
-You’ll need a relatively recent version (v10.0 or newer ideally) of Node.js installed. On OS X, a great way of doing this without disturbing your existing dev environment is to install NVM. [Installation instructions are here](https://github.com/creationix/nvm#installation).
+You’ll need a relatively recent version (v10.0 or newer ideally) of Node.js installed. On OS X, a great way of doing this without disturbing your existing dev environment is to install NVM.
 
 ### Install & Update Script
 
-Either download and run the nvm script manually, or run the following cURL or Wget command:
+Follow the NVM installation instruction to get set up. [Installation instructions are here](https://github.com/creationix/nvm#installation). If you are installing NVM for the first time, but sure to check your terminal for further instructions.
 
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-```
-
-Then run:
-
-```
-export NVM_DIR="/Users/{username}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-```
-
-You’ll know everything is set up properly when you can run
+You’ll know everything is set up properly when you can run:
 
 ```
 nvm --version # might look like "0.34.0"
@@ -116,8 +104,10 @@ Make use of the many built-in Ember-CLI generators to get files that follow the 
 
 ### Running Tests
 
-- `ember test` (to run all tests)
-- `ember test --server` (to re-run tests on every file change)
+You may ues _either_ of the following two commands to run the entire test suite:
+
+- `ember test`
+- `ember test --server`
 
 ### Linting
 

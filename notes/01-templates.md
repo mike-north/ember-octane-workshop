@@ -267,3 +267,7 @@ If `ember serve` is running, you should be able to visit `http://localhost:4200`
 <img src="./img/app.png" width=800>
 
 </p>
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/5ba89d25b4a638f17a06bd1d2eb5f0e1152e2903)

@@ -311,3 +311,7 @@ In the above code that we added, apart from the actual tests, there are other fu
 - `jsonResponse` - helper function that converts the raw response data, in this case, an array of objects, and converts it into a format that can be used by `setupServer` method.
 
 And that's it. We have now successfully implemented conditional route forwarding, and added tests.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/236b55cdbdcaf605c280d462fd9ea433b506fa52)

@@ -289,4 +289,6 @@ We don't have to worry about too much more than this, given that we've already u
 
 Congrats! We're done with this helper!
 
-<!-- It would be great to have the completed files shown so users can compare it to their repo in case there are any mistakes in their work -->
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/e3190f7c39ec5032c658424905cfe61d6c0e3642)

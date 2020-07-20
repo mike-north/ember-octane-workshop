@@ -63,3 +63,7 @@ and now go to http://localhost:4200/tests. Try adding a `debugger;` to various p
 <!-- Give short explaination about Ember test helpers and how it is applicable to this project/why the dev should know about them -->
 
 [Ember's test helpers](https://github.com/emberjs/ember-test-helpers/blob/master/API.md) can do a lot more, and are built using `async`/`await`.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/672bd7d733a61ce047f5a3f49fb3d2cf6a95da29)

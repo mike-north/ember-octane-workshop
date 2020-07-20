@@ -161,3 +161,7 @@ Go back to [`app/components/channel-footer.js`](`../app/components/channel-foote
 ```
 
 You should now be able to create chat messages!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/8d219e83a39ba848263b49370adcba64835e01fb)

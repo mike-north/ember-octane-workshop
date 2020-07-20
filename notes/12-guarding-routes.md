@@ -214,3 +214,7 @@ test('visiting /teams while logged out', async function (assert) {
   assert.equal(currentURL(), '/login');
 });
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/f695c3d1720150a066b055b317aaef679f4d4234)

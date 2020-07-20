@@ -153,3 +153,7 @@ Finally, let's go back to our JS module and make sure that if the form is disabl
 +    if (!this.isDisabled) this.handleSignIn(this.userId);
    }
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/36cef7d1b40c652b601bdd1cbd15c27c6caaca85)

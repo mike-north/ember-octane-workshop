@@ -148,3 +148,7 @@ Going back to http://localhost:4200/tests?filter=login-form&nolint, you should s
 ![second-test](./img/09-integration-tests/another-test.png)
 
 Congrats! We've just written a nice component integration test!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/3eb1ec93f29d6d2877871f0bc62551bdd6808ea1)
