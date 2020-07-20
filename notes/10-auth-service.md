@@ -2,7 +2,7 @@
 
 Services allow state and functionality (i.e., regular functions, actions) to be shared across various parts of an Ember app.
 
-<!-- Explain what services are -->
+<!-- Explain what services are. Even if things are so simple that there's nothing more to say, we should make that clear -->
 
 In our case, there are various things that may need to "see" or "use" authentication concerns (i.e., a `currentUser`):
 
