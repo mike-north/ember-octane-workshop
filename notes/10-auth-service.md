@@ -32,7 +32,7 @@ We could use a component for this, but it would increase the complexity of our t
 </Auth>
 ```
 
-This is pretty ugly, and gets uglier as more of these cross-cutting areas are added, and more things need to access them. Thankfully, Services allow a better way of accomplishing the same thing...
+This is pretty ugly, and gets uglier as more of these cross-cutting areas (state and functionality that many parts of the app need to know about) are added, and more things need to access them. Thankfully, Services allow a better way of accomplishing the same thing...
 
 <!-- Clearify "cross-cutting areas" - state differently -->
 
