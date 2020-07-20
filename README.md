@@ -158,7 +158,7 @@ If we want to create an Ember Octane app, [Ember Octane](https://emberjs.com/edi
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
-Next, I installed a few packages like:
+This workshop project is basically a new ember app, with the following packages pre-installed for your convenience:
 
 - [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) (deprecated)
 - [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)
