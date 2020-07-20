@@ -160,7 +160,7 @@ ember new -b @ember/octane-app-blueprint <app-name>
 
 This workshop project is basically a new ember app, with the following packages pre-installed for your convenience:
 
-- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) (deprecated)
+- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind)
 - [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)
 - [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
 
