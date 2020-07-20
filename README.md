@@ -132,7 +132,7 @@ Depending on whether you want an un-minified development build or a minified pro
 
 ## Troubleshooting
 
-- Be sure your watchman is up-to-date by running `brew install watchman` or follow the documentation [embercli](https://ember-cli.com/user-guide/#watchman)
+- Be sure your [watchman](https://facebook.github.io/watchman/) is up-to-date by running `brew install watchman` or follow the documentation [embercli](https://ember-cli.com/user-guide/#watchman)
 -
 
 ## Further Reading / Useful Links
