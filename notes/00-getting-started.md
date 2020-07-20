@@ -82,4 +82,4 @@ You should see some indication that the app is running on localhost (`:4200` by 
 
     Build successful (2158ms) – Serving on http://localhost:4200/
 
-Once you visit localhost, you will see a congratulations 🐹message if the app is correctly spun up.
+Once you visit https://localhost:4200, you will see a congratulations 🐹message if the app is correctly spun up.
