@@ -251,7 +251,7 @@ module('Integration | Helper | format-timestamp', function (hooks) {
   test('it renders', async function (assert) {
     this.set('inputValue', '1234');
 
-    await render(hbs`{{format-timestamp inputValue}}`);
+    await render(hbs`{{format-timestamp this.inputValue}}`);
 
     assert.equal(this.element.textContent.trim(), '1234');
   });
