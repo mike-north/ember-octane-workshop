@@ -21,10 +21,6 @@ export default class StubbedAuthService extends Service {
    */
   @tracked currentUserId = null;
 
-  get isAuthenticated() {
-    return !!this.currentUserId;
-  }
-
   loginWithUserId(id) {
     this.currentUserId = id;
     this.router.transitionTo('teams');
