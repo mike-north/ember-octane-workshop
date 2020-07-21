@@ -20,9 +20,13 @@ There are a few things you need to ensure you have installed, in order to be rea
 
 ### Node.js
 
-You’ll need a relatively recent version (v10.0 or newer ideally) of Node.js installed. On OS X, a great way of doing this without disturbing your existing dev environment is to install NVM. [Installation instructions are here](https://github.com/creationix/nvm#installation).
+You’ll need a relatively recent version (v10.0 or newer ideally) of Node.js installed. On OS X, a great way of doing this without disturbing your existing dev environment is to install NVM.
 
-You’ll know everything is set up properly when you can run
+### Install & Update Script
+
+Follow the NVM installation instruction to get set up. [Installation instructions are here](https://github.com/creationix/nvm#installation). If you are installing NVM for the first time, but sure to check your terminal for further instructions.
+
+You’ll know everything is set up properly when you can run:
 
 ```
 nvm --version # might look like "0.34.0"
@@ -52,7 +56,10 @@ ember --version
 
 and see something like
 
+<!-- The term "see something like" may confuse users from the standpoint of a user wondering if the versions should be the exact match or not and if not when does a version stray too far from the listed version below that it becomes a problem. Changing the language to something like:  "You will see the following if everything is installed correctly" may be clearer to the user. -->
+
 ```
+# NOTE: your version numbers may be different. This is fine!
 ember-cli: 3.10.0
 node: 11.6.0
 os: darwin x64
@@ -86,6 +93,7 @@ ember serve
 ```
 
 - Visit your app at [http://localhost:4200](http://localhost:4200)
+  - You will see a Congratulations message if the app is correctly spun up
 - Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests)
 - Your app runs on localhost `:4200` by default. You can customize this via `--port <port-number>`
 
@@ -94,6 +102,8 @@ ember serve
 Make use of the many built-in Ember-CLI generators to get files that follow the latest practices (with matching tests\_. To see available generators, run `ember help generate`
 
 ### Running Tests
+
+You may ues _either_ of the following two commands to run the entire test suite:
 
 - `ember test`
 - `ember test --server`
@@ -106,8 +116,15 @@ Make use of the many built-in Ember-CLI generators to get files that follow the 
 
 ### Building
 
-- `ember build` (development)
-- `ember build --environment production` (production)
+Depending on whether you want an un-minified development build or a minified production build (takes longer, but results in smaller file sizes) you may run either of the following
+
+- `ember build # development`
+- `ember build --environment production # production`
+
+## Troubleshooting
+
+- Be sure your [watchman](https://facebook.github.io/watchman/) is up-to-date by running `brew install watchman` or follow the documentation [embercli](https://ember-cli.com/user-guide/#watchman)
+-
 
 ## Further Reading / Useful Links
 
@@ -124,15 +141,15 @@ We _could_ create a new Ember app by running the following command (you don't ne
 ember new <app-name>
 ```
 
-This would create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app). If we want to create an Ember Octane app, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
+This would create a project based on [the default Ember.js app blueprint](https://github.com/ember-cli/ember-cli/tree/7d9fce01d8faa4ce69cc6a8aab6f7f07b6b88425/blueprints/app).
+
+If we want to create an Ember Octane app, [Ember Octane](https://emberjs.com/editions/octane/) being the newest version of Ember.js, we can use the [official Ember Octane blueprint](https://github.com/ember-cli/ember-octane-blueprint/tree/396992a0e0582a18fe718e888a57432aaafc46fe/packages/%40ember/octane-app-blueprint) instead by running:
 
 ```sh
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
-Beyond this, all I've done is...
-
-Installed a few packages like
+This workshop project is basically a new ember app, with the following packages pre-installed for your convenience:
 
 - [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind)
 - [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)

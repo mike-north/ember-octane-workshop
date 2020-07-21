@@ -1,7 +1,10 @@
 # Guarding Routes
 
 In this exercise, we will be adding redirection in the UI flow based on whether the user is logged in or not.
-Specifically, users should be able to access the `login` route, only when they are _not logged in_. And similarly, users should be able to access the `teams` route only they are _logged in_.
+Specifically, users should be able to access the `login` route, only when they are _not logged in_. And similarly, users should be able to access the `teams` route only they are _logged in_. Clear? Let’s use a diagram just to be sure:
+
+![Login redirection flow chart](./img/12-guarding-routes/flow-chart.png)
+
 
 So let's get started.
 
@@ -61,7 +64,7 @@ The jsdoc comment above, for `AuthService`, improves the developer experience wh
 ## Adding a redirect to the /login page
 
 Now let's move on to `teams` route defined at [`app/routes/teams.js`](../app/routes/teams.js).
-The `login` route should have a similar [`beforeModel`]((https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel)) hook, but note that the validation logic is flipped in this case. We redirect to the `/login` page only the user is _logged out_.
+The `login` route should have a similar [`beforeModel`](https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel) hook, but note that the validation logic is flipped in this case. We redirect to the `/login` page only the user is _logged out_.
 
 In the `teams` route, import the `auth` service, since its not already available(injected).
 
@@ -71,7 +74,8 @@ import { inject as service } from '@ember/service';
 import AuthService from 'shlack/services/auth';
 ```
 
-And, in the same route file([`app/routes/teams.js`](../app/routes/teams.js)), inject the imported `auth` service and add the [`beforeModel`]((https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel)) hook to check if the user is logged in.
+And, in the same route file([`app/routes/teams.js`](../app/routes/teams.js)), inject the imported `auth` service and add the [`beforeModel`](<(https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel)>) hook to check if the user is logged in.
+
 ```js
 
    /**
@@ -91,7 +95,10 @@ The jsdoc comment above, for `AuthService`, improves the developer experience wh
 
 ## Changes in Templates
 
-Now that we have the javascript implementation in place, lets add the UI for the same.
+Now that we have the javascript part of our component in place, let's work on the matching handlebars template.
+
+<!-- What is this inreference to - "for the same"  -->
+
 In `app/templates/components/team-sidebar.hbs`, replace the `LinkTo` component with a plain old HTML `button` element with an onclick handler that will trigger the `logout` action, that you defined in `app/services/auth.js`.
 
 ```diff
@@ -117,7 +124,7 @@ Reasons why acceptance tests are preferred (over unit tests or an integration te
 
 ### Test login
 
-In [`../tests/acceptance/login-test.js`](../tests/acceptance/login-test.js), import the `StubbedAuthService` service:
+In [`tests/acceptance/login-test.js`](../tests/acceptance/login-test.js), import the `StubbedAuthService` service:
 
 ```js
 import StubbedAuthService from '../test-helpers/auth-service';
@@ -126,7 +133,7 @@ import StubbedAuthService from '../test-helpers/auth-service';
 Then, inject the auth service inside the `beforeEach` hooks for test setup.
 
 ```js
-hooks.beforeEach(function() {
+hooks.beforeEach(function () {
   this.owner.register('service:auth', StubbedAuthService);
 });
 ```
@@ -134,7 +141,7 @@ hooks.beforeEach(function() {
 Modify the test with label, `starting logged out, then logging in` as follows:
 
 ```js
-test('starting logged out, then logging in', async function(assert) {
+test('starting logged out, then logging in', async function (assert) {
   const auth = this.owner.lookup('service:auth');
   auth.currentUserId = null;
 
@@ -151,7 +158,7 @@ test('starting logged out, then logging in', async function(assert) {
 Then add a test for the use case when the user is `already logged in`, as follows:
 
 ```js
-test('already logged in', async function(assert) {
+test('already logged in', async function (assert) {
   const auth = this.owner.lookup('service:auth');
   auth.currentUserId = '1';
 
@@ -163,7 +170,7 @@ test('already logged in', async function(assert) {
 
 ### Test logout
 
-Now let's add acceptance tests to test when users are logged out. The test file is present at [`../tests/acceptance/logout-test.js`](../tests/acceptance/logout-test.js).
+Now let's add acceptance tests to test when users are logged out. The test file is present at [`tests/acceptance/logout-test.js`](../tests/acceptance/logout-test.js).
 
 And as in the previous test, first import the `StubbedAuthService` service:
 
@@ -177,7 +184,7 @@ And add a test with label, `visiting /teams while logged in, and then logging ou
 Modify the `beforeEach` in the same way we did for the previous test.
 
 ```js
-hooks.beforeEach(function() {
+hooks.beforeEach(function () {
   this.owner.register('service:auth', StubbedAuthService);
 });
 ```
@@ -185,7 +192,7 @@ hooks.beforeEach(function() {
 Then add the test for accessing `teams` route while being logging in, and then logging out:
 
 ```js
-test('visiting /teams while logged in, and then logging out', async function(assert) {
+test('visiting /teams while logged in, and then logging out', async function (assert) {
   const auth = this.owner.lookup('service:auth');
   auth.currentUserId = '1';
 
@@ -201,7 +208,7 @@ test('visiting /teams while logged in, and then logging out', async function(ass
 And finally, let's add a test for the use case `when visiting /teams while logged out`.
 
 ```js
-test('visiting /teams while logged out', async function(assert) {
+test('visiting /teams while logged out', async function (assert) {
   const auth = this.owner.lookup('service:auth');
   auth.currentUserId = null;
 
@@ -210,3 +217,7 @@ test('visiting /teams while logged out', async function(assert) {
   assert.equal(currentURL(), '/login');
 });
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/f695c3d1720150a066b055b317aaef679f4d4234)
