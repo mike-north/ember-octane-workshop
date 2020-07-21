@@ -2,9 +2,9 @@
 
 Services allow state and functionality (i.e., regular functions, actions) to be shared across various parts of an Ember app.
 
-<!-- Explain what services are -->
+<!-- Explain what services are. Even if things are so simple that there's nothing more to say, we should make that clear -->
 
-In our case, there are various things that may need to "see" or "use" authentication concerns (i.e., a `currentUser`):
+In our case, there are various things that may need to "see" or "use" authentication state/functionality (i.e., a `currentUser`, the `logOut` and `logIn` functions, etc...):
 
 <!-- Clearify "authentication concerns" - state it differently  -->
 
@@ -13,7 +13,7 @@ In our case, there are various things that may need to "see" or "use" authentica
 - Logging in
 - Logging out
 
-We could use a component for this, but it would increase the complexity of our templates, and would involve passing extra arguements through the component tree.
+We could use a component for this, but it would increase the complexity of our templates and would involve passing extra named args (the things that look like `{{ @firstName }}`) through the component tree.
 
 ```hbs
 <Auth as |authApi|>
@@ -32,7 +32,7 @@ We could use a component for this, but it would increase the complexity of our t
 </Auth>
 ```
 
-This is pretty ugly, and gets uglier as more of these cross-cutting areas are added, and more things need to access them. Thankfully, Services allow a better way of accomplishing the same thing...
+This is pretty ugly, and gets uglier as more of these cross-cutting areas (state and functionality that many parts of the app need to know about) are added, and more things need to access them. Thankfully, Services allow a better way of accomplishing the same thing...
 
 <!-- Clearify "cross-cutting areas" - state differently -->
 

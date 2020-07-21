@@ -25,9 +25,8 @@ ember --version
 
 and see something like
 
-<!-- The term "see something like" may confuse users from the standpoint of a user wondering if the versions should be the exact match or not and if not, when does a version stray too far from the listed version below that it becomes a problem. Changing the language to something like:  "You will see the following if everything is installed correctly" or "You should see the following output. It is okay if the versions are within a 1.0 range of the versions below" may be clearer to the user. -->
-
 ```sh
+# You may see different version numbers when you run the command. This is fine!
 ember-cli: 3.10.0
 node: 11.6.0
 os: darwin x64
@@ -83,4 +82,4 @@ You should see some indication that the app is running on localhost (`:4200` by 
 
     Build successful (2158ms) – Serving on http://localhost:4200/
 
-Once you visit localhost, you will see a congratulations 🐹message if the app is correctly spun up.
+Once you visit https://localhost:4200, you will see a congratulations 🐹message if the app is correctly spun up.

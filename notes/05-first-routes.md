@@ -26,8 +26,13 @@ The `application` route (we have no corresponding file for this in our project) 
 application # application.hbs
   login     # login.hbs
   teams     # teams.hbs
+<<<<<<< HEAD
     team    # teams/team.hbs
       channel #   teams/team/channel.hbs
+=======
+    team    #   teams/team.hbs
+      channel # teams/team/channel.hbs
+>>>>>>> ff3a9371a3d15987d24c9aa98c59f9f2fededc10
 ```
 
 ![routes](./img/05-first-routes/routes.gif)

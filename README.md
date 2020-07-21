@@ -59,6 +59,7 @@ and see something like
 <!-- The term "see something like" may confuse users from the standpoint of a user wondering if the versions should be the exact match or not and if not when does a version stray too far from the listed version below that it becomes a problem. Changing the language to something like:  "You will see the following if everything is installed correctly" may be clearer to the user. -->
 
 ```
+# NOTE: your version numbers may be different. This is fine!
 ember-cli: 3.10.0
 node: 11.6.0
 os: darwin x64
@@ -84,8 +85,6 @@ git clone git@github.com:mike-north/ember-octane-workshop.git shlack
 cd shlack
 yarn install
 ```
-
-<!-- Are there options for users to use npm vs yarn if npm is their default dependency installer? -->
 
 ### Start the development server
 
@@ -117,13 +116,14 @@ You may ues _either_ of the following two commands to run the entire test suite:
 
 ### Building
 
-- `ember build` (development)
-- `ember build --environment production` (production)
-<!-- When should a user use which, in the case of the eng workshop? Provide more documentation -->
+Depending on whether you want an un-minified development build or a minified production build (takes longer, but results in smaller file sizes) you may run either of the following
+
+- `ember build # development`
+- `ember build --environment production # production`
 
 ## Troubleshooting
 
-- Be sure your watchman is up-to-date by running `brew install watchman` or follow the documentation [embercli](https://ember-cli.com/user-guide/#watchman)
+- Be sure your [watchman](https://facebook.github.io/watchman/) is up-to-date by running `brew install watchman` or follow the documentation [embercli](https://ember-cli.com/user-guide/#watchman)
 -
 
 ## Further Reading / Useful Links
@@ -149,9 +149,9 @@ If we want to create an Ember Octane app, [Ember Octane](https://emberjs.com/edi
 ember new -b @ember/octane-app-blueprint <app-name>
 ```
 
-Next, I installed a few packages like:
+This workshop project is basically a new ember app, with the following packages pre-installed for your convenience:
 
-- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) (deprecated)
+- [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind)
 - [ember-on-modifier](https://github.com/buschtoens/ember-on-modifier)
 - [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
 

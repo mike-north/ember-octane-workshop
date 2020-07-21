@@ -61,7 +61,7 @@ The jsdoc comment above, for `AuthService`, improves the developer experience wh
 ## Adding a redirect to the /login page
 
 Now let's move on to `teams` route defined at [`app/routes/teams.js`](../app/routes/teams.js).
-The `login` route should have a similar [`beforeModel`](<(https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel)>) hook, but note that the validation logic is flipped in this case. We redirect to the `/login` page only the user is _logged out_.
+The `login` route should have a similar [`beforeModel`](https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel) hook, but note that the validation logic is flipped in this case. We redirect to the `/login` page only the user is _logged out_.
 
 In the `teams` route, import the `auth` service, since its not already available(injected).
 
@@ -92,7 +92,7 @@ The jsdoc comment above, for `AuthService`, improves the developer experience wh
 
 ## Changes in Templates
 
-Now that we have the javascript implementation in place, lets add the UI for the same.
+Now that we have the javascript part of our component in place, let's work on the matching handlebars template.
 
 <!-- What is this inreference to - "for the same"  -->
 

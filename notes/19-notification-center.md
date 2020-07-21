@@ -91,7 +91,7 @@ Now, anywhere we need to be able to provide notifications, we need only inject t
 
 ## The List of Notifications
 
-We'll need a component for the list of notifications. Let's use the ember-cli to generate one
+We'll need a component for the list of notifications. Let's use ember-cli to generate one
 
 ```sh
 ember generate component notification-list
