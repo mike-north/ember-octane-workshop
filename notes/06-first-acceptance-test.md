@@ -1,6 +1,6 @@
 # Our First Acceptance Test
 
-Good acceptance tests imitate using your app the way a user would. For browsers, this means your tests should be expressed in terms of a sequence of things like
+Good acceptance tests imitate using your app the way a user would. For browsers, this means your tests should be expressed in terms of a sequence of things like:
 
 - Visit a URL
 - Click on a button
@@ -10,7 +10,7 @@ Good acceptance tests imitate using your app the way a user would. For browsers,
 
 If you find yourself wanting to do things that a user can't do -- that's a sign that you may be diverging from the territory of acceptance tests.
 
-Ember provides fantastic support for these kinds of tests out of the box. New apps include support for [QUnit](https://qunitjs.com) by default (via the [`ember-qunit`](https://github.com/emberjs/ember-qunit)), but you can swap it out for [Mocha](https://mochajs.org/) (via [`ember-mocha`](https://github.com/emberjs/ember-mocha)) in about a minute.
+Ember provides fantastic support for these kinds of tests out of the box. New apps include support for [QUnit](https://qunitjs.com) by default (via the command [`ember-qunit`](https://github.com/emberjs/ember-qunit)), but you can swap it out for [Mocha](https://mochajs.org/) (via the command [`ember-mocha`](https://github.com/emberjs/ember-mocha)) in about a minute.
 
 <hr>
 <p>
@@ -43,10 +43,10 @@ import { module, test } from 'qunit';
 import { visit, currentURL, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
-module('Acceptance | logout', function(hooks) {
+module('Acceptance | logout', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('visiting /teams', async function(assert) {
+  test('visiting /teams', async function (assert) {
     await visit('/teams'); // Go to a URL
 
     assert.equal(currentURL(), '/teams'); // Make sure we've arrived
@@ -60,4 +60,10 @@ module('Acceptance | logout', function(hooks) {
 
 and now go to http://localhost:4200/tests. Try adding a `debugger;` to various places within this test (i.e., between `await`s). What do you notice?
 
-[Ember's test helpers](https://github.com/emberjs/ember-test-helpers/blob/master/API.md) can do a lot more, and are built with using `async`/`await` in mind.
+<!-- Give short explaination about Ember test helpers and how it is applicable to this project/why the dev should know about them -->
+
+[Ember's test helpers](https://github.com/emberjs/ember-test-helpers/blob/master/API.md) can do a lot more, and are built using `async`/`await`.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/672bd7d733a61ce047f5a3f49fb3d2cf6a95da29)

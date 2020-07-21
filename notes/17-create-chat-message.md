@@ -58,7 +58,7 @@ Next, let's enhance our channel container by implementing a `createMessage` acti
   }
 ```
 
-In this component's template, let's create a new `acts` object that's yielded out, and pass our new action along as a property. Consumers can then do something like `channel.acts.createMessage` to access this function. Make the following change to [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs)
+In this component's template, let's create a new `acts` object that's yielded out, and pass our new action along as a property. Consumers can then do something like `channel.acts.createMessage` to access this function. Make the following change to [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs).
 
 ```diff
 <main class="flex-1 flex flex-col bg-white overflow-hidden channel"
@@ -74,7 +74,7 @@ In this component's template, let's create a new `acts` object that's yielded ou
 </main>
 ```
 
-Consume this new action that's yielded out of the component in [`app/templates/teams/team/channel.hbs`](../app/templates/teams/team/channel.hbs)
+Consume this new action that's yielded out of the component in [`app/templates/teams/team/channel.hbs`](../app/templates/teams/team/channel.hbs).
 
 ```diff
     {{/each}}
@@ -85,17 +85,17 @@ Consume this new action that's yielded out of the component in [`app/templates/t
 </ChannelContainer>
 ```
 
-We now have a function available to `<ChannelFooter />`, either as `@createMessage` in the component's `.hbs` file or `this.args.createMessage` within the `.js` file, which when passed a string creates a new chat message for the current user, in the current channel.
+We now have a function available to `<ChannelFooter />`, either as `@createMessage` in the component's `.hbs` file or `this.args.createMessage` within the `.js` file which, when passed a string, creates a new chat message for the current user, in the current channel.
 
-Before we use it, let's stop and think about some other reasonable behavior we might want in this component
+Before we use it, let's stop and think about some other reasonable behavior we might want in this component:
 
 - The user should be able to "click" the "send" button to create the message, or `Cmd + Enter`
   - this is an indication that we probably want the "submitting" to happen via `<form>` and the `onsubmit` event.
 - The "send" button should be disabled unless the user actually types something in the message field
   - this is an indication that we need to keep track of the `<input>`'s value at all times, and create some derived state (`isDisabled`) based on it
 
-Let's care of the "disable send, if the message is blank" functionality first. Create a new file [`app/components/channel-footer.js`](`../app/components/channel-footer.js`)
-that contains
+Let's take care of the "disable send, if the message is blank" functionality first. Create a new file [`app/components/channel-footer.js`](`../app/components/channel-footer.js`)
+that contains:
 
 ```js
 import Component from '@glimmer/component';
@@ -116,7 +116,7 @@ export default class ChannelFooterComponent extends Component {
 }
 ```
 
-We'll need to hook this up with a few changes to our existing hbs file for this component [`app/templates/components/channel-footer.hbs`](`../app/templates/components/channel-footer.hbs`)
+We'll need to hook this up with a few changes to our existing hbs file for this component [`app/templates/components/channel-footer.hbs`](`../app/templates/components/channel-footer.hbs`).
 
 ```diff
     <input id="message-input" class="channel-footer__message-input w-full px-4"
@@ -147,7 +147,7 @@ Now let's hook up that submit event. Make one more change to [`app/templates/com
     </h1>
 ```
 
-Go back to [`app/components/channel-footer.js`](`../app/components/channel-footer.js`) and add the appropriate action
+Go back to [`app/components/channel-footer.js`](`../app/components/channel-footer.js`) and add the appropriate action.
 
 ```js
   @action
@@ -161,3 +161,7 @@ Go back to [`app/components/channel-footer.js`](`../app/components/channel-foote
 ```
 
 You should now be able to create chat messages!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/8d219e83a39ba848263b49370adcba64835e01fb)

@@ -2,14 +2,18 @@
 
 Services allow state and functionality (i.e., regular functions, actions) to be shared across various parts of an Ember app.
 
-In our case, there are various things that may need to "see" or "use" authentication concerns (i.e., a `currentUser`).
+<!-- Explain what services are. Even if things are so simple that there's nothing more to say, we should make that clear -->
+
+In our case, there are various things that may need to "see" or "use" authentication state/functionality (i.e., a `currentUser`, the `logOut` and `logIn` functions, etc...):
+
+<!-- Clearify "authentication concerns" - state it differently  -->
 
 - Creating a new chat message
 - Preventing unauthenticated users from entering the app
 - Logging in
 - Logging out
 
-We could use a component for this, but it would increase the complexity of our templates, and would involve passing extra args through the component tree.
+We could use a component for this, but it would increase the complexity of our templates and would involve passing extra named args (the things that look like `{{ @firstName }}`) through the component tree.
 
 ```hbs
 <Auth as |authApi|>
@@ -28,7 +32,9 @@ We could use a component for this, but it would increase the complexity of our t
 </Auth>
 ```
 
-This is pretty ugly, and gets uglier as more of these cross-cutting areas are added, and more things need to access them. Thankfully, Services allow a better way of accomplishing the same thing...
+This is pretty ugly, and gets uglier as more of these cross-cutting areas (state and functionality that many parts of the app need to know about) are added, and more things need to access them. Thankfully, Services allow a better way of accomplishing the same thing...
+
+<!-- Clearify "cross-cutting areas" - state differently -->
 
 <hr>
 <p>
@@ -46,13 +52,13 @@ This is pretty ugly, and gets uglier as more of these cross-cutting areas are ad
 </p>
 <hr>
 
-Run the following
+Run the following:
 
 ```
 ember generate service auth
 ```
 
-This will result in two new files being created
+This will result in two new files being created.
 
 - [`app/services/auth.js`](../app/services/auth.js) - the service
 - [`tests/unit/services/auth-test.js`](../tests/unit/services/auth-test.js) - a unit test for the service
@@ -85,16 +91,16 @@ export default class AuthService extends Service {
 
 ### Delegating "logging in" to the login component
 
-Let's use this service in our `<LoginForm />` component in [`app/components/login-form.js`](../app/components/login-form.js)
+Let's use this service in our `<LoginForm />` component in [`app/components/login-form.js`](../app/components/login-form.js).
 
-Start by adding these imports
+Start by adding these imports:
 
 ```js
 import { inject as service } from '@ember/service';
 import AuthService from 'shlack/services/auth';
 ```
 
-inject the service onto the component
+Inject the service onto the component.
 
 ```ts
   /**
@@ -103,7 +109,7 @@ inject the service onto the component
   @service auth;
 ```
 
-and update the `handleSignIn` function to make use of it
+Update the `handleSignIn` function to make use of it.
 
 ```diff
    handleSignIn(value) {
@@ -115,7 +121,7 @@ and update the `handleSignIn` function to make use of it
 
 ### Rendering authentication data in the chat UI
 
-Let's show the ID of the currently logged in user in the chat sidebar component. We just have a `.hbs` file so far, so let's upgrade it to a proper component
+Let's show the ID of the currently logged in user in the chat sidebar component. We just have a `.hbs` file so far, so let's upgrade it to a proper component.
 
 **BE SURE NOT TO OVERWRITE THE TEMPLATE**
 
@@ -123,7 +129,7 @@ Let's show the ID of the currently logged in user in the chat sidebar component.
 ember generate component team-sidebar
 ```
 
-in the newly-created [`app/components/team-sidebar.js`](../app/components/team-sidebar.js), add the following service injection
+In the newly-created [`app/components/team-sidebar.js`](../app/components/team-sidebar.js), add the following service injection:
 
 ```diff
  import Component from '@glimmer/component';
@@ -138,7 +144,7 @@ in the newly-created [`app/components/team-sidebar.js`](../app/components/team-s
  }
 ```
 
-in [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs) use the currentUserId value from the service
+In [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs) use the currentUserId value from the service.
 
 ```diff
          <span class="team-sidebar__current-user-name text-white opacity-50 text-sm">
@@ -151,7 +157,7 @@ in [`app/templates/components/team-sidebar.hbs`](../app/templates/components/tea
 
 ### Tests
 
-Update the component test at [`tests/integration/components/team-sidebar-test.js`](../tests/integration/components/team-sidebar-test.js) so that it uses the following assertion
+Update the component test at [`tests/integration/components/team-sidebar-test.js`](../tests/integration/components/team-sidebar-test.js) so that it uses the following assertion:
 
 ```js
 assert.deepEqual(
@@ -163,13 +169,13 @@ assert.deepEqual(
 );
 ```
 
-Create a new acceptance test for logging in
+Create a new acceptance test for logging in.
 
 ```sh
 ember generate acceptance-test login
 ```
 
-Open [`tests/acceptance/login-test.js`](../tests/acceptance/login-test.js) and replace the example assertions with
+Open [`tests/acceptance/login-test.js`](../tests/acceptance/login-test.js) and replace the example assertions with:
 
 ```ts
 await visit('/login');
@@ -183,8 +189,12 @@ await click('form input[type="submit"]');
 assert.equal(currentURL(), '/teams');
 ```
 
-Being sure to import what you need from `@ember/test-helpers`
+Being sure to import what you need from `@ember/test-helpers`.
 
 ```ts
 import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/5a7cd8b74ac6bf429b3e15e2419d91a71a6829ec)
