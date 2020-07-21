@@ -4,12 +4,12 @@ As we saw when writing tests for our `{{format-timestamp}}` helper, integration 
 
 Our `<LoginForm />` component has become complicated enough that we should write some meaningful tests for it.
 
-For our learning purposes, we'll just worry about two scenarios
+For our learning purposes, we'll just worry about two scenarios:
 
 - When the component is initially rendered, no user is selected, and the `input[type="submit"]` is disabled
 - Once a user is chosen, the `input[type="submit"]` is enabled, and the `<select>` should have a value of the appropriate user's id
 
-Open up the integration test for `<LoginForm />` - [`tests/integration/components/login-form-test.js`](../tests/integration/components/login-form-test.js). It should look like this
+Open up the integration test for `<LoginForm />` - [`tests/integration/components/login-form-test.js`](../tests/integration/components/login-form-test.js). It should look like this:
 
 ```ts
 import { module, test } from 'qunit';
@@ -17,10 +17,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | login-form', function(hooks) {
+module('Integration | Component | login-form', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
@@ -31,7 +31,13 @@ module('Integration | Component | login-form', function(hooks) {
         .trim()
         .replace(/\s*\n+\s*/g, '\n')
         .split('\n'),
-      ['Login', 'Select a user', 'Select a user', 'Testy Testerson', 'Sample McData']
+      [
+        'Login',
+        'Select a user',
+        'Select a user',
+        'Testy Testerson',
+        'Sample McData',
+      ]
     );
   });
 });
@@ -51,17 +57,17 @@ test module
     assertion
 ```
 
-If you go to http://localhost:4200/tests?filter=login-form&nolint, you can see this information in the test runner UI
+If you go to http://localhost:4200/tests?filter=login-form&nolint, you can see this information in the test runner UI:
 
 ![test-runner](./img/09-integration-tests/test-runner.png)
 
-Let's change the title of the existing test to something more descriptive
+Let's change the title of the existing test to something more descriptive.
 
 ```
 'initially has no user selected, and "Sign In" button disabled'
 ```
 
-We'll need to get ahold of two DOM elements to assert against
+We'll need to get ahold of two DOM elements to assert against:
 
 1. the "Sign In" button
 2. the `<select>`
@@ -71,47 +77,47 @@ let button = find('input[type="submit"]');
 let select = find('select');
 ```
 
-If you wanted to add some special autocomplete awesomeness, you could give your editor a clue (via [JSDoc comments](http://usejsdoc.org/tags-type.html)) of the types we expect `find` to return in these cases
+If you wanted to add some special autocomplete awesomeness, you could give your editor a clue (via [JSDoc comments](http://usejsdoc.org/tags-type.html)) of the types we expect `find` to return in these cases.
 
 ```js
 let button = /** @type {HTMLInputElement} */ (find('input[type="submit"]'));
 let select = /** @type {HTMLSelectElement} */ (find('select'));
 ```
 
-We will also need to import `find` from `@ember/test-helpers` by updating line 3: 
+We will also need to import `find` from `@ember/test-helpers` by updating line 3:
 
 ```js
 import { render, find } from '@ember/test-helpers';
 ```
 
-Now we can write two assertions against these
+Now we can write two assertions against these:
 
 ```js
 assert.equal(select.value, '', 'Initially, no user is selected');
 assert.equal(button.disabled, true, 'Initially the button is disabled');
 ```
 
-Go back to http://localhost:4200/tests?filter=login-form&nolint and you should see the nice assertion labels showing up
+Go back to http://localhost:4200/tests?filter=login-form&nolint and you should see the nice assertion labels showing up:
 
 ![assertion-labels](./img/09-integration-tests/assertion-labels.png)
 
-Create a new test immediately below the first one, and name it something like
+Create a new test immediately below the first one, and name it something like:
 
 ```ts
-test('after selecting a user "Sign In" button enabled', async function(assert) {
+test('after selecting a user "Sign In" button enabled', async function (assert) {
   // ...
 });
 ```
 
-define the test body as follows
+Define the test body as follows:
 
 ```ts
 // Render the component
 await render(hbs`<LoginForm />`);
 
 // Pluck off the DOM elements we care about
-let button = /** @type {HTMLInputElement} */ (find('input[type="submit"]'));
-let select = /** @type {HTMLSelectElement} */ (find('select'));
+let button = /** @type {HTMLInputElement} */ find('input[type="submit"]');
+let select = /** @type {HTMLSelectElement} */ find('select');
 
 // Select the <option> with value="1"
 await fillIn('select', '1');
@@ -137,8 +143,12 @@ assert.deepEqual(
 );
 ```
 
-Going back to http://localhost:4200/tests?filter=login-form&nolint, you should see the new test and all of our nice assertion labels in the test runner UI
+Going back to http://localhost:4200/tests?filter=login-form&nolint, you should see the new test and all of our nice assertion labels in the test runner UI.
 
 ![second-test](./img/09-integration-tests/another-test.png)
 
-Congrats! we've just written a nice component integration test!
+Congrats! We've just written a nice component integration test!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/3eb1ec93f29d6d2877871f0bc62551bdd6808ea1)
