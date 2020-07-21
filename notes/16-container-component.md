@@ -20,18 +20,18 @@ The pattern of container and presentational components was made popular by [this
 
 First, let's define two ideas that are central to this topic
 
-- A _container component_ owns state and may have some state-manipulating actions, doesn't do much in terms of rendering something to the screen. The primary purpose of one of these components is to "do things"
+- A _container component_, which owns state and may have some state-manipulating actions, doesn't do much in terms of rendering something to the screen. The primary purpose of one of these components is to "do things"
 - A _presentational component_ owns no state, and has no state-manipulating actions (although it may be passed these things as arguments). The primary purpose of one of these components is to "display things"
 
 In our app, we're going to use a container component to load channel messages, and in future exercises, create and delete messages.
 
-Let's use ember-cli to create this new component
+Let's use ember-cli to create this new component.
 
 ```sh
 ember generate component channel-container
 ```
 
-This component will hold the `messages` state (and be responsible for managing it). Let's set ourselves up for this properly in [`app/components/channel-container.js`](../app/components/channel-container.js) with the following
+This component will hold the `messages` state (and be responsible for managing it). Let's set ourselves up for this properly in [`app/components/channel-container.js`](../app/components/channel-container.js) with the following:
 
 ```js
 import Component from '@glimmer/component';
@@ -43,7 +43,7 @@ export default class ChannelContainerComponent extends Component {
 }
 ```
 
-Next, let's give ourselves a single DOM element "wrapper" around our container, and be sure to yield out the messages array so the "block" passed into our component can have access to them. In [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs), start with a template like
+Next, let's give ourselves a single DOM element "wrapper" around our container, and be sure to yield out the messages array so the "block" passed into our component can have access to them. In [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs), start with a template like:
 
 ```hbs
 <main class="flex-1 flex flex-col bg-white overflow-hidden channel">
@@ -77,7 +77,7 @@ Now let's use our component in [`app/templates/teams/team/channel.hbs`](../app/t
 + </ChannelContainer>
 ```
 
-Next, we'll need to set things up so that messages load when the component renders, and whenever the channel changes. To accomplish this, we'll use "render modifiers", which are conceptually similar to lifecycle hook, in that they let us trigger actions when a DOM element is inserted, or when a tracked property updates.
+Next, we'll need to set things up so that messages load when the component renders, and whenever the channel changes. To accomplish this, we'll use "render modifiers", which are conceptually similar to a lifecycle hook, in that they let us trigger actions when a DOM element is inserted, or when a tracked property updates.
 
 In [`app/templates/components/channel-container.hbs`](../app/templates/components/channel-container.hbs) we'll set up two modifiers: one for the initial render, and one for the `@channel` update
 
@@ -88,7 +88,7 @@ In [`app/templates/components/channel-container.hbs`](../app/templates/component
 >
 ```
 
-and define a corresponding action in [`app/components/channel-container.js`](../app/components/channel-container.js)
+and define a corresponding action in [`app/components/channel-container.js`](../app/components/channel-container.js).
 
 ```diff
 import Component from '@glimmer/component';
@@ -118,7 +118,7 @@ export default class ChannelContainerComponent extends Component {
 
 One piece of code that's worth pointing out is that last line in our new action: `this.messages = messages;`. This looks a little strange, but sheds light on the fact that _updates to tracked properties are triggered on assignment_. You can think of this like a `this.set('messages', this.get('messages'));` in the classic ember world, or `this.setState({ messages: this.messages });` in the react world.
 
-Messages should now load with the app, but they're visually identical regardless of the data passed to them. This is because we haven't parameterized them yet. In [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) we can fix this by using the `@message` param that's now passed to this component
+Messages should now load with the app, but they're visually identical regardless of the data passed to them. This is because we haven't parameterized them yet. In [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) we can fix this by using the `@message` param that's now passed to this component.
 
 ```diff
  <!-- Message -->
@@ -149,9 +149,9 @@ Messages should now load with the app, but they're visually identical regardless
 
 ```
 
-Now you should see messages loading as the app renders, and changing as appropriately as the user moves from channel to channel. All we need to do now is write a meaningful test.
+Now you should see messages loading as the app renders, and changing as the user moves from channel to channel. All we need to do now is write a meaningful test.
 
-There's some starter code for the mocked API responses in [`starter-files/016-pretender-server.js`](../starter-files/016-pretender-server.js). Copy the contents of this into [`tests/integration/components/channel-container-test.js`](../tests/integration/components/channel-container-test.js). Follow this with a reasonable test for asserting that messages are actually yielded out from the `<ChannelContainer />`, and that each message has an id, body and user object. Here's an example implementation
+There's some starter code for the mocked API responses in [`starter-files/016-pretender-server.js`](../starter-files/016-pretender-server.js). Copy the contents of this into [`tests/integration/components/channel-container-test.js`](../tests/integration/components/channel-container-test.js). Follow this with a reasonable test for asserting that the messages are actually yielded out from the `<ChannelContainer />`, and that each message has an id, body and user object. Here's an example implementation:
 
 ```js
 import { module, test } from 'qunit';
@@ -166,7 +166,7 @@ import Pretender, { ResponseHandler } from 'pretender';
  * @returns {ResponseHandler}
  */
 function jsonResponse(body) {
-  return function() {
+  return function () {
     return [200, {}, JSON.stringify(body)];
   };
 }
@@ -197,22 +197,22 @@ function setupServer() {
   );
 }
 
-module('Integration | Component | channel-container', function(hooks) {
+module('Integration | Component | channel-container', function (hooks) {
   setupRenderingTest(hooks);
 
   /**
    * @type {Pretender | null}
    */
   let server;
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     server = new Pretender(setupServer);
   });
-  hooks.afterEach(function() {
+  hooks.afterEach(function () {
     server && server.shutdown();
     server = null;
   });
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
@@ -244,3 +244,7 @@ module('Integration | Component | channel-container', function(hooks) {
   });
 });
 ```
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/cbf48e6fff59e0f76d9460c9793544b18cee2ef3)

@@ -30,7 +30,6 @@ import svgStroke from './svg-stroke';
 
 export default {
   colors,
-  screens,
   fonts,
   textSizes,
   fontWeights,
@@ -56,6 +55,13 @@ export default {
   opacity,
   svgFill,
   svgStroke,
+  screens: {
+    sm: '520px',
+    // => @media (min-width: 640px) { ... }
+
+    md: '769px',
+    // => @media (min-width: 1024px) { ... }
+  },
 
   /*
   |-----------------------------------------------------------------------------
@@ -78,13 +84,7 @@ export default {
   */
 
   modules: {
-    appearance: [
-      'responsive',
-      'hover',
-      'focus',
-      'active',
-      'group-hover',
-    ],
+    appearance: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     backgroundAttachment: ['responsive'],
     backgroundColors: ['responsive', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
