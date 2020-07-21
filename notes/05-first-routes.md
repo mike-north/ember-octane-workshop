@@ -12,27 +12,27 @@ and the chat UI showing up when users visit http://localhost:4200/teams
 
 ## What's routing
 
-Whenever we think about URL-driven state (or content), [Routing](https://octane-guides-preview.emberjs.com/release/routing/) is likely to be involved. Our router [`app/router.js`](../app/router.js) responds to URL changes, and the appropriate routes take care of the particulars of bringing the application into the correct state for that URL (fetching the right data, rendering the right thing, etc...)
+Whenever we think about URL-driven state (or content), [Routing](https://octane-guides-preview.emberjs.com/release/routing/) is likely to be involved. Our router [`app/router.js`](../app/router.js) responds to URL changes, and the appropriate routes take care of the particulars of bringing the application into the correct state for that URL (fetching the right data, rendering the right thing, etc...).
 
 Each route is associated with a top-level template (the `.hbs` files in `app/templates` _other than_ the ones in `app/templates/components`) of a similar name. For example [`app/routes/teams.js`](../app/routes/teams.js) would have [`app/templates/teams.hbs`](../app/templates/teams.hbs) as its corresponding top-level template.
 
 The contents of our [app/templates/application.hbs](../app/templates/application.hbs) file will show up on the screen regardless of URL, but if we add a `{{outlet}}` to the template, any "child routes" will render their content into the outlet.
 
-The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we URL-specific content to meet our app's needs
+The `application` route (we have no corresponding file for this in our project) is the highest-level route, and children can be nested such that we have URL-specific content to meet our app's needs
 
 ### An Example Routing Hierarchy
 
 ```yaml
-application # application.hbs
-  login     # login.hbs
-  teams     # teams.hbs
-    team    #   teams/team.hbs
+application   # application.hbs
+  login       # login.hbs
+  teams       # teams.hbs
+    team      # teams/team.hbs
       channel # teams/team/channel.hbs
 ```
 
 ![routes](./img/05-first-routes/routes.gif)
 
-## ⌨️ Task: The `/teams` route
+## The `/teams` route
 
 In this task, we'll create a new top-level template that's displayed on the screen for URLs that begin with `/teams`.
 
@@ -60,7 +60,7 @@ You should now see...
 - visiting http://localhost:4200/ shows a blank screen, with no JS errors in the console
 - visiting http://localhost:4200/teams shows the chat UI
 
-## ⌨️ Task: The `/login` route
+## The `/login` route
 
 The goal of this task is to get a login screen showing up whenever users visit URLs starting with `/login`.
 
@@ -136,13 +136,13 @@ You should now see...
 - visiting http://localhost:4200/login shows the login UI
 - visiting http://localhost:4200/teams shows the chat UI
 
-## ⌨️ Task: Creating a basic link
+## Creating a basic link
 
 In this task, we'll create our first link between routes. The default browser behavior when receiving a click on an `<a href="..."></a>` is to trigger a full page load, and this is not what we want.
 
-Ember provides a tool for this called [`link-to`](https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/link-to?anchor=link-to).
+Ember provides a tool for this called [`<LinkTo>`](https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/link-to?anchor=link-to).
 
-`link-to` is a powerful tool, but for now we'll use it in a basic way: making the "Logout" button in the chat UI send the user to the login screen
+`<LinkTo>` is a powerful tool, but for now we'll use it in a basic way: making the "Logout" button in the chat UI send the user to the login screen
 
 First, open up [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs) and find the `Logout` button near the bottom.
 
@@ -166,4 +166,8 @@ A11y tip: Notice that this logout "button" is still a link, even though it looks
 
 You should now be able to click on the "Logout" button and find yourself looking at the login screen with a `/login` url.
 
-Congrats! we've just set up our first routes!
+Congrats! We've just set up our first routes!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/8e0808c0ec8aef96cfb638f5e7f144effebfaf72)

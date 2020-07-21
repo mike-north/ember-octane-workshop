@@ -2,6 +2,8 @@
 
 Actions are Ember's mechanism for handling user interactions through DOM events, and most often are associated with Components.
 
+<!-- Explain more: What does it mean - "are associated with Components" and why should the dev care? -->
+
 In our app, we'll need an action in order to properly handle the Login `<form>`'s "submit" event. You can think of this as kind of like defining an `onSubmit` handler
 
 ```html
@@ -32,6 +34,8 @@ loginForm.addEventListener('submit', function myFunction() {
 ```
 
 We'll see in a moment that we don't have to worry about the _imperative process_ that Ember uses to install an event listener -- we have a _declarative API_ for setting them up.
+
+<!-- Why does this matter to the dev? What is important about imperative process vs declarative API? -->
 
 ## Creating a component with a JS module
 
@@ -97,11 +101,11 @@ In this example
 
 because the `{{my-helper}}` is associated with the `class` attribute of the `<div>` -- we know it cannot be a modifier.
 
-Open your devtools and try your use of the `{{on}}` modifier out. You may notice that the selected user ID is logged to the console _briefly_ and then disappears. Why is this?
+Open your devtools and try out your use of the `{{on}}` modifier. You may notice that the selected user ID is logged to the console _briefly_ and then it disappears. Why is this?
 
 The default behavior of a form submit is to make a GET request to the current URL w/ form data serialized into queryParams. This means our single-page app is reloaded -- not what we want. We need to prevent this default behavior -- any ideas as to how we might do this?
 
-Update your event handler to use [`Event.preventDefault();`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault), so that the default form behavior is avoided
+Update your event handler to use [`Event.preventDefault();`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault), so that the default form behavior is avoided.
 
 ```js
 /**
@@ -143,7 +147,7 @@ export default class LoginFormComponent extends Component {
 
 Seems like it should work. Let's try it!
 
-Oops! we'll get an error.
+Oops! We'll get an error.
 
 ```
 login-form.js:23 Uncaught TypeError: this.handleSignIn is not a function
@@ -198,4 +202,8 @@ onLoginFormSubmit(evt) {
 
 Stop at the `debugger;` again and observe: we now have what we want, and the logging works properly again!
 
-Delete the `debugger;` inside `onLoginFormSubmit()` before we continue
+Delete the `debugger;` inside `onLoginFormSubmit()` before we continue.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/b38fd546b42681006a7ffc7df82cbf51da396c3e)
