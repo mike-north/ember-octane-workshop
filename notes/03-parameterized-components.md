@@ -1,6 +1,6 @@
 # Parameterized Components
 
-We can parameterize components by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
+We can parameterized components (express their output using _variables_ in addition to static expressions) by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
 
 ```jsx
 // ⚠️️ Pseudocode ⚠️
@@ -16,7 +16,7 @@ function renderChannelHeader(args) {
 
 Ember calls values that are passed into a component from the outside world in this fashion [“named args”](https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md). We can recognize these named args in a template because they always begin with an `@` sign.
 
-## ⌨️ Task: Parameterizing `<ChannelHeader />`
+## Parameterizing `<ChannelHeader />`
 
 The goal of this task is to modify `<ChannelHeader />` such that we can pass in a title and description of our choice.
 
@@ -29,7 +29,7 @@ Our component is now parameterized, and ready to receive data!
 
 ### Syntax breakdown
 
-- The `{{double-braces}}` indicate that the whatever is between them should be evaluated as a handlebars expression
+- The `{{double-braces}}` indicate that whatever is between them should be evaluated as a handlebars expression
 - The `@` indicates that `title` and `description` are named args, passed into the component from the outside world
 
 ### Passing in data
@@ -47,3 +47,7 @@ Go to your [`app/templates/application.hbs`](../app/templates/application.hbs) a
 Now, you should see the title and description properly rendered in the channel header
 
 ![done](./img/03-parameterized-components/done.png)
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/e9f0827798ef0d11bb91f1d059702738885f3028)

@@ -4,11 +4,11 @@ Helpers are like simple functions that can be used in templates. We'll create a 
 
 Once defined, helpers can be used in _any_ of an app's templates.
 
-## ⌨️ Task: Implementing a `dateToString` utility
+## Implementing a `dateToString` utility
 
 The goal of this task is to define a JavaScript module for date-related utilities, a `dateToString` function within it that transforms date-like values into strings, and accompanying unit tests.
 
-Your `app/utils` folder is a great place for low-level utilities like these. Let's generate a `utils` module by running
+Your `app/utils` folder is a great place for low-level utilities like these. Ember allows modules to quickly be created using the `generate` command in the cli. Let's generate a `utils` module by running
 
 ```sh
 ember generate util date
@@ -89,7 +89,7 @@ export function dateToString(date) {
 
 </details>
 
-Now, any code that needs to use this function can import it and do so
+Now, any code that needs to use this function can import it and do so. For Example:
 
 ```js
 import { dateToString } from 'shlack/utils/date';
@@ -97,7 +97,7 @@ import { dateToString } from 'shlack/utils/date';
 dateToString('5/3/1985'); // 'May 3, 1985 00:00.00 AM'
 ```
 
-## Task: ⌨️ Implementing a unit test
+## Implementing a unit test
 
 Now let's fill in the regular [QUnit](http://qunitjs.com) test module that Ember CLI created for us. Replace the contents of [`tests/unit/utils/date-test.js`](../tests/unit/utils/date-test.js) with the `date-test.js` below
 
@@ -110,9 +110,9 @@ import { dateToString } from 'shlack/utils/date';
 import { module, test } from 'qunit';
 
 // A QUnit Module
-module('Unit | Utility | date', function() {
+module('Unit | Utility | date', function () {
   // A QUnit Test
-  test('string inputs', function(assert) {
+  test('string inputs', function (assert) {
     // A QUnit Assertion
     assert.equal(
       dateToString('04/05/1983'),
@@ -132,7 +132,7 @@ module('Unit | Utility | date', function() {
   });
 
   // A QUnit Test
-  test('empty and invalid inputs', function(assert) {
+  test('empty and invalid inputs', function (assert) {
     // @ts-ignore
     assert.equal(dateToString(), null);
     // @ts-ignore
@@ -147,15 +147,15 @@ module('Unit | Utility | date', function() {
 
 </details>
 
-Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing our test passing
+Now we can go to <http://localhost:4200/tests?filter=date&nolint> and see the test runner UI, showing that our new test is now passing:
 
 ![unit-test](./img/04-helpers/unit-test.png)
 
-## ⌨️ Task: Implementing the `{{format-timestamp}}` helper
+## Implementing the `{{format-timestamp}}` helper
 
 Now that we have the core utility for converting a date-like thing into a consistently-formatted string, we just need create a helper to allow us to consume this in our `.hbs` files
 
-We can use Ember CLI to generate a starting point for our helper, as well as basic (passing) integration test.
+We can use Ember CLI to generate a starting point for our helper, as well as basic (passing) integration test. Let's run:
 
 ```sh
 ember generate helper format-timestamp
@@ -165,6 +165,8 @@ Ember CLI will generate the following files:
 
 - [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) - the helper
 - [`tests/integration/helpers/format-timestamp-test.js`](../tests/integration/helpers/format-timestamp-test.js) - a passing integration test
+
+### Understanding Helpers
 
 The code in [`app/helpers/format-timestamp.js`](../app/helpers/format-timestamp.js) will look something like this:
 
@@ -209,7 +211,7 @@ export default helper(function formatTimestamp([date]) {
 });
 ```
 
-While, we'll see in a moment that writing tests for helpers is quick and easy, I still recommend that helpers of this kind be implemented as a thin layer wrapping some unit-tested pure vanilla JS function. This approach allows you to use the same code easily in both the `.hbs` and `.js` worlds.
+While we'll see in a moment that writing tests for helpers is quick and easy, I still recommend that helpers of this kind be implemented as a thin layer wrapping some unit-tested pure vanilla JS function. This approach allows you to use the same code easily in both the `.hbs` and `.js` worlds.
 
 Now let's put our new helper to use. Open up [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) and replace the hardcoded timestamp with an invocation of our new helper
 
@@ -220,7 +222,7 @@ Now let's put our new helper to use. Open up [`app/templates/components/chat-mes
   </time>
 ```
 
-## ⌨️ Task: Implementing an integration test
+## Implementing an integration test
 
 Next, we should also write integration tests for our helper, just to make sure the helper is hooked up to the underlying "utils" function correctly.
 
@@ -242,11 +244,11 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Helper | format-timestamp', function(hooks) {
+module('Integration | Helper | format-timestamp', function (hooks) {
   setupRenderingTest(hooks);
 
   // Replace this with your real tests.
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     this.set('inputValue', '1234');
 
     await render(hbs`{{format-timestamp inputValue}}`);
@@ -277,7 +279,7 @@ You can view the current state of the tests by visiting <http://localhost:4200/t
 We can also add a negative test case below the first one (but still inside the callback passed to `module()`) to ensure the helper behaves reasonably when passed no arguments
 
 ```js
-test('No argument passed', async function(assert) {
+test('No argument passed', async function (assert) {
   await render(hbs`{{format-timestamp}}`);
   assert.equal(this.element.textContent.trim(), '(unknown)');
 });
@@ -286,3 +288,7 @@ test('No argument passed', async function(assert) {
 We don't have to worry about too much more than this, given that we've already unit tested the interesting part.
 
 Congrats! We're done with this helper!
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/e3190f7c39ec5032c658424905cfe61d6c0e3642)
