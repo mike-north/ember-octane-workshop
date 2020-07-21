@@ -1,10 +1,10 @@
 # Guarding Routes
 
 In this exercise, we will be adding redirection in the UI flow based on whether the user is logged in or not.
-Specifically, users should be able to access the `login` route, only when they are _not logged in_. And similarly, users should be able to access the `teams` route only they are _logged in_. Clear? Let’s use a diagram just to be sure:
+
+Specifically, users should be able to access the `login` route only when they are _not logged in_. And similarly, users should be able to access the `teams` route only when they are _logged in_.
 
 ![Login redirection flow chart](./img/12-guarding-routes/flow-chart.png)
-
 
 So let's get started.
 
@@ -64,7 +64,8 @@ The jsdoc comment above, for `AuthService`, improves the developer experience wh
 ## Adding a redirect to the /login page
 
 Now let's move on to `teams` route defined at [`app/routes/teams.js`](../app/routes/teams.js).
-The `login` route should have a similar [`beforeModel`](https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel) hook, but note that the validation logic is flipped in this case. We redirect to the `/login` page only the user is _logged out_.
+
+The `login` route should have a similar [`beforeModel`]((https://api.emberjs.com/ember/3.9/classes/Route/methods/beforeModel?anchor=beforeModel)) hook, but note that the validation logic is flipped in this case. We redirect to the `/login` page only if the user is _logged out_.
 
 In the `teams` route, import the `auth` service, since its not already available(injected).
 
@@ -114,7 +115,7 @@ In `app/templates/components/team-sidebar.hbs`, replace the `LinkTo` component w
 
 ## Adding Tests
 
-Now that we have the implementation in place for our redirect logic, lets add some acceptance tests for the same.
+Now that we have the implementation in place for our redirect logic, let's add some acceptance tests for the same.
 
 Reasons why acceptance tests are preferred (over unit tests or an integration tests):
 
