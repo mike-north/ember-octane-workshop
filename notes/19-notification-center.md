@@ -2,9 +2,12 @@
 
 While components are generally reusable, sometimes it's more convenient to use _singleton state_ to drive a component, particularly in cases where many parts of a codebase need to be able to get involved with its behavior. A great example of this kind of pattern is a notification center.
 
+<!-- Explain what singleton state is -->
+<!-- Explain more about why a notification center is a good example of this involved behavior -->
+
 ## The Notification Component
 
-Let's begin with a `<Notification />` component. Create the file [`app/templates/components/notification.hbs`](../app/templates/components/notification.hbs) as follows
+Let's begin with a `<Notification />` component. Create the file [`app/templates/components/notification.hbs`](../app/templates/components/notification.hbs) as follows:
 
 ```hbs
 <div class="notification flex flex-row items-center bg-{{@notification.color}} text-white text-sm font-bold px-4 py-3 notification-transition {{if @notification.entering "entering" ""}} {{if @notification.leaving "leaving" ""}}"
@@ -27,7 +30,7 @@ This component uses a pattern where we can have a default DOM structure for noti
 <Notification @notification=... />
 ```
 
-but can also customize it by using the "block form"
+but can also customize it by using the "block form".
 
 ```hbs
 <Notification @notification=... >
@@ -45,7 +48,7 @@ Next, let's build a service to hold the collection of notifications
 ember generate service notifications
 ```
 
-and implement [`app/services/notifications.js`](../app/services/notifications.js) as follows
+and implement [`app/services/notifications.js`](../app/services/notifications.js) as follows:
 
 ```js
 import Service from '@ember/service';
@@ -74,7 +77,7 @@ export default class NotificationsService extends Service {
     // REMOVE after elapsed time is complete
     setTimeout(() => {
       // remove notification by ID
-      const idx = this.messages.map(n => `${n.id}`).indexOf(`${id}`);
+      const idx = this.messages.map((n) => `${n.id}`).indexOf(`${id}`);
       this.messages.splice(idx, 1);
 
       // tracked property update via assignment
@@ -84,7 +87,7 @@ export default class NotificationsService extends Service {
 }
 ```
 
-now, anywhere we need to be able to provide notifications, we need only inject this service and call `notifications.notify('Message');`.
+Now, anywhere we need to be able to provide notifications, we need only inject this service and call `notifications.notify('Message');`:
 
 ## The List of Notifications
 
@@ -119,7 +122,7 @@ and its HBS file [`app/templates/components/notification-list.hbs`](../app/templ
 </div>
 ```
 
-Let's use this component at the top of the channel, above all of the messages. Open [`app/templates/teams/team/channel.hbs`](../app/templates/teams/team/channel.hbs) and make the following change
+Let's use this component at the top of the channel, above all of the messages. Open [`app/templates/teams/team/channel.hbs`](../app/templates/teams/team/channel.hbs) and make the following change:
 
 ```diff
   <ChannelHeader @title={{this.model.name}} @description={{this.model.description}} />
@@ -218,3 +221,7 @@ Now all we have left to do is use the service to create notifications in respons
 ```
 
 You should now see notifications upon creation and deletion of messages, both for successful completion of these operations and when the app encounters an error.
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/7670d6d56cc6d80d306a1761c3d50971598dd1f1)

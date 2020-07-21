@@ -2,9 +2,9 @@
 
 To describe the HTML portion of a web application, Ember uses declarative templates based on [Handlebars.js](https://handlebarsjs.com/) markup.
 
-For now, we'll just focus on one of these files: `app/templates/application.hbs`. Markup you put in this template will be shown anytime your app is on the screen, regardless of URL (we'll get into URLs later).
+For now, we'll just focus on this file: `app/templates/application.hbs`. Markup you put in this template will be shown anytime your app is on the screen, regardless of URL (we'll get into URLs later).
 
-## ⌨️ Task: Moving the initial HTML & CSS into our app
+## Moving the initial HTML & CSS into our app
 
 The goal of this step is to place the starting point HTML and CSS in your new app, and see what it looks like in a browser.
 
@@ -267,3 +267,7 @@ If `ember serve` is running, you should be able to visit `http://localhost:4200`
 <img src="./img/app.png" width=800>
 
 </p>
+
+## Completed File
+
+[view here](https://github.com/mike-north/ember-octane-workshop/commit/5ba89d25b4a638f17a06bd1d2eb5f0e1152e2903)
