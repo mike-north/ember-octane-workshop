@@ -127,8 +127,8 @@ In `app/templates/components/team-sidebar.hbs`, replace the `LinkTo` component w
 ```diff
 -    <LinkTo @route='login' {{! destination route }}
 -            @tagName="button" {{! use <button> instead of <a> }}
--            class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button" {{! HTML classes}}
-+    <button {{on "click" this.auth.logout}} class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button"
+-            class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button" {{! HTML classes}}
++    <button {{on "click" this.auth.logout}} class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button"
 +    >
       Logout
 -    </LinkTo>

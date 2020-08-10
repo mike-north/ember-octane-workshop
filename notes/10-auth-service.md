@@ -149,7 +149,7 @@ In the newly-created [`app/components/team-sidebar.js`](../app/components/team-s
 In [`app/templates/components/team-sidebar.hbs`](../app/templates/components/team-sidebar.hbs) use the currentUserId value from the service.
 
 ```diff
-         <span class="team-sidebar__current-user-name text-white opacity-50 text-sm">
+         <span class="team-sidebar__current-user-name text-white opacity-75 text-sm">
 -          Mike North
 +          Mike North ({{this.auth.currentUserId}})
          </span>

@@ -91,7 +91,9 @@ Paste the HTML below into [`app/templates/login.hbs`](../app/templates/login.hbs
     <div class="w-full max-w-xs">
       <form class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="inline-block relative w-64 mt-2">
+          <label class="sr-only">Select a user</label>
           <select
+            id="select-user"
             class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="" disabled>Select a user</option>

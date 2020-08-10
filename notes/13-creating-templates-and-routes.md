@@ -173,7 +173,8 @@ The array iteration is done using handlebar's [`each`](https://api.emberjs.com/e
 
 ```diff
 -   <nav
--     class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
+-     class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block"
+-     aria-label="Team">
 -     <a href="/li" data-team-id="li"
 -       class="team-selector__team-button cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
 -       <div
@@ -191,7 +192,8 @@ The array iteration is done using handlebar's [`each`](https://api.emberjs.com/e
 -           alt="Microsoft">
 -       </div>
 -     </a>
-+<nav class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block">
++<nav class="team-selector bg-indigo-darkest border-indigo-darkest border-r-2 pt-2 text-purple-lighter flex-none hidden sm:block"
++  aria-label="Team">
 +  {{#each @teams as |team|}}
 +    <LinkTo @route="teams.team" @model={{team.id}} data-team-id={{team.id}} class="team-selector__team-button cursor-pointer rounded-lg p-2 pl-4 block no-underline opacity-25 opacity-100">
 +      <div
@@ -227,7 +229,7 @@ Iterate the `channels` array that was passed in as part of the @team attribute u
 
 ```diff
 -   <a href="/li/general" data-channel-id="general"
--     class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75 bg-teal-dark">
+-     class="team-sidebar__channel-link py-1 px-4 text-white no-underline block bg-teal-darker">
 -     <span aria-hidden="true">#</span>
 -     general
 -   </a>
@@ -235,9 +237,9 @@ Iterate the `channels` array that was passed in as part of the @team attribute u
 +     <LinkTo
 +       @route="teams.team.channel"
 +       @model={{channel.id}}
-+       @activeClass="bg-teal-dark"
++       @activeClass="bg-teal-darker"
 +       data-channel-id={{channel.id}}
-+       class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75">
++       class="team-sidebar__channel-link py-1 px-4 text-white no-underline block">
 +       <span aria-hidden="true">#</span>
 +       {{channel.name}}
 +     </LinkTo>

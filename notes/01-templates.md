@@ -58,7 +58,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
         <svg class="h-2 w-2 fill-current text-green mr-2" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="10"></circle>
         </svg>
-        <span class="team-sidebar__current-user-name text-white opacity-50 text-sm">
+        <span class="team-sidebar__current-user-name text-white opacity-75 text-sm">
           Mike North
         </span>
       </div>
@@ -87,14 +87,14 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
     </div>
 
     <a href="/li/general" data-channel-id="general"
-      class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75 bg-teal-dark">
+      class="team-sidebar__channel-link py-1 px-4 text-white no-underline block bg-teal-darker">
       <span aria-hidden="true">#</span>
       general
     </a>
   </nav>
 
   <footer class="mx-4 mb-2 text-white">
-    <button class="text-white rounded bg-grey-dark hover:bg-red-darker p-2 team-sidebar__logout-button">
+    <button class="text-white rounded bg-grey-darker hover:bg-red-darker p-2 team-sidebar__logout-button">
       Logout
     </button>
   </footer>
