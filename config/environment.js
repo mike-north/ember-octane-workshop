@@ -26,6 +26,16 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    // A11y testing config
+    ['ember-a11y-testing']: {
+        componentOptions: {
+        // Disable visual audit feature
+        turnAuditOff: true,
+        // Include axe-core in tests only
+        excludeAxeCore: true,
+      },
+    },
   };
 
   if (environment === 'development') {

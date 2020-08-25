@@ -1,6 +1,6 @@
 # Parameterized Components
 
-We can parameterized components (express their output using _variables_ in addition to static expressions) by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
+We can parameterize components (express their output using _variables_ in addition to static expressions) by substituting some of the text in our hardcoded HTML with handlebars expressions (things that look like `{{ something }}`). Think of this kind of like how we can pass arguments to a function in order to get them to return new values.
 
 ```jsx
 // ⚠️️ Pseudocode ⚠️
@@ -20,9 +20,9 @@ Ember calls values that are passed into a component from the outside world in th
 
 The goal of this task is to modify `<ChannelHeader />` such that we can pass in a title and description of our choice.
 
-in [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
+In [`app/templates/components/channel-header.hbs`](../app/templates/components/channel-header.hbs)
 
-1.  find the text `general` and replace it with `{{@title}}`
+1.  Find the text `general` and replace it with `{{@title}}`
 2.  Find the text `Generally chatting about general things` and replace it with `{{@description}}`
 
 Our component is now parameterized, and ready to receive data!
@@ -34,9 +34,9 @@ Our component is now parameterized, and ready to receive data!
 
 ### Passing in data
 
-You may notice that your component now shows a blank title and description. Instead of rendering hard-coded values, the component now expects to be passed `args` called `@title` and `@description`. Let's pass it some data:
+You may notice that your component now shows a blank title and description. Instead of rendering hard-coded values, the component now expects to be passed `args` called `@title` and `@description`. Let's pass it some data.
 
-Go to your [`app/templates/application.hbs`](../app/templates/application.hbs) and pass some values into the component using key-value pairs
+Go to your [`app/templates/application.hbs`](../app/templates/application.hbs) and pass some values into the component using key-value pairs:
 
 ```hbs
 <ChannelHeader
@@ -44,7 +44,7 @@ Go to your [`app/templates/application.hbs`](../app/templates/application.hbs) a
     @description="Say nice things about your teammates" />
 ```
 
-Now, you should see the title and description properly rendered in the channel header
+Now, you should see the title and description properly rendered in the channel header.
 
 ![done](./img/03-parameterized-components/done.png)
 
