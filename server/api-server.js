@@ -1,14 +1,13 @@
 /* eslint-env node */
 const jsonServer = require('json-server');
-const url = require('url');
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 // eslint-disable-next-line no-unused-vars
 
-module.exports = server => {
+module.exports = (server) => {
   function SINGULAR_MIDDLEWARE(req, res, next) {
     const _send = res.send;
-    res.send = function(body) {
+    res.send = function (body) {
       if (req.url.indexOf('singular') >= 0) {
         try {
           const json = JSON.parse(body);
