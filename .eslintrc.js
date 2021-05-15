@@ -1,21 +1,25 @@
+'use strict';
+
 module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
+    ecmaFeatures: {
+      legacyDecorators: true,
+    },
   },
   plugins: ['ember'],
-  extends: ['eslint:recommended', 'plugin:ember/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:ember/recommended',
+    'plugin:prettier/recommended',
+  ],
   env: {
     browser: true,
   },
-  rules: {
-    'ember/routes-segments-snake-case': 0,
-    'no-debugger': 0,
-    'no-console': 0,
-    'no-unused-vars': 0,
-  },
+  rules: {},
   overrides: [
     // node files
     {
@@ -24,6 +28,7 @@ module.exports = {
         '.eslintrc.js',
         'prod-server.js',
         'server/**/*.js',
+        '.prettierrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
@@ -34,21 +39,18 @@ module.exports = {
       excludedFiles: ['app/**'],
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2015,
       },
       env: {
         browser: false,
         node: true,
       },
       plugins: ['node'],
-      rules: Object.assign(
-        {},
-        // eslint-disable-next-line node/no-unpublished-require
-        require('eslint-plugin-node').configs.recommended.rules,
-        {
-          // add your custom rules and overrides for node files here
-        }
-      ),
+      extends: ['plugin:node/recommended'],
+      rules: {
+        // this can be removed once the following is fixed
+        // https://github.com/mysticatea/eslint-plugin-node/issues/77
+        'node/no-unpublished-require': 'off',
+      },
     },
   ],
 };
