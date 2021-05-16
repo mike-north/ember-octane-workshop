@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { visit, currentURL, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import StubbedAuthService from '../test-helpers/auth-service';
+import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
 module('Acceptance | logout', function(hooks) {
   setupApplicationTest(hooks);
@@ -17,6 +18,8 @@ module('Acceptance | logout', function(hooks) {
     await visit('/teams'); // Go to a URL
 
     assert.equal(currentURL(), '/teams'); // Make sure we've arrived
+
+    await a11yAudit(); // Verify teams accessibility
 
     await click('.team-sidebar__logout-button'); // Click a button
 

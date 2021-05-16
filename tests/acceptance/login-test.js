@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { visit, currentURL, fillIn, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import StubbedAuthService from '../test-helpers/auth-service';
+import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
 module('Acceptance | login', function(hooks) {
   setupApplicationTest(hooks);
@@ -16,6 +17,8 @@ module('Acceptance | login', function(hooks) {
 
     await visit('/login');
     assert.equal(currentURL(), '/login');
+
+    await a11yAudit(); // Verify login page accessibility
 
     await fillIn('select', '1');
 
