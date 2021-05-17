@@ -31,6 +31,8 @@ module.exports = {
         'prod-server.js',
         'server/**/*.js',
         '.prettierrc.js',
+        'postcss.config.js',
+        'tailwind.config.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',

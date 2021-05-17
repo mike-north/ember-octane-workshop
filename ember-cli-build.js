@@ -11,13 +11,13 @@ module.exports = function (defaults) {
           {
             module: require('postcss-import'),
             options: {
-              path: ['node_modules']
-            }
+              path: ['node_modules'],
+            },
           },
-          require('tailwindcss')('./tailwind.config.js')
-        ]
-      }
-    }
+          require('tailwindcss')('./tailwind.config.js'),
+        ],
+      },
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
