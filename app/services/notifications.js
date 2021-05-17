@@ -24,7 +24,7 @@ export default class NotificationsService extends Service {
     // REMOVE after elapsed time is complete
     setTimeout(() => {
       // remove notification by ID
-      const idx = this.messages.map(n => `${n.id}`).indexOf(`${id}`);
+      const idx = this.messages.map((n) => `${n.id}`).indexOf(`${id}`);
       this.messages.splice(idx, 1);
 
       // tracked property update via assignment

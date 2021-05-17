@@ -2,7 +2,7 @@
   {{#each this.notifications.messages as |msg|}}
     {{#if (eq msg.color "green-dark")}}
       <Notification @notification={{msg}}>
-        <img src="https://media.giphy.com/media/toBi2rizjV8CswqIXG/giphy.gif" width="140" class="mr-20">
+        <img src="https://media.giphy.com/media/toBi2rizjV8CswqIXG/giphy.gif" width="140" class="mr-20" alt="jeff-goldblum">
         {{msg.body}}
       </Notification>
     {{else}}

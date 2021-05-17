@@ -33,9 +33,9 @@ export default class AuthService extends Service {
   async loadCurrentUser() {
     const { currentUserId } = this;
     if (!currentUserId) return;
-    this.currentUser = await (await fetch(
-      `/api/users/${currentUserId}`
-    )).json();
+    this.currentUser = await (
+      await fetch(`/api/users/${currentUserId}`)
+    ).json();
   }
 
   get currentUserId() {

@@ -3,10 +3,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, find, fillIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | login-form', function(hooks) {
+module('Integration | Component | login-form', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('initially has no user selected, and "Sign In" button disabled', async function(assert) {
+  test('initially has no user selected, and "Sign In" button disabled', async function (assert) {
     this.set('myUsers', [
       { id: 1, name: 'Sample McFixture' },
       { id: 2, name: 'Testy Assertington' },
@@ -30,7 +30,7 @@ module('Integration | Component | login-form', function(hooks) {
     assert.equal(button.disabled, true);
   });
 
-  test('after selecting a user "Sign In" button enabled', async function(assert) {
+  test('after selecting a user "Sign In" button enabled', async function (assert) {
     this.set('myUsers', [
       { id: 1, name: 'Sample McFixture' },
       { id: 2, name: 'Testy Assertington' },

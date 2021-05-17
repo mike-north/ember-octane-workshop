@@ -4,14 +4,14 @@ import { setupApplicationTest } from 'ember-qunit';
 import StubbedAuthService from '../test-helpers/auth-service';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-module('Acceptance | login', function(hooks) {
+module('Acceptance | login', function (hooks) {
   setupApplicationTest(hooks);
 
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     this.owner.register('service:auth', StubbedAuthService);
   });
 
-  test('starting logged out, then logging in', async function(assert) {
+  test('starting logged out, then logging in', async function (assert) {
     const auth = this.owner.lookup('service:auth');
     auth.currentUserId = null;
 
@@ -27,7 +27,7 @@ module('Acceptance | login', function(hooks) {
     assert.ok(currentURL().startsWith('/teams'));
   });
 
-  test('already logged in', async function(assert) {
+  test('already logged in', async function (assert) {
     const auth = this.owner.lookup('service:auth');
     auth.currentUserId = '1';
 

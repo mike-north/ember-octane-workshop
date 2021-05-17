@@ -26,9 +26,9 @@ export default class ChannelContainerComponent extends Component {
       channel: { id: channelId, teamId },
     } = this.args;
 
-    const messages = await (await fetch(
-      `/api/teams/${teamId}/channels/${channelId}/messages`
-    )).json();
+    const messages = await (
+      await fetch(`/api/teams/${teamId}/channels/${channelId}/messages`)
+    ).json();
     if (this.isDestroyed || this.isDestroying) return;
     this.messages = messages;
   }
@@ -41,7 +41,7 @@ export default class ChannelContainerComponent extends Component {
       },
     });
     if (resp.ok) {
-      const idx = this.messages.map(m => m.id).indexOf(message.id);
+      const idx = this.messages.map((m) => m.id).indexOf(message.id);
       this.messages.splice(idx, 1);
       this.messages = this.messages;
       console.log('deleting');

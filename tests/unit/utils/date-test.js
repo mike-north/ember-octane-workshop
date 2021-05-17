@@ -1,9 +1,9 @@
 import { dateToString } from 'shlack/utils/date';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | date', function() {
+module('Unit | Utility | date', function () {
   // Replace this with your real tests.
-  test('string inputs', function(assert) {
+  test('string inputs', function (assert) {
     assert.equal(
       dateToString('04/05/1983'),
       'Apr 5, 1983 00:00.00 AM',
@@ -21,7 +21,7 @@ module('Unit | Utility | date', function() {
     );
   });
 
-  test('empty and invalid inputs', function(assert) {
+  test('empty and invalid inputs', function (assert) {
     // @ts-ignore
     assert.equal(dateToString(), null);
     // @ts-ignore

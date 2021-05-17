@@ -4,14 +4,14 @@ import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import StubbedAuthService from 'shlack/tests/test-helpers/auth-service';
 
-module('Integration | Component | team-sidebar', function(hooks) {
+module('Integration | Component | team-sidebar', function (hooks) {
   setupRenderingTest(hooks);
 
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     this.owner.register('service:auth', StubbedAuthService);
   });
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     const auth = this.owner.lookup('service:auth');
     auth.currentUserId = 'LOL';
 

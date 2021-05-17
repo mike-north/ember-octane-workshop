@@ -35,7 +35,9 @@
           {{/if}}
         </p>
         <div class="flex items-center justify-between">
-          <input class="{{if this.isDisabled "bg-grey" "bg-teal-dark"}} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          <input
+            aria-label="submit"
+            class="{{if this.isDisabled "bg-grey" "bg-teal-dark"}} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             disabled={{this.isDisabled}}
             value="Sign In" type="submit" />
         </div>

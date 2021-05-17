@@ -1,7 +1,7 @@
 <div
   class="notification flex flex-row items-center bg-{{@notification.color}} text-white text-sm font-bold px-4 py-3 notification-transition {{if @notification.entering "entering" ""}} {{if @notification.leaving "leaving" ""}}"
   role="alert">
-  {{#if hasBlock}}
+  {{#if (has-block)}}
     {{yield }}
   {{else}}
     <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

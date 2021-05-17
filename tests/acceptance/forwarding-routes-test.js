@@ -10,7 +10,7 @@ import Pretender, { ResponseHandler } from 'pretender';
  * @returns {ResponseHandler}
  */
 function jsonResponse(body) {
-  return function() {
+  return function () {
     return [200, {}, JSON.stringify(body)];
   };
 }
@@ -57,16 +57,13 @@ function setupServer() {
       name: 'Pull Requests',
     })
   );
-  this.get(
-    '/api/teams/gh/channels/prs/messages',
-    jsonResponse([])
-  );
+  this.get('/api/teams/gh/channels/prs/messages', jsonResponse([]));
 }
 
-module('Acceptance | forwarding routes', function(hooks) {
+module('Acceptance | forwarding routes', function (hooks) {
   setupApplicationTest(hooks);
 
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     this.owner.register('service:auth', StubbedAuthService);
   });
 
@@ -74,15 +71,15 @@ module('Acceptance | forwarding routes', function(hooks) {
    * @type {Pretender | null}
    */
   let server;
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     server = new Pretender(setupServer);
   });
-  hooks.afterEach(function() {
+  hooks.afterEach(function () {
     server && server.shutdown();
     server = null;
   });
 
-  test('forwarding from /teams', async function(assert) {
+  test('forwarding from /teams', async function (assert) {
     const auth = this.owner.lookup('service:auth');
     auth.currentUserId = '1';
 

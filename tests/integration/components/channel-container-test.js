@@ -10,7 +10,7 @@ import Pretender, { ResponseHandler } from 'pretender';
  * @returns {ResponseHandler}
  */
 function jsonResponse(body) {
-  return function() {
+  return function () {
     return [200, {}, JSON.stringify(body)];
   };
 }
@@ -41,34 +41,32 @@ function setupServer() {
   );
 }
 
-module(
-  'Integration | Component | channel-container',
-  function(hooks) {
-    setupRenderingTest(hooks);
+module('Integration | Component | channel-container', function (hooks) {
+  setupRenderingTest(hooks);
 
-    /**
-     * @type {Pretender | null}
-     */
-    let server;
-    hooks.beforeEach(function() {
-      server = new Pretender(setupServer);
+  /**
+   * @type {Pretender | null}
+   */
+  let server;
+  hooks.beforeEach(function () {
+    server = new Pretender(setupServer);
+  });
+  hooks.afterEach(function () {
+    server && server.shutdown();
+    server = null;
+  });
+
+  test('it renders', async function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
+
+    this.set('myChannel', {
+      id: 'prs',
+      teamId: 'gh',
+      name: 'Pull Requests',
     });
-    hooks.afterEach(function() {
-      server && server.shutdown();
-      server = null;
-    });
 
-    test('it renders', async function(assert) {
-      // Set any properties with this.set('myProperty', 'value');
-      // Handle any actions with this.set('myAction', function(val) { ... });
-
-      this.set('myChannel', {
-        id: 'prs',
-        teamId: 'gh',
-        name: 'Pull Requests',
-      });
-
-      await render(hbs`
+    await render(hbs`
       <ChannelContainer @channel={{this.myChannel}} as |ch|>
         <ul>
           {{#each ch.messages as |message|}}
@@ -79,17 +77,13 @@ module(
       </ChannelContainer>
     `);
 
-      assert.deepEqual(
-        ('' + this.element.textContent)
-          .trim()
-          .replace(/\s*\n+\s*/g, '\n')
-          .split('\n'),
+    assert.deepEqual(
+      ('' + this.element.textContent)
+        .trim()
+        .replace(/\s*\n+\s*/g, '\n')
+        .split('\n'),
 
-        [
-          '(1) Testy Testerson - Hello Tests',
-          'template block text',
-        ]
-      );
-    });
-  }
-);
+      ['(1) Testy Testerson - Hello Tests', 'template block text']
+    );
+  });
+});

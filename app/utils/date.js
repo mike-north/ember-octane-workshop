@@ -27,8 +27,7 @@ const MONTH_NAMES = [
  */
 function padLeadingZeroes(val, digits) {
   let valString = `${val}`;
-  while (valString.length < digits)
-    valString = 0 + valString;
+  while (valString.length < digits) valString = 0 + valString;
   return valString;
 }
 
@@ -53,8 +52,8 @@ export function dateToString(date) {
   } ${d.getDate()}, ${d.getFullYear()} ${padLeadingZeroes(
     d.getHours() % 12,
     2
-  )}:${padLeadingZeroes(
-    d.getMinutes(),
+  )}:${padLeadingZeroes(d.getMinutes(), 2)}.${padLeadingZeroes(
+    d.getSeconds(),
     2
-  )}.${padLeadingZeroes(d.getSeconds(), 2)} ${ampm}`;
+  )} ${ampm}`;
 }
