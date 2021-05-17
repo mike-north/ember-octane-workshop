@@ -146,7 +146,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
             Lisa Huang-North
           </a>
           <span class="sr-only">at</span>
-          <time class="message__timestamp text-gray-600 text-xs font-normal">
+          <time class="message__timestamp text-gray-500 text-xs font-normal">
             Apr 21, 2019 12:21.38 PM
           </time>
         </h5>
@@ -176,7 +176,7 @@ For now, paste the following HTML in [`app/templates/application.hbs`](../app/te
             Mike North
           </a>
           <span class="sr-only">at</span>
-          <time class="message__timestamp text-gray-600 text-xs font-normal">
+          <time class="message__timestamp text-gray-500 text-xs font-normal">
             Apr 21, 2019 12:23.4 PM
           </time>
         </h5>

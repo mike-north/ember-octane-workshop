@@ -216,7 +216,7 @@ While we'll see in a moment that writing tests for helpers is quick and easy, I 
 Now let's put our new helper to use. Open up [`app/templates/components/chat-message.hbs`](../app/templates/components/chat-message.hbs) and replace the hardcoded timestamp with an invocation of our new helper
 
 ```diff
-  <time class="message__timestamp text-gray-600 text-xs font-normal">
+  <time class="message__timestamp text-gray-500 text-xs font-normal">
 -    Apr 21, 2019 12:21.38 PM
 +    {{format-timestamp '4/21/2019 12:21:38'}}
   </time>

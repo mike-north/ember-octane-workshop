@@ -135,7 +135,7 @@ Messages should now load with the app, but they're visually identical regardless
 +       {{@message.user.name}}
       </a>
       <span class="sr-only">at</span>
-      <time class="message__timestamp text-gray-600 text-xs font-normal">
+      <time class="message__timestamp text-gray-500 text-xs font-normal">
 -       {{format-timestamp '04-21-2019 12:21.38 PM'}}
 +       {{format-timestamp @message.createdAt}}
       </time>

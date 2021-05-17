@@ -237,7 +237,7 @@ Iterate the `channels` array that was passed in as part of the @team attribute u
 +     <LinkTo
 +       @route="teams.team.channel"
 +       @model={{channel.id}}
-+       @activeClass="bg-green-700"
++       @activeClass="bg-green-600"
 +       data-channel-id={{channel.id}}
 +       class="team-sidebar__channel-link py-1 px-4 text-white no-underline block">
 +       <span aria-hidden="true">#</span>
