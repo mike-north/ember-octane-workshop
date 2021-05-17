@@ -36,6 +36,7 @@
     "@types/ember__test-helpers": "^2.0.0",
     "@types/qunit": "^2.11.1",
     "@types/rsvp": "^4.0.3",
+    "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-a11y-testing": "4.0.7",
@@ -46,6 +47,7 @@
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-htmlbars": "^5.7.1",
     "ember-cli-inject-live-reload": "^2.0.2",
+    "ember-cli-postcss": "^7.0.0",
     "ember-cli-pretender": "^4.0.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-tailwind": "^0.7.0",
@@ -66,12 +68,15 @@
     "eslint-plugin-prettier": "^3.3.1",
     "loader.js": "^4.7.0",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.15",
+    "postcss-import": "^14.0.2",
     "prettier": "^2.2.1",
     "qunit": "^2.14.1",
-    "qunit-dom": "^1.6.0"
+    "qunit-dom": "^1.6.0",
+    "tailwindcss": "^2.1.2"
   },
   "engines": {
-    "node": "12.* || >= 14"
+    "node": ">=12.13.0 || >= 14"
   },
   "ember": {
     "edition": "octane"
@@ -82,7 +87,7 @@
     "json-server": "^0.16.3"
   },
   "volta": {
-    "node": "12.1.0",
+    "node": "12.13.0",
     "yarn": "1.15.2"
   }
 }

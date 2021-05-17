@@ -1,0 +1,15 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+.hover-target .show-on-hover {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.hover-target:hover .show-on-hover,
+.hover-target .show-on-hover:focus,
+.hover-target .show-on-hover:active {
+  opacity: 1;
+  filter: alpha(opacity=1);
+}
