@@ -1,7 +1,6 @@
 import container from 'tailwindcss/plugins/container';
 
 import colors from './colors';
-import screens from './screens';
 import fonts from './fonts';
 import textSizes from './text-sizes';
 import fontWeights from './font-weights';
