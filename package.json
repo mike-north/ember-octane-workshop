@@ -50,7 +50,6 @@
     "ember-cli-postcss": "^7.0.0",
     "ember-cli-pretender": "^4.0.0",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-tailwind": "^0.7.0",
     "ember-cli-terser": "^4.0.1",
     "ember-export-application-global": "^2.0.1",
     "ember-load-initializers": "^2.1.2",
