@@ -41,8 +41,7 @@ module.exports = (server) => {
     jsonServer.rewriter({
       '/api/teams/:id': '/api/teams/:id?_embed=channels',
       '/api/teams/:id/channels': '/api/channels?teamId=:id',
-      '/api/teams/:id/channels/:channelId':
-        '/api/channels?id=:channelId&teamId=:id&singular=1',
+      '/api/teams/:id/channels/:channelId': '/api/channels?id=:channelId&teamId=:id&singular=1',
       '/api/teams/:id/channels/:channelId/messages':
         '/api/messages?_expand=user&teamId=:id&channelId=:channelId',
     })
